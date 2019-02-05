@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8bcc595-42e0-41ec-a1b7-85081d3070e6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/empty" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -408,7 +406,7 @@
       <workItem from="1549257700757" duration="16946000" />
       <workItem from="1549343693023" duration="119000" />
       <workItem from="1549343974382" duration="609000" />
-      <workItem from="1549344632422" duration="956000" />
+      <workItem from="1549344632422" duration="1215000" />
     </task>
     <task id="LOCAL-00016" summary="CI: karma all browsers">
       <created>1548525207445</created>
@@ -789,7 +787,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187166000" />
+    <option name="totallyTimeSpent" value="187425000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
