@@ -6,17 +6,28 @@
     "TODO": "bin/src/index.js"
   },
   "author": "TODO",
+  "homepage": "TODO",
   "bugs": {
     "url": "TODO"
   },
-  "homepage": "TODO",
-
+  "license": "CC0-1.0",
+  "keywords": [
+    "cli-app",
+    "cli",
+    "command-line",
+    "cmd",
+    "terminal",
+    "console"
+  ],
+  "files": [
+    "bin/src/**"
+  ],
   "engines": {
     "node": ">= 8.6.0"
   },
   "main": "bin/src/index.js",
   "scripts": {
-    "build": "del-cli bin/ --force && babel src/ --out-dir bin/src/ && babel test/ --out-dir bin/test/",
+    "build": "shx rm -rf bin/ && babel src/ --out-dir bin/src/ && babel test/ --out-dir bin/test/",
     "lint": "eslint --plugin markdown --ext js,md .",
     "test:mocha": "mocha -r ./env/register-babel ./test/tests --recursive --exclude **/src/**",
     "test:mocha:build": "mocha -r ./env/register-tests ./bin/test/tests --recursive --exclude **/src/**",
@@ -28,7 +39,6 @@
     "coverage": "npm run lint && npm run coverage:mocha && npm run coverage:mocha:build",
     "ci": "npm run lint && npm run coverage && ncat ./tmp/coverage/**/lcov.info --banner \"\" | coveralls"
   },
-  "license": "CC0-1.0",
   "devDependencies": {
     "@babel/core": "^7.2.0",
     "@babel/plugin-proposal-class-properties": "^7.2.0",
@@ -40,7 +50,6 @@
     "@babel/register": "^7.0.0",
     "babel-eslint": "^10.0.1",
     "chai": "^4.2.0",
-    "del-cli": "^1.1.0",
     "eslint": "^5.12.1",
     "eslint-config-pro": "0.0.2",
     "eslint-config-standard": "^12.0.0",
@@ -61,7 +70,9 @@
     "rollup-plugin-istanbul": "^2.0.1",
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-pluginutils": "^2.3.3",
-    "yargs": "^12.0.5"
+    "shx": "^0.3.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "yargs": "^12.0.5"
+  }
 }
