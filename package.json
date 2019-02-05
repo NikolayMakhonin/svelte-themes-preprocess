@@ -12,7 +12,7 @@
     "test": "npm run lint && npm run test:mocha",
     "watch:mocha": "mocha -r ./env/babel-register ./test/tests --recursive --exclude **/src/** --watch --watch-extensions \"js){100}|^(((?!([\\\\/](dist|tmp|node_modules|reports|\\.[^\\\\/]*)[\\\\/]|\\.(log|bak)$)).)*\"",
     "perf:mocha": "mocha -r ./env/babel-register ./test/performance",
-    "coverage:mocha": "nyc npm run test:mocha",
+    "coverage:mocha": "nyc --nycrc-path ./env/.nycrc.json npm run test:mocha",
     "coverage": "npm run lint && npm run coverage:mocha",
     "ci": "npm run lint && npm run coverage:mocha && ncat ./tmp/coverage/*/**/lcov.info | coveralls"
   },
