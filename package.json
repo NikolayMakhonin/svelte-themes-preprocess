@@ -2,6 +2,15 @@
   "name": "TODO",
   "version": "0.0.1",
   "description": "TODO",
+  "bin": {
+    "TODO": "bin/src/index.js"
+  },
+  "author": "TODO",
+  "bugs": {
+    "url": "TODO"
+  },
+  "homepage": "TODO",
+
   "engines": {
     "node": ">= 8.6.0"
   },
@@ -19,12 +28,7 @@
     "coverage": "npm run lint && npm run coverage:mocha && npm run coverage:mocha:build",
     "ci": "npm run lint && npm run coverage && ncat ./tmp/coverage/**/lcov.info --banner \"\" | coveralls"
   },
-  "author": "TODO",
   "license": "CC0-1.0",
-  "bugs": {
-    "url": "TODO"
-  },
-  "homepage": "TODO",
   "devDependencies": {
     "@babel/core": "^7.2.0",
     "@babel/plugin-proposal-class-properties": "^7.2.0",
