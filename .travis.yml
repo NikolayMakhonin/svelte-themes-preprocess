@@ -25,4 +25,4 @@ before_install:
   - "test ! -d node_modules || npm rebuild"
 
 script:
-  - npm run ci && sleep 3 && ncat ./tmp/coverage/*/**/lcov.info --banner "" | coveralls
+  - npm run ci

@@ -14,7 +14,7 @@
     "perf:mocha": "mocha -r ./env/babel-register ./test/performance",
     "coverage:mocha": "nyc npm run test:mocha",
     "coverage": "npm run lint && npm run coverage:mocha",
-    "ci": "npm run lint && npm run coverage:mocha"
+    "ci": "npm run lint && npm run coverage:mocha && ncat ./tmp/coverage/**/lcov.info --banner \"\" | coveralls"
   },
   "author": "",
   "license": "CC0-1.0",
