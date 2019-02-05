@@ -20,7 +20,8 @@
     "console"
   ],
   "files": [
-    "bin/src/**"
+    "bin/**",
+    "env/register-tests"
   ],
   "engines": {
     "node": ">= 8.6.0"
@@ -30,7 +31,7 @@
     "lint": "eslint --plugin markdown --ext js,md .",
     "test:mocha": "mocha -r ./env/register-babel ./test/tests --recursive --exclude **/src/**",
     "test:mocha:build": "mocha -r ./env/register-tests ./bin/test/tests --recursive --exclude **/src/**",
-    "test": "npm run lint && npm run test:mocha && npm run test:mocha:build",
+    "test": "npm run test:mocha:build",
     "watch:mocha": "mocha -r ./env/register-babel ./test/tests --recursive --exclude **/src/** --watch --watch-extensions \"js){100}|^(((?!([\\\\/](dist|tmp|node_modules|reports|\\.[^\\\\/]*)[\\\\/]|\\.(log|bak)$)).)*\"",
     "perf:mocha": "mocha -r ./env/register-babel ./test/performance",
     "coverage:mocha": "nyc npm run test:mocha",
