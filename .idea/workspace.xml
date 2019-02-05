@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8bcc595-42e0-41ec-a1b7-85081d3070e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/env/empty" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/empty" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -30,8 +30,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-26">
-              <caret line="16" column="120" selection-start-line="16" selection-start-column="111" selection-end-line="16" selection-end-column="120" />
+            <state relative-caret-position="338">
+              <caret line="16" column="101" selection-start-line="16" selection-start-column="101" selection-end-line="16" selection-end-column="101" />
             </state>
           </provider>
         </entry>
@@ -109,11 +109,6 @@
               <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/env/empty">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -258,7 +253,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -298,6 +292,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -413,6 +408,7 @@
       <workItem from="1549257700757" duration="16946000" />
       <workItem from="1549343693023" duration="119000" />
       <workItem from="1549343974382" duration="609000" />
+      <workItem from="1549344632422" duration="956000" />
     </task>
     <task id="LOCAL-00016" summary="CI: karma all browsers">
       <created>1548525207445</created>
@@ -793,7 +789,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186210000" />
+    <option name="totallyTimeSpent" value="187166000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1008,6 +1004,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="16" column="101" selection-start-line="16" selection-start-column="101" selection-end-line="16" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/test/tests/env/argv.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
@@ -1069,13 +1072,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/env/empty">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26">
-          <caret line="16" column="120" selection-start-line="16" selection-start-column="111" selection-end-line="16" selection-end-column="120" />
-        </state>
-      </provider>
     </entry>
   </component>
 </project>
