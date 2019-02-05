@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a8bcc595-42e0-41ec-a1b7-85081d3070e6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="a8bcc595-42e0-41ec-a1b7-85081d3070e6" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -39,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="33" column="15" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
+            <state relative-caret-position="130">
+              <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -109,6 +106,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/env/x.log">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/@babel/core/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-702" />
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -260,6 +264,24 @@
               <item name="nodejs-template-cli" type="b2602c69:ProjectViewProjectNode" />
               <item name="nodejs-template-cli" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="nodejs-template-cli" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodejs-template-cli" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodejs-template-cli" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodejs-template-cli" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="@babel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodejs-template-cli" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodejs-template-cli" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="@babel" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -390,7 +412,7 @@
       <workItem from="1549366439664" duration="6000" />
       <workItem from="1549367075244" duration="987000" />
       <workItem from="1549368104048" duration="166000" />
-      <workItem from="1549369478147" duration="11452000" />
+      <workItem from="1549369478147" duration="12002000" />
     </task>
     <task id="LOCAL-00016" summary="CI: karma all browsers">
       <created>1548525207445</created>
@@ -771,7 +793,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203356000" />
+    <option name="totallyTimeSpent" value="203906000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -787,9 +809,9 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17773019" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.17773019" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.32729805" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" visible="true" weight="0.32729805" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5010707" side_tool="true" weight="0.42339832" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
@@ -842,7 +864,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_trash/karma.conf.helpers.js" />
     <entry file="file://$PROJECT_DIR$/env/karma.conf.ci.js" />
     <entry file="file://$PROJECT_DIR$/env/karma.conf.coverage.js" />
     <entry file="file://$PROJECT_DIR$/env/karma.conf.helpers.js" />
@@ -1123,10 +1144,15 @@
     <entry file="file://$PROJECT_DIR$/env/x.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@babel/core/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-702" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="33" column="15" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
+        <state relative-caret-position="130">
+          <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
         </state>
       </provider>
     </entry>
