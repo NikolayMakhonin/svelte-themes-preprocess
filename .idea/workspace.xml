@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8bcc595-42e0-41ec-a1b7-85081d3070e6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/env/cli-banner" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/cmd_init.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/env/cmd-init.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/cmd_start.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/env/cmd-start.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/js_transform_watcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/env/js-transform-watcher.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -29,8 +34,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+            <state relative-caret-position="129">
+              <caret line="28" column="121" selection-start-line="28" selection-start-column="121" selection-end-line="28" selection-end-column="121" />
             </state>
           </provider>
         </entry>
@@ -40,15 +45,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="78">
               <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -101,6 +97,32 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/env/cli-banner">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="26">
+              <caret line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../nodejs-template-helpers/node_modules/concat-with-sourcemaps/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="442">
+                <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bin/src/index.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -112,9 +134,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>IntellijPlugin</find>
-      <find>IntellijReporter</find>
-      <find>hasOwn</find>
       <find>proto</find>
       <find>FOUN</find>
       <find>onRunComplete</find>
@@ -142,6 +161,9 @@
       <find>nycrc</find>
       <find>coveralls</find>
       <find>TODO</find>
+      <find>bufferFrom</find>
+      <find>Concat</find>
+      <find>new Concat</find>
     </findStrings>
     <replaceStrings>
       <replace>isOk</replace>
@@ -160,8 +182,8 @@
       <dir>L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-helpers\node_modules\browserstack</dir>
       <dir>L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-helpers</dir>
       <dir>L:\Program Files\JetBrains\WebStorm 2018.3\plugins\js-karma\js_reporter\karma-intellij\</dir>
-      <dir>L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-helpers\node_modules\</dir>
       <dir>L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-helpers\node_modules\yargs</dir>
+      <dir>L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-helpers\node_modules\</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -170,8 +192,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tmp/karma/chai.js" />
-        <option value="$PROJECT_DIR$/test/tests/common/environment/modules.js" />
         <option value="$PROJECT_DIR$/.gitattributes" />
         <option value="$PROJECT_DIR$/test/performance/browser/isBrowser.js" />
         <option value="$PROJECT_DIR$/test/performance/node/isNode.js" />
@@ -220,6 +240,8 @@
         <option value="$PROJECT_DIR$/test/tests/index.js" />
         <option value="$PROJECT_DIR$/.nycrc.json" />
         <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/env/cli_banner" />
+        <option value="$PROJECT_DIR$/env/cli-banner" />
         <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
@@ -249,6 +271,17 @@
             <path>
               <item name="nodejs-template-cli" type="b2602c69:ProjectViewProjectNode" />
               <item name="nodejs-template-cli" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodejs-template-cli" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodejs-template-cli" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="nodejs-template-cli" type="b2602c69:ProjectViewProjectNode" />
+              <item name="nodejs-template-cli" type="462c0819:PsiDirectoryNode" />
+              <item name="bin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="nodejs-template-cli" type="b2602c69:ProjectViewProjectNode" />
@@ -407,6 +440,8 @@
       <workItem from="1549365525169" duration="22000" />
       <workItem from="1549365841794" duration="36000" />
       <workItem from="1549366439664" duration="6000" />
+      <workItem from="1549367075244" duration="987000" />
+      <workItem from="1549368104048" duration="166000" />
     </task>
     <task id="LOCAL-00016" summary="CI: karma all browsers">
       <created>1548525207445</created>
@@ -787,7 +822,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190751000" />
+    <option name="totallyTimeSpent" value="191904000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -800,12 +835,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="892" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.17529039" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17529039" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="0" visible="true" weight="0.37465182" />
+      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.37465182" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.500528" side_tool="true" weight="0.20752089" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
@@ -858,9 +892,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/karma-browserstack-launcher/package.json" />
-    <entry file="file://$PROJECT_DIR$/node_modules/socket.io/lib/socket.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/karma-browserstack-launcher/browserstack-reporter.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/karma-browserstack-launcher/worker-manager.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/karma-browserstack-launcher/worker.js" />
     <entry file="file://$PROJECT_DIR$/node_modules/karma/lib/browser.js" />
@@ -894,10 +925,10 @@
     <entry file="file://$PROJECT_DIR$/node_modules/karma/lib/events.js" />
     <entry file="file://$PROJECT_DIR$/key.txt" />
     <entry file="file://$PROJECT_DIR$/tmp/watch/env/js_watcher.js" />
-    <entry file="file://$PROJECT_DIR$/env/cmd_init.cmd">
+    <entry file="file://$PROJECT_DIR$/env/cmd-init.cmd">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/env/cmd_start.cmd">
+    <entry file="file://$PROJECT_DIR$/env/cmd-start.cmd">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
           <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
@@ -918,7 +949,7 @@
     <entry file="file://$PROJECT_DIR$/env/karma.conf.performance.js" />
     <entry file="file://$PROJECT_DIR$/env/karma.conf.tests.js" />
     <entry file="file://$PROJECT_DIR$/env/polyfill_custom.js" />
-    <entry file="file://$PROJECT_DIR$/env/js_transform_watcher.js">
+    <entry file="file://$PROJECT_DIR$/env/js-transform-watcher.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="75" column="15" selection-start-line="75" selection-start-column="15" selection-end-line="75" selection-end-column="15" />
@@ -1004,10 +1035,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/env/empty" />
     <entry file="file://$PROJECT_DIR$/env/babel-register.js" />
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="4" />
+        <state relative-caret-position="129">
+          <caret line="28" column="121" selection-start-line="28" selection-start-column="121" selection-end-line="28" selection-end-column="121" />
         </state>
       </provider>
     </entry>
@@ -1015,13 +1053,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
           <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1062,6 +1093,26 @@
           <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/env/cli-banner">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../nodejs-template-helpers/node_modules/concat-with-sourcemaps/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="442">
+            <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/src/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

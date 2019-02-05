@@ -25,9 +25,8 @@
   "engines": {
     "node": ">= 8.6.0"
   },
-  "main": "bin/src/index.js",
   "scripts": {
-    "build": "shx rm -rf bin/ && babel src/ --out-dir bin/src/ && babel test/ --out-dir bin/test/",
+    "build": "shx rm -rf bin/ && babel src/ --out-dir bin/src/ && babel test/ --out-dir bin/test/ && ncat env/cli-banner bin/src/index.js -o bin/src/index.js",
     "lint": "eslint --plugin markdown --ext js,md .",
     "test:mocha": "mocha -r ./env/register-babel ./test/tests --recursive --exclude **/src/**",
     "test:mocha:build": "mocha -r ./env/register-tests ./bin/test/tests --recursive --exclude **/src/**",
