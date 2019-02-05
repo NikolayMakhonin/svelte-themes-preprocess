@@ -2,13 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8bcc595-42e0-41ec-a1b7-85081d3070e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/env/cli-banner" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.babelrc-mjs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/cli.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/helpers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/tests/main/helpers.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/tests/main/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Coverage_Mocha.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Coverage_Mocha.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Watch_Mocha.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Watch_Mocha.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/cmd_init.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/env/cmd-init.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/cmd_start.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/env/cmd-start.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/env/js_transform_watcher.js" beforeDir="false" afterPath="$PROJECT_DIR$/env/js-transform-watcher.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.nycrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.nycrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/cli-banner" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/.eslintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/performance/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/performance/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/tests/env/argv.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tests/env/argv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/tests/env/modules.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tests/env/modules.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/tests/env/src/module1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tests/env/src/module1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/tests/env/src/module2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tests/env/src/module2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/tests/index.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,106 +37,94 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/nodejs_template_cli$Coverage_Mocha.dat" NAME="Coverage Mocha Coverage Results" MODIFIED="1549342943431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/nodejs_template_cli$Coverage_Mocha.dat" NAME="Coverage Mocha Coverage Results" MODIFIED="1549388456845" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/nodejs_template_helpers$Coverage_Karma.dat" NAME="Coverage Karma Coverage Results" MODIFIED="1549182141671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="KarmaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/nodejs_template_helpers$Coverage_Mocha.dat" NAME="Coverage Mocha Coverage Results" MODIFIED="1549180787162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/nodejs_template_cli$Watch_Mocha.dat" NAME="Watch Mocha Coverage Results" MODIFIED="1549388271204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/nodejs_template_helpers$CI_Karma.dat" NAME="CI Karma Coverage Results" MODIFIED="1549207666338" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="KarmaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CoverageViewManager">
-    <option name="myElementSize" value="399" />
+    <option name="myElementSize" value="597" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.nycrc.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="52">
+              <caret line="2" column="56" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="129">
-              <caret line="28" column="121" selection-start-line="28" selection-start-column="121" selection-end-line="28" selection-end-column="121" />
+              <caret line="32" column="49" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/tests/env/argv.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../nodejs-template-helpers/node_modules/yargs/yargs.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25116">
-              <caret line="966" selection-start-line="966" selection-end-line="966" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../nodejs-template-helpers/node_modules/yargs/lib/usage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4004">
-              <caret line="154" selection-start-line="154" selection-end-line="154" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/tests/index.js">
+        <entry file="file://$PROJECT_DIR$/.babelrc-mjs.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="130">
-              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+              <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="286">
-                <caret line="11" column="98" selection-start-line="11" selection-end-line="11" selection-end-column="98" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.travis.yml">
+        <entry file="file://$PROJECT_DIR$/.babelrc.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+            <state relative-caret-position="416">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/env/cli-banner">
+        <entry file="file://$PROJECT_DIR$/src/test/tests/env/src/module1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="1" selection-end-line="1" />
+            <state>
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../nodejs-template-helpers/node_modules/concat-with-sourcemaps/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="442">
-                <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/src/test/tests/env/src/module2.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/src/index.js">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/src/test/tests/env/modules.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="118">
+              <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/cli.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="52">
+              <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -134,10 +138,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>proto</find>
-      <find>FOUN</find>
-      <find>onRunComplete</find>
-      <find>captureTimeout</find>
       <find>because no message in</find>
       <find>dist</find>
       <find>tmp</find>
@@ -164,6 +164,10 @@
       <find>bufferFrom</find>
       <find>Concat</find>
       <find>new Concat</find>
+      <find>modules</find>
+      <find>src</find>
+      <find>build</find>
+      <find>.?</find>
     </findStrings>
     <replaceStrings>
       <replace>isOk</replace>
@@ -192,19 +196,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitattributes" />
-        <option value="$PROJECT_DIR$/test/performance/browser/isBrowser.js" />
-        <option value="$PROJECT_DIR$/test/performance/node/isNode.js" />
-        <option value="$PROJECT_DIR$/test/tests/node/isNode.js" />
-        <option value="$PROJECT_DIR$/test/tests/common/example.js" />
-        <option value="$PROJECT_DIR$/karma.conf.performance.js" />
-        <option value="$PROJECT_DIR$/karma.conf.coverage.js" />
-        <option value="$PROJECT_DIR$/tmp/karma/polyfill.js" />
-        <option value="$PROJECT_DIR$/karma.conf.tests.js" />
-        <option value="$APPLICATION_HOME_DIR$/plugins/js-karma/js_reporter/karma-intellij/lib/intellij.conf.js" />
-        <option value="$PROJECT_DIR$/node_modules/karma/lib/executor.js" />
-        <option value="$PROJECT_DIR$/js_watcher.js" />
-        <option value="$PROJECT_DIR$/test/tests/browser/isBrowser.js" />
         <option value="$PROJECT_DIR$/node_modules/karma/lib/launcher.js" />
         <option value="$PROJECT_DIR$/node_modules/karma-browserstack-launcher/browserstack-reporter.js" />
         <option value="$PROJECT_DIR$/node_modules/karma-browserstack-launcher/worker-manager.js" />
@@ -224,9 +215,7 @@
         <option value="$PROJECT_DIR$/env/karma.conf.ci.js" />
         <option value="$PROJECT_DIR$/env/karma.conf.helpers.js" />
         <option value="$PROJECT_DIR$/env/polyfill_custom.js" />
-        <option value="$PROJECT_DIR$/.babelrc" />
         <option value="$PROJECT_DIR$/test/tests/common/env/modules.js" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/env/js_transform_watcher.js" />
         <option value="$PROJECT_DIR$/.eslintrc" />
         <option value="$PROJECT_DIR$/test/.eslintrc" />
@@ -235,14 +224,29 @@
         <option value="$PROJECT_DIR$/test/tests/env/cli_args.js" />
         <option value="$PROJECT_DIR$/../nodejs-template-helpers/node_modules/yargs/yargs.js" />
         <option value="$PROJECT_DIR$/../nodejs-template-helpers/node_modules/yargs/lib/usage.js" />
-        <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/test/tests/env/argv.js" />
-        <option value="$PROJECT_DIR$/test/tests/index.js" />
-        <option value="$PROJECT_DIR$/.nycrc.json" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/env/cli_banner" />
         <option value="$PROJECT_DIR$/env/cli-banner" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/test/tests/index.js" />
+        <option value="$PROJECT_DIR$/test/tests/main/index.js" />
+        <option value="$PROJECT_DIR$/src/helpers.js" />
+        <option value="$PROJECT_DIR$/test/tests/main/test.js" />
+        <option value="$PROJECT_DIR$/test/tests/bin/index.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/cli.js" />
+        <option value="$PROJECT_DIR$/test/tests/main/helpers.js" />
+        <option value="$PROJECT_DIR$/test/tests/main.js" />
+        <option value="$PROJECT_DIR$/.babelrc-mjs" />
+        <option value="$PROJECT_DIR$/.babelrc" />
+        <option value="$PROJECT_DIR$/.babelrc.mjs" />
+        <option value="$PROJECT_DIR$/.babelrc.js" />
+        <option value="$PROJECT_DIR$/.babelrc-mjs.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/.nycrc.json" />
+        <option value="$PROJECT_DIR$/src/test/tests/env/modules.js" />
+        <option value="$PROJECT_DIR$/src/main/cli.js" />
       </list>
     </option>
   </component>
@@ -275,41 +279,13 @@
             <path>
               <item name="nodejs-template-cli" type="b2602c69:ProjectViewProjectNode" />
               <item name="nodejs-template-cli" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nodejs-template-cli" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nodejs-template-cli" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="nodejs-template-cli" type="b2602c69:ProjectViewProjectNode" />
               <item name="nodejs-template-cli" type="462c0819:PsiDirectoryNode" />
-              <item name="env" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nodejs-template-cli" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nodejs-template-cli" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nodejs-template-cli" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nodejs-template-cli" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nodejs-template-cli" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nodejs-template-cli" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nodejs-template-cli" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nodejs-template-cli" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="env" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -344,19 +320,19 @@
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-helpers\_trash" />
-      <recent name="L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-helpers" />
-      <recent name="L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-helpers\test\tests\node" />
-      <recent name="L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-helpers\test\tests\browser" />
-      <recent name="L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-helpers\test\performance\node" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-cli" />
-      <recent name="L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-cli\test\performance" />
+      <recent name="L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-cli\src\test\tests\main" />
+      <recent name="L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-cli\src" />
+      <recent name="L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-cli\src\main" />
       <recent name="L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-cli\test\tests" />
-      <recent name="L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-helpers\env" />
-      <recent name="L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-helpers\test\performance\node" />
+      <recent name="L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-cli\test\tests\main" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-cli" />
+      <recent name="L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-cli\test\tests\main" />
+      <recent name="L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-cli\src" />
+      <recent name="L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-cli\test\tests\bin" />
+      <recent name="L:\Work\_GIT\GitHub\NodeJs\templates\nodejs-template-helpers\_trash" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -389,10 +365,9 @@
       <working-directory>$PROJECT_DIR$</working-directory>
       <pass-parent-env>true</pass-parent-env>
       <ui>bdd</ui>
-      <extra-mocha-options>-r ./env/babel-register --exclude **/src/** --watch --watch-extensions  js){100}|^(((?!([\\/](dist|tmp|node_modules|reports|\.[^\\/]*)[\\/]|\.(log|bak)$)).)*</extra-mocha-options>
-      <test-kind>DIRECTORY</test-kind>
-      <test-directory>$PROJECT_DIR$/test</test-directory>
-      <recursive>true</recursive>
+      <extra-mocha-options>-r ./env/register-babel --exclude **/src/** --watch --watch-extensions  js){100}|^(((?!([\\/](dist|tmp|node_modules|reports|\.[^\\/]*)[\\/]|\.(log|bak)$)).)*</extra-mocha-options>
+      <test-kind>PATTERN</test-kind>
+      <test-pattern>./src/test/tests/**/*.js</test-pattern>
       <method v="2" />
     </configuration>
     <list>
@@ -442,6 +417,7 @@
       <workItem from="1549366439664" duration="6000" />
       <workItem from="1549367075244" duration="987000" />
       <workItem from="1549368104048" duration="166000" />
+      <workItem from="1549369478147" duration="9310000" />
     </task>
     <task id="LOCAL-00016" summary="CI: karma all browsers">
       <created>1548525207445</created>
@@ -790,39 +766,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Watch_Mocha - 2019.02.05 at 06h 42m 29s.xml">
+    <history-entry file="Watch_Mocha - 2019.02.05 at 19h 24m 24s.xml">
       <configuration name="Watch Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Watch_Mocha - 2019.02.05 at 06h 46m 01s.xml">
-      <configuration name="Watch Mocha" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Watch_Mocha - 2019.02.05 at 06h 46m 27s.xml">
-      <configuration name="Watch Mocha" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Watch_Mocha - 2019.02.05 at 06h 46m 54s.xml">
-      <configuration name="Watch Mocha" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Watch_Mocha - 2019.02.05 at 06h 46m 59s.xml">
-      <configuration name="Watch Mocha" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Watch_Mocha - 2019.02.05 at 06h 47m 06s.xml">
-      <configuration name="Watch Mocha" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Watch_Mocha - 2019.02.05 at 06h 55m 36s.xml">
-      <configuration name="Watch Mocha" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Watch_Mocha - 2019.02.05 at 06h 59m 02s.xml">
-      <configuration name="Watch Mocha" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Coverage_Mocha - 2019.02.05 at 07h 00m 28s.xml">
+    <history-entry file="Coverage_Mocha - 2019.02.05 at 19h 25m 18s.xml">
       <configuration name="Coverage Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Coverage_Mocha - 2019.02.05 at 07h 02m 23s.xml">
+    <history-entry file="Coverage_Mocha - 2019.02.05 at 19h 29m 15s.xml">
+      <configuration name="Coverage Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Watch_Mocha - 2019.02.05 at 19h 33m 46s.xml">
+      <configuration name="Watch Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Coverage_Mocha - 2019.02.05 at 19h 33m 51s.xml">
+      <configuration name="Coverage Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Watch_Mocha - 2019.02.05 at 19h 35m 27s.xml">
+      <configuration name="Watch Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Coverage_Mocha - 2019.02.05 at 19h 35m 33s.xml">
+      <configuration name="Coverage Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Watch_Mocha - 2019.02.05 at 19h 36m 05s.xml">
+      <configuration name="Watch Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Coverage_Mocha - 2019.02.05 at 19h 38m 16s.xml">
+      <configuration name="Coverage Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Coverage_Mocha - 2019.02.05 at 19h 40m 56s.xml">
       <configuration name="Coverage Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191904000" />
+    <option name="totallyTimeSpent" value="201214000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -835,24 +811,25 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="892" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17529039" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17773019" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.37465182" />
-      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.500528" side_tool="true" weight="0.20752089" />
+      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.32729805" />
+      <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5010707" side_tool="true" weight="0.42339832" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32729805" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49947202" weight="0.39275765" />
+      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49892932" weight="0.42339832" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39972144" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.3286908" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32729805" />
       <window_info anchor="bottom" id="TypeScript" order="12" weight="0.32729805" />
-      <window_info anchor="right" id="Coverage" order="0" side_tool="true" visible="true" weight="0.28907922" />
+      <window_info anchor="right" id="Coverage" order="0" side_tool="true" visible="true" weight="0.28479657" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
@@ -892,42 +869,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/karma-browserstack-launcher/worker-manager.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/karma-browserstack-launcher/worker.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/karma/lib/browser.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/karma/lib/launcher.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/karma-browserstack-launcher/index.js" />
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/js-karma/js_reporter/karma-intellij/lib/intellijReporter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6058">
-          <caret line="233" column="28" selection-start-line="233" selection-start-column="28" selection-end-line="233" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/js-karma/js_reporter/karma-intellij/lib/intellijPlugin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="10" selection-start-line="4" selection-end-line="4" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/js-karma/js_reporter/karma-intellij/lib/intellij.conf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2288">
-          <caret line="88" column="34" selection-start-line="88" selection-start-column="34" selection-end-line="88" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/karma/lib/config.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/di/lib/injector.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/karma/lib/server.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/karma/lib/executor.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/karma/lib/events.js" />
-    <entry file="file://$PROJECT_DIR$/key.txt" />
-    <entry file="file://$PROJECT_DIR$/tmp/watch/env/js_watcher.js" />
-    <entry file="file://$PROJECT_DIR$/env/cmd-init.cmd">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/env/cmd-start.cmd">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
@@ -936,13 +877,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_trash/karma.conf.helpers.js" />
-    <entry file="file://$PROJECT_DIR$/.babelrc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/env/karma.conf.ci.js" />
     <entry file="file://$PROJECT_DIR$/env/karma.conf.coverage.js" />
     <entry file="file://$PROJECT_DIR$/env/karma.conf.helpers.js" />
@@ -967,14 +901,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/performance/node/.eslintrc" />
-    <entry file="file://$PROJECT_DIR$/test/.eslintrc">
+    <entry file="file://$PROJECT_DIR$/src/test/.eslintrc">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
           <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/performance/test.js">
+    <entry file="file://$PROJECT_DIR$/src/test/performance/test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="29" selection-start-column="29" selection-end-column="29" />
@@ -1019,37 +953,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/tests/env/modules.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-71">
-          <caret line="9" selection-start-line="6" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.nycrc.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/env/empty" />
     <entry file="file://$PROJECT_DIR$/env/babel-register.js" />
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="28" column="121" selection-start-line="28" selection-start-column="121" selection-end-line="28" selection-end-column="121" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/tests/env/argv.js">
+    <entry file="file://$PROJECT_DIR$/src/test/tests/env/argv.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
           <caret line="3" column="14" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
@@ -1067,23 +973,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4004">
           <caret line="154" selection-start-line="154" selection-end-line="154" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/tests/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="286">
-            <caret line="11" column="98" selection-start-line="11" selection-end-line="11" selection-end-column="98" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1111,8 +1000,166 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bin/src/index.js">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="148">
+            <caret line="14" column="43" selection-start-line="14" selection-start-column="43" selection-end-line="14" selection-end-column="43" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/cross-spawn/lib/enoent.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/tests/bin/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/helpers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/main/helpers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/main/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="11" selection-start-column="7" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/src/cli.js">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/src/helpers.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" selection-start-line="2" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/mjs/src/main/helpers.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/env/register-babel.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/js/src/main/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-234" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.babelrc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.babelrc-mjs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/mjs/src/main/cli.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/mjs/src/main/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/mjs/src/test/tests/main/main.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="32" column="49" selection-start-line="32" selection-start-column="49" selection-end-line="32" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.nycrc.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="56" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/env/src/module1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/env/src/module2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/env/modules.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/cli.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

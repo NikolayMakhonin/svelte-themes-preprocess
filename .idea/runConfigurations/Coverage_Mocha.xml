@@ -6,10 +6,9 @@
     <working-directory>$PROJECT_DIR$</working-directory>
     <pass-parent-env>true</pass-parent-env>
     <ui>bdd</ui>
-    <extra-mocha-options>-r ./env/babel-register --exclude **/src/** --exclude **/browser/**</extra-mocha-options>
-    <test-kind>DIRECTORY</test-kind>
-    <test-directory>$PROJECT_DIR$/test/tests</test-directory>
-    <recursive>true</recursive>
+    <extra-mocha-options>-r ./env/register-babel --exclude **/src/** --exclude **/browser/**</extra-mocha-options>
+    <test-kind>PATTERN</test-kind>
+    <test-pattern>./{src,dist/{js,mjs}}/test/tests/**/*.js</test-pattern>
     <method v="2" />
   </configuration>
 </component>

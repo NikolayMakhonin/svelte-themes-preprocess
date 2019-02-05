@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "TODO",
   "bin": {
-    "TODO": "bin/src/index.js"
+    "TODO": "dist/js/src/cli.js"
   },
   "author": "TODO",
   "homepage": "TODO",
@@ -20,23 +20,30 @@
     "console"
   ],
   "files": [
-    "bin/**",
-    "env/register-tests"
+    "dist/**",
+    "env/register-*"
   ],
+  "main": "bin/js/src/index.js",
+  "jsnext:main": "dist/mjs/src/index.js",
+  "module": "dist/mjs/src/index.js",
   "engines": {
     "node": ">= 8.6.0"
   },
   "scripts": {
-    "build": "shx rm -rf bin/ && babel src/ --out-dir bin/src/ && babel test/ --out-dir bin/test/ && ncat env/cli-banner bin/src/index.js -o bin/src/index.js",
+    "build:js": "shx rm -rf dist/js/ && babel src --out-dir dist/js/",
+    "build:mjs": "shx rm -rf dist/mjs/ && babel src --out-dir dist/mjs/ --no-babelrc --config-file ./.babelrc-mjs.js",
+    "build": "npm run build:mjs && npm run build:js",
     "lint": "eslint --plugin markdown --ext js,md .",
-    "test:mocha": "mocha -r ./env/register-babel ./test/tests --recursive --exclude **/src/**",
-    "test:mocha:build": "mocha -r ./env/register-tests ./bin/test/tests --recursive --exclude **/src/**",
-    "test": "npm run test:mocha:build",
-    "watch:mocha": "mocha -r ./env/register-babel ./test/tests --recursive --exclude **/src/** --watch --watch-extensions \"js){100}|^(((?!([\\\\/](dist|tmp|node_modules|reports|\\.[^\\\\/]*)[\\\\/]|\\.(log|bak)$)).)*\"",
-    "perf:mocha": "mocha -r ./env/register-babel ./test/performance",
+    "test:mocha": "mocha -r ./env/register-babel ./src/test/tests/**/*.js --exclude **/src/**",
+    "test:mocha:js": "mocha -r ./env/register-tests ./dist/js/test/tests/**/*.js --exclude **/src/**",
+    "test:mocha:mjs": "mocha -r ./env/register-babel ./dist/mjs/test/tests/**/*.js --exclude **/src/**",
+    "test": "npm run test:mocha:mjs && npm run test:mocha:js",
+    "watch:mocha": "mocha -r ./env/register-babel ./src/test/tests/**/*.js --exclude **/src/** --watch --watch-extensions \"js){100}|^(((?!([\\\\/](dist|tmp|node_modules|\\.[^\\\\/]*)[\\\\/]|\\.(log|bak)$)).)*\"",
+    "perf:mocha": "mocha -r ./env/register-babel ./src/test/performance",
     "coverage:mocha": "nyc npm run test:mocha",
-    "coverage:mocha:build": "nyc --report-dir ./tmp/coverage/bin/ npm run test:mocha",
-    "coverage": "npm run lint && npm run coverage:mocha && npm run coverage:mocha:build",
+    "coverage:mocha:js": "nyc --report-dir ./tmp/coverage/js/ npm run test:mocha:js",
+    "coverage:mocha:mjs": "nyc --report-dir ./tmp/coverage/mjs/ npm run test:mocha:mjs",
+    "coverage": "npm run lint && npm run coverage:mocha && npm run coverage:mocha:mjs && npm run coverage:mocha:js",
     "ci": "npm run lint && npm run coverage && ncat ./tmp/coverage/**/lcov.info --banner \"\" | coveralls"
   },
   "devDependencies": {
@@ -58,6 +65,7 @@
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
+    "execa": "^1.0.0",
     "fs-extra": "^7.0.1",
     "js-beautify": "^1.8.9",
     "mocha": "^5.2.0",
