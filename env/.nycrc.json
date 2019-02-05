@@ -1,0 +1,10 @@
+{
+    "include": [
+        "src/**/*.js"
+    ],
+    "reporter": [
+        "text-lcov"
+    ],
+    "temp-dir": "./tmp/coverage",
+    "report-dir": "./tmp/coverage"
+}

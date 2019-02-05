@@ -1,0 +1,15 @@
+{
+	"env": {
+		"mocha": true
+	},
+	"rules": {
+		"no-unused-vars": [ "off" ],
+		"no-new-wrappers": [ "off" ]
+	},
+	"globals": {
+		"assert": true,
+		"expect": true,
+		"should": true,
+		"console": true
+	}
+}

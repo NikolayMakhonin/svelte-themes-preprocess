@@ -1,0 +1,22 @@
+{
+	"extends": ["pro"],
+
+	"env": {
+		"node": true,
+		"es6": true
+	},
+
+	"parser": "babel-eslint",
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"sourceType": "module",
+		"allowImportExportEverywhere": false,
+		"codeFrame": true
+	},
+
+	"rules": {
+		"no-unused-vars": [ "off" ],
+		"no-new-wrappers": [ "off" ],
+		"no-process-env" : "off"
+	}
+}

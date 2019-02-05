@@ -1,0 +1,59 @@
+{
+  "name": "TODO",
+  "version": "0.0.1",
+  "description": "TODO",
+  "engines": {
+    "node": ">= 8.6.0"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint --plugin markdown --ext js,md .",
+    "test:mocha": "mocha -r ./env/babel-register ./test/tests/common/ ./test/tests/node/ --recursive --exclude **/src/**",
+    "test": "npm run lint && npm run test:mocha",
+    "watch:mocha": "mocha -r ./env/babel-register ./test/tests/common/ ./test/tests/node/ --recursive --exclude **/src/** --watch --watch-extensions \"js){100}|^(((?!([\\\\/](dist|tmp|node_modules|reports|\\.[^\\\\/]*)[\\\\/]|\\.(log|bak)$)).)*\"",
+    "perf:mocha": "mocha -r ./env/babel-register ./test/performance/common/ ./test/performance/node/",
+    "coverage:mocha": "nyc --nycrc-path ./env/.nycrc.json npm run test:mocha",
+    "coverage": "npm run lint && npm run coverage:mocha",
+    "ci": "npm run lint && npm run coverage:mocha && ncat ./tmp/coverage/*/**/lcov.info | coveralls"
+  },
+  "author": "",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "TODO"
+  },
+  "homepage": "TODO",
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.2.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-async-to-generator": "^7.2.0",
+    "@babel/plugin-transform-parameters": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/register": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "chai": "^4.2.0",
+    "eslint": "^5.12.1",
+    "eslint-config-pro": "0.0.2",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.15.0",
+    "eslint-plugin-markdown": "^1.0.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "fs-extra": "^7.0.1",
+    "js-beautify": "^1.8.9",
+    "mocha": "^5.2.0",
+    "ncat": "^2.0.5",
+    "nyc": "^13.1.0",
+    "rollup": "^0.67.4",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-eslint": "^5.0.0",
+    "rollup-plugin-istanbul": "^2.0.1",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-pluginutils": "^2.3.3",
+    "yargs": "^12.0.5"
+  },
+  "dependencies": {}
+}
