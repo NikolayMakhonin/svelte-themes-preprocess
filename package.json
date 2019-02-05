@@ -5,18 +5,21 @@
   "engines": {
     "node": ">= 8.6.0"
   },
-  "main": "src/index.js",
+  "main": "bin/src/index.js",
   "scripts": {
+    "build": "del-cli bin/ --force && babel src/ --out-dir bin/src/ && babel test/ --out-dir bin/test/",
     "lint": "eslint --plugin markdown --ext js,md .",
-    "test:mocha": "mocha -r ./env/babel-register ./test/tests --recursive --exclude **/src/**",
-    "test": "npm run lint && npm run test:mocha",
-    "watch:mocha": "mocha -r ./env/babel-register ./test/tests --recursive --exclude **/src/** --watch --watch-extensions \"js){100}|^(((?!([\\\\/](dist|tmp|node_modules|reports|\\.[^\\\\/]*)[\\\\/]|\\.(log|bak)$)).)*\"",
-    "perf:mocha": "mocha -r ./env/babel-register ./test/performance",
+    "test:mocha": "mocha -r ./env/register-babel ./test/tests --recursive --exclude **/src/**",
+    "test:mocha:build": "mocha -r ./env/register-tests ./bin/test/tests --recursive --exclude **/src/**",
+    "test": "npm run lint && npm run test:mocha && npm run test:mocha:build",
+    "watch:mocha": "mocha -r ./env/register-babel ./test/tests --recursive --exclude **/src/** --watch --watch-extensions \"js){100}|^(((?!([\\\\/](dist|tmp|node_modules|reports|\\.[^\\\\/]*)[\\\\/]|\\.(log|bak)$)).)*\"",
+    "perf:mocha": "mocha -r ./env/register-babel ./test/performance",
     "coverage:mocha": "nyc npm run test:mocha",
-    "coverage": "npm run lint && npm run coverage:mocha",
-    "ci": "npm run lint && npm run coverage:mocha && ncat ./tmp/coverage/**/lcov.info --banner \"\" | coveralls"
+    "coverage:mocha:build": "nyc --report-dir ./tmp/coverage/bin/ npm run test:mocha",
+    "coverage": "npm run lint && npm run coverage:mocha && npm run coverage:mocha:build",
+    "ci": "npm run lint && npm run coverage && ncat ./tmp/coverage/**/lcov.info --banner \"\" | coveralls"
   },
-  "author": "",
+  "author": "TODO",
   "license": "CC0-1.0",
   "bugs": {
     "url": "TODO"
@@ -33,6 +36,7 @@
     "@babel/register": "^7.0.0",
     "babel-eslint": "^10.0.1",
     "chai": "^4.2.0",
+    "del-cli": "^1.1.0",
     "eslint": "^5.12.1",
     "eslint-config-pro": "0.0.2",
     "eslint-config-standard": "^12.0.0",

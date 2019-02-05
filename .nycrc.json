@@ -1,6 +1,8 @@
 {
     "include": [
-        "src/**/*.js"
+        "src/**/*.js",
+        "test/**/src/**/*.js",
+        "bin/**/src/**/*.js"
     ],
     "reporter": [
         "lcovonly"
