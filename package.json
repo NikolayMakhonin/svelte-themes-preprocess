@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "TODO",
   "bin": {
-    "TODO": "dist/js/src/cli.js"
+    "TODO": "dist/js/main/cli.js"
   },
   "author": "TODO",
   "homepage": "TODO",
@@ -23,13 +23,16 @@
     "dist/**",
     "env/register-*"
   ],
-  "main": "bin/js/src/index.js",
-  "jsnext:main": "dist/mjs/src/index.js",
-  "module": "dist/mjs/src/index.js",
+  "main": "bin/js/main/index.js",
+  "jsnext:main": "dist/mjs/main/index.js",
+  "module": "dist/mjs/main/index.js",
   "engines": {
     "node": ">= 8.6.0"
   },
   "scripts": {
+    "clean": "shx rm -rf {dist,tmp,*.log}",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test",
     "build:js": "shx rm -rf dist/js/ && babel src --out-dir dist/js/",
     "build:mjs": "shx rm -rf dist/mjs/ && babel src --out-dir dist/mjs/ --no-babelrc --config-file ./.babelrc-mjs.js",
     "build": "npm run build:mjs && npm run build:js",
