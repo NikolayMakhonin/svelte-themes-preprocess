@@ -1,2 +1,2 @@
 cd /d %~dp0\..
-cmd /K %~dp0\cmd_init
+cmd /K %~dp0\cmd-init
