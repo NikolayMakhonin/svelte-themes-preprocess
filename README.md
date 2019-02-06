@@ -12,12 +12,6 @@ For quickly create NodeJs command line module using this command:
 npx degit NikolayMakhonin/nodejs-template-cli <app name> && cd <app name> && npm i && npm run test
 ```
 
-Use this command for publish module to the npm: 
-
-```bash
-npm run build && npm test && npm publish
-```
-
 # License
 
 [CC0-1.0](LICENSE)
