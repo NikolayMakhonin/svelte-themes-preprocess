@@ -1,9 +1,6 @@
 import helpers from './helpers'
-import yargs from 'yargs'
 
-export function main(argv) {
-	// see http://yargs.js.org/docs/
-	const args = yargs(argv).argv
+export function main(args) {
 	console.log(JSON.stringify(args))
 }
 
