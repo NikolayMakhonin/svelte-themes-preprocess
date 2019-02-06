@@ -1,4 +1,4 @@
-import main from '../../../main'
+import main from '../../../main/main'
 
 describe('main', function () {
 	it('base', function () {
