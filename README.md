@@ -37,10 +37,10 @@ npx degit NikolayMakhonin/nodejs-template-helpers <app name> && cd <app name> &&
 [npm-url]: https://npmjs.org/package/nodejs-template-helpers
 [node-version-image]: https://img.shields.io/node/v/nodejs-template-helpers.svg
 [node-version-url]: https://nodejs.org/en/download/
-[travis-image]: https://travis-ci.org/NikolayMakhonin/nodejs-template-helpers.svg
-[travis-url]: https://travis-ci.org/NikolayMakhonin/nodejs-template-helpers
-[coveralls-image]: https://coveralls.io/repos/github/NikolayMakhonin/nodejs-template-helpers/badge.svg
-[coveralls-url]: https://coveralls.io/github/NikolayMakhonin/nodejs-template-helpers
+[travis-image]: https://travis-ci.org/NikolayMakhonin/nodejs-template-helpers.svg?branch=template-helpers
+[travis-url]: https://travis-ci.org/NikolayMakhonin/nodejs-template-helpers?branch=template-helpers
+[coveralls-image]: https://coveralls.io/repos/github/NikolayMakhonin/nodejs-template-helpers/badge.svg?branch=template-helpers
+[coveralls-url]: https://coveralls.io/github/NikolayMakhonin/nodejs-template-helpers?branch=template-helpers
 [downloads-image]: https://img.shields.io/npm/dm/nodejs-template-helpers.svg
 [downloads-url]: https://npmjs.org/package/nodejs-template-helpers
 [npm-url]: https://npmjs.org/package/nodejs-template-helpers
