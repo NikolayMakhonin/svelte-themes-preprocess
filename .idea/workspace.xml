@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a8bcc595-42e0-41ec-a1b7-85081d3070e6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tests/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tests/main/main.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -31,8 +29,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
+            <state relative-caret-position="1456">
+              <caret line="56" column="45" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -87,16 +85,6 @@
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/env/x.log">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/@babel/core/package.json">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -215,8 +203,8 @@
         <option value="$PROJECT_DIR$/env/babel-register.js" />
         <option value="$PROJECT_DIR$/test/performance/test.js" />
         <option value="$PROJECT_DIR$/test/tests/env/cli_args.js" />
-        <option value="$PROJECT_DIR$/../nodejs-template-helpers/node_modules/yargs/yargs.js" />
-        <option value="$PROJECT_DIR$/../nodejs-template-helpers/node_modules/yargs/lib/usage.js" />
+        <option value="$PROJECT_DIR$/node_modules/yargs/yargs.js" />
+        <option value="$PROJECT_DIR$/node_modules/yargs/lib/usage.js" />
         <option value="$PROJECT_DIR$/test/tests/env/argv.js" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/env/cli_banner" />
@@ -262,50 +250,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="nodejs-template-cli" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nodejs-template-cli" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nodejs-template-cli" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nodejs-template-cli" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nodejs-template-cli" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nodejs-template-cli" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nodejs-template-cli" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nodejs-template-cli" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nodejs-template-cli" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nodejs-template-cli" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="nodejs-template-cli" type="b2602c69:ProjectViewProjectNode" />
-              <item name="nodejs-template-cli" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -433,6 +379,7 @@
       <workItem from="1549368104048" duration="166000" />
       <workItem from="1549369478147" duration="12677000" />
       <workItem from="1549451109590" duration="556000" />
+      <workItem from="1549460687048" duration="610000" />
     </task>
     <task id="LOCAL-00016" summary="CI: karma all browsers">
       <created>1548525207445</created>
@@ -813,7 +760,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205137000" />
+    <option name="totallyTimeSpent" value="205747000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -825,12 +772,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1928" height="892" extended-state="6" />
+    <frame x="-4" y="-4" width="1928" height="892" extended-state="7" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17740232" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.17740232" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.32729805" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" visible="true" weight="0.32729805" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.5010707" side_tool="true" weight="0.42339832" />
       <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="bottom" id="Docker" order="3" show_stripe_button="false" />
@@ -866,7 +813,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/../nodejs-template-helpers/node_modules/yargs/yargs.js</url>
+          <url>file://$PROJECT_DIR$/node_modules/yargs/yargs.js</url>
           <line>965</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
@@ -968,14 +915,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../nodejs-template-helpers/node_modules/yargs/yargs.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/yargs/yargs.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25116">
           <caret line="966" selection-start-line="966" selection-end-line="966" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../nodejs-template-helpers/node_modules/yargs/lib/usage.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/yargs/lib/usage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4004">
           <caret line="154" selection-start-line="154" selection-end-line="154" />
@@ -990,7 +937,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/env/cli-banner" />
-    <entry file="file://$PROJECT_DIR$/../nodejs-template-helpers/node_modules/concat-with-sourcemaps/README.md">
+    <entry file="file://$PROJECT_DIR$/node_modules/concat-with-sourcemaps/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="442">
@@ -1057,6 +1004,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/env/x.log" />
+    <entry file="file://$PROJECT_DIR$/node_modules/@babel/core/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1456">
+          <caret line="56" column="45" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.babelrc.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
@@ -1096,19 +1054,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/env/x.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@babel/core/package.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
         </state>
       </provider>
     </entry>
