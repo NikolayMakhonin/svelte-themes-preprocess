@@ -14,7 +14,7 @@ For quickly create NodeJs helpers module using these commands:
 SET DIR_NAME=<directory name>
 SET YOUR_REPO_URL=<your new repository url>
 
-git clone --origin template-helpers --branch template-helpers https://github.com/NikolayMakhonin/nodejs-templates.git %DIR_NAME%
+git clone --origin template --branch template-helpers https://github.com/NikolayMakhonin/nodejs-templates.git %DIR_NAME%
 cd %DIR_NAME%
 git remote set-url --push template no_push
 git remote add origin %YOUR_REPO_URL%
