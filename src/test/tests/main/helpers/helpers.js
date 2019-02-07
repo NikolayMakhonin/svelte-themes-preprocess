@@ -1,4 +1,4 @@
-import helpers from '../../../main/helpers'
+import helpers from '../../../../main/helpers/helpers'
 
 describe('helpers', function () {
 	it('base', function () {

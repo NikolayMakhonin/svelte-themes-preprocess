@@ -6,7 +6,8 @@
 		"no-unused-vars": ["off"],
 		"no-new-wrappers": ["off"],
 		"no-sync": ["off"],
-		"no-undefined": ["off"]
+		"no-undefined": ["off"],
+		"dot-notation": ["off"]
 	},
 	"globals": {
 		"assert": true,

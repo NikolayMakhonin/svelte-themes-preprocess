@@ -1,4 +1,4 @@
-import helpers from './helpers'
+import helpers from './helpers/helpers'
 
 export function main(args) {
 	console.log(JSON.stringify(args))

@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8bcc595-42e0-41ec-a1b7-85081d3070e6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.babelrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.babelrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/env/register-tests.js" beforeDir="false" afterPath="$PROJECT_DIR$/env/register-tests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/helpers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/.eslintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/tests/main/helpers.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -29,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1456">
-              <caret line="56" column="45" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
+            <state relative-caret-position="1248">
+              <caret line="48" column="45" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -39,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/.babelrc.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="416">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -76,18 +82,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/cli.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/tests/main/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -100,10 +94,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="7" selection-start-column="7" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#31#0" expanded="true" />
-              </folding>
+              <caret column="38" selection-start-column="38" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -177,7 +168,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/node_modules/karma/lib/launcher.js" />
         <option value="$PROJECT_DIR$/node_modules/karma-browserstack-launcher/browserstack-reporter.js" />
         <option value="$PROJECT_DIR$/node_modules/karma-browserstack-launcher/worker-manager.js" />
         <option value="$PROJECT_DIR$/node_modules/karma-browserstack-launcher/index.js" />
@@ -228,6 +218,7 @@
         <option value="$PROJECT_DIR$/src/test/tests/env/modules.js" />
         <option value="$PROJECT_DIR$/src/main/cli.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/main/main.js" />
       </list>
     </option>
   </component>
@@ -250,8 +241,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -307,7 +298,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Mocha.Coverage Mocha">
+  <component name="RunManager" selected="Mocha.Watch Mocha">
     <configuration default="true" type="JavaScriptTestRunnerKarma">
       <config-file value="$PROJECT_DIR$/env/karma.conf.tests.js" />
       <karma-package-dir value="$PROJECT_DIR$/node_modules/karma" />
@@ -380,6 +371,7 @@
       <workItem from="1549369478147" duration="12677000" />
       <workItem from="1549451109590" duration="556000" />
       <workItem from="1549460687048" duration="610000" />
+      <workItem from="1549553151489" duration="84000" />
     </task>
     <task id="LOCAL-00016" summary="CI: karma all browsers">
       <created>1548525207445</created>
@@ -728,9 +720,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Watch_Mocha - 2019.02.05 at 19h 24m 24s.xml">
-      <configuration name="Watch Mocha" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
     <history-entry file="Coverage_Mocha - 2019.02.05 at 19h 25m 18s.xml">
       <configuration name="Coverage Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
@@ -758,9 +747,12 @@
     <history-entry file="Coverage_Mocha - 2019.02.05 at 19h 40m 56s.xml">
       <configuration name="Coverage Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
+    <history-entry file="Watch_Mocha - 2019.02.07 at 17h 25m 55s.xml">
+      <configuration name="Watch Mocha" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205747000" />
+    <option name="totallyTimeSpent" value="205831000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -772,7 +764,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="-4" width="1928" height="892" extended-state="7" />
+    <frame x="-4" y="-4" width="1928" height="892" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.17740232" />
@@ -1010,15 +1003,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1456">
-          <caret line="56" column="45" selection-start-line="56" selection-start-column="45" selection-end-line="56" selection-end-column="45" />
+        <state relative-caret-position="1248">
+          <caret line="48" column="45" selection-start-line="48" selection-start-column="45" selection-end-line="48" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.babelrc.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
@@ -1067,10 +1060,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/main.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="7" selection-start-column="7" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
+          <caret column="38" selection-start-column="38" selection-end-column="38" />
         </state>
       </provider>
     </entry>
