@@ -5,7 +5,8 @@
 	"rules": {
 		"no-unused-vars": ["off"],
 		"no-new-wrappers": ["off"],
-		"no-sync": ["off"]
+		"no-sync": ["off"],
+		"no-undefined": ["off"]
 	},
 	"globals": {
 		"assert": true,

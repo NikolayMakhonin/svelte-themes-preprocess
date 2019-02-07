@@ -21,10 +21,11 @@
   },
   "scripts": {
     "clean": "shx rm -rf {dist,tmp,*.log}",
+    "test:all": "npm run lint && npm run clean && npm run test:mocha && npm run build && npm test",
     "prepare": "npm run build",
     "prepublishOnly": "npm test",
-    "build:js": "shx rm -rf dist/js/ && babel src --out-dir dist/js/",
-    "build:mjs": "shx rm -rf dist/mjs/ && babel src --out-dir dist/mjs/ --no-babelrc --config-file ./.babelrc-mjs.js",
+    "build:js": "shx rm -rf dist/js/ && babel src --out-dir dist/js/ && shx cp -rf src/test/tests/assets dist/js/test/tests/",
+    "build:mjs": "shx rm -rf dist/mjs/ && babel src --out-dir dist/mjs/ --no-babelrc --config-file ./.babelrc-mjs.js && shx cp -rf src/test/tests/assets dist/mjs/test/tests/",
     "build": "npm run build:mjs && npm run build:js",
     "lint": "eslint --plugin markdown --ext js,md .",
     "test:mocha": "mocha -r ./env/register-babel ./src/test/tests/**/*.js --exclude **/src/**",
@@ -47,6 +48,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/plugin-transform-async-to-generator": "^7.2.0",
     "@babel/plugin-transform-parameters": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/preset-env": "^7.3.1",
     "@babel/register": "^7.0.0",
     "babel-eslint": "^10.0.1",
@@ -73,5 +75,8 @@
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-pluginutils": "^2.3.3",
     "shx": "^0.3.2"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.3.1"
   }
 }
