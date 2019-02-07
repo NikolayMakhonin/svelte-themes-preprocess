@@ -11,7 +11,7 @@
 
 # Description
 
-For quickly create NodeJs helpers module using these commands:
+For quickly create NodeJs helpers module using these commands (just copy/paste it to the console):
 
 (Create new clear empty repository before)
 
