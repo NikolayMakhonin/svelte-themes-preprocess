@@ -1,3 +1,8 @@
+<!-- Markdown Docs: -->
+<!-- https://guides.github.com/features/mastering-markdown/#GitHub-flavored-markdown -->
+<!-- https://daringfireball.net/projects/markdown/basics -->
+<!-- https://daringfireball.net/projects/markdown/syntax -->
+
 <!-- [![NPM Version][npm-image]][npm-url] -->
 <!-- [![NPM Downloads][downloads-image]][downloads-url] -->
 <!-- [![Node.js Version][node-version-image]][node-version-url] -->
@@ -8,21 +13,22 @@
 
 For quickly create NodeJs helpers module using these commands (just copy/paste it to the console):
 
-(Create new empty repository before)
+(Create new clear empty repository before)
 
 ```cmd
+SET TEMPLATE_NAME=helpers
 SET /p DIR_NAME=Enter project directory name
-SET /p YOUR_REPO_URL=Enter your new repository url
-git clone --origin template --branch helpers https://github.com/NikolayMakhonin/nodejs-templates.git %DIR_NAME%
+SET /p YOUR_REPO_URL=Enter your new clear repository url
+git clone --origin template --branch %TEMPLATE_NAME% https://github.com/NikolayMakhonin/nodejs-templates.git %DIR_NAME%
 cd %DIR_NAME%
-git branch -m helpers master
-git tag -a -m "New project from template \"helpers\"" v0.0.0
+git branch -m %TEMPLATE_NAME% master
+git tag -a -m "New project from template \"%TEMPLATE_NAME%\"" v0.0.0
 git remote set-url --push template no_push
 git remote add origin %YOUR_REPO_URL%
 git checkout -b develop
 git push --all origin
 git push --tags origin
-
+ 
 ```
 
 Or you can just clone repository without history using this command:
