@@ -5,6 +5,6 @@
     "reporter": [
         "lcovonly"
     ],
-    "temp-dir": "./tmp/coverage",
+    "temp-dir": "./tmp/coverage/tmp",
     "report-dir": "./tmp/coverage"
 }
