@@ -11,23 +11,36 @@
 
 # Description
 
-For quickly create NodeJs helpers module using these commands (just copy/paste it to the console):
+For quickly create NodeJs helpers module using these commands:
 
 (Create new clear empty repository before)
 
+Config:
+
 ```cmd
-SET TEMPLATE_NAME=helpers
-SET /p DIR_NAME=Enter project directory name
-SET /p YOUR_REPO_URL=Enter your new clear repository url
-git clone --origin template --branch %TEMPLATE_NAME% https://github.com/NikolayMakhonin/nodejs-templates.git %DIR_NAME%
+(
+SET TEMPLATE_BRANCH=helpers
+SET TEMPLATE_REPO=https://github.com/NikolayMakhonin/nodejs-templates.git
+SET /p DIR_NAME=Enter project directory name:
+SET /p YOUR_REPO_URL=Enter your new clear repository url:
+)
+ 
+```
+
+Install:
+
+```cmd
+git clone --origin template --branch %TEMPLATE_BRANCH% %TEMPLATE_REPO% %DIR_NAME%
 cd %DIR_NAME%
-git branch -m %TEMPLATE_NAME% master
-git tag -a -m "New project from template \"%TEMPLATE_NAME%\"" v0.0.0
+git branch -m %TEMPLATE_BRANCH% master
+git tag -a -m "New project from template \"%TEMPLATE_BRANCH%\"" v0.0.0
 git remote set-url --push template no_push
 git remote add origin %YOUR_REPO_URL%
-git checkout -b develop
+git checkout -b develop origin
 git push --all origin
 git push --tags origin
+git branch -u origin/develop develop
+git branch -u origin/master master
  
 ```
 
