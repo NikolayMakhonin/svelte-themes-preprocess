@@ -1,6 +1,8 @@
 {
 	"env": {
-		"mocha": true
+		"mocha": true,
+		"browser": false,
+		"node": false
 	},
 	"rules": {
 		"no-unused-vars": ["off"],
