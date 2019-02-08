@@ -53,14 +53,14 @@ npx degit NikolayMakhonin/nodejs-templates#helpers <app name> && cd <app name> &
 
 [CC0-1.0](LICENSE)
 
-[npm-image]: https://img.shields.io/npm/v/nodejs-templates.svg
-[npm-url]: https://npmjs.org/package/nodejs-templates
-[node-version-image]: https://img.shields.io/node/v/nodejs-templates.svg
+[npm-image]: https://img.shields.io/npm/v/templates.svg
+[npm-url]: https://npmjs.org/package/templates
+[node-version-image]: https://img.shields.io/node/v/templates.svg
 [node-version-url]: https://nodejs.org/en/download/
 [travis-image]: https://travis-ci.org/NikolayMakhonin/nodejs-templates.svg?branch=helpers
 [travis-url]: https://travis-ci.org/NikolayMakhonin/nodejs-templates?branch=helpers
 [coveralls-image]: https://coveralls.io/repos/github/NikolayMakhonin/nodejs-templates/badge.svg?branch=helpers
 [coveralls-url]: https://coveralls.io/github/NikolayMakhonin/nodejs-templates?branch=helpers
-[downloads-image]: https://img.shields.io/npm/dm/nodejs-templates.svg
-[downloads-url]: https://npmjs.org/package/nodejs-templates
-[npm-url]: https://npmjs.org/package/nodejs-templates
+[downloads-image]: https://img.shields.io/npm/dm/templates.svg
+[downloads-url]: https://npmjs.org/package/templates
+[npm-url]: https://npmjs.org/package/templates
