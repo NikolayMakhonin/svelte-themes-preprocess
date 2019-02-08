@@ -1,8 +1,8 @@
 "use strict";
 
-var _main = _interopRequireDefault(require("../../../main/main"));
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _main = _interopRequireDefault(require("../../../main/main"));
 
 describe('main', function () {
   it('base', function () {

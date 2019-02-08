@@ -3,7 +3,7 @@
         "{src,dist/{js,mjs}}/{main,test/**/src}/**/*.js"
     ],
     "reporter": [
-        "lcovonly"
+        "lcov"
     ],
     "temp-dir": "./tmp/coverage/tmp",
     "report-dir": "./tmp/coverage"

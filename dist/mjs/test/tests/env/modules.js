@@ -8,9 +8,11 @@ describe('environment', function () {
     it('babel', function (done) {
       var func1Str = func1.toString().replace(/\s+/g, ' ');
       assert.isOk(func1Str);
-      assert.strictEqual(func1('qwe', [1, 2]), 'qwe 1');
-      assert.strictEqual(func1('qwe', 1, 2), 'qwe 2');
-      assert.strictEqual(func1('qwe'), 'qwe 0');
+      assert.strictEqual(func1('qwe', [1, 2]), 'qwe 3 1');
+      assert.strictEqual(func1('qwe', 1, 2), 'qwe 3 2');
+      assert.strictEqual(func1('qwe'), 'qwe 3 0');
+      assert.strictEqual(func1(), 'undefined undefined 0');
+      assert.strictEqual(func1(null), 'null undefined 0');
       assert.isOk(func1Str.indexOf('.?') < 0, "babel is not worked 1:\r\n".concat(func1Str)); // assert.isOk(func1Str.indexOf('arguments.length') >= 0, `babel is not worked 2:\r\n${func1Str}`)
       // assert.isOk(func1Str.match(/function func1\(p1\)|function *\((\w|p1)\)/), `babel is not worked 3:\r\n${func1Str}`)
       // console.log(func1.toString());

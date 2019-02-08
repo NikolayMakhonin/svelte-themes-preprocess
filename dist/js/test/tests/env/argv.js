@@ -1,8 +1,8 @@
 "use strict";
 
-var _yargs = _interopRequireDefault(require("yargs"));
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _yargs = _interopRequireDefault(require("yargs"));
 
 /* eslint-disable global-require */
 describe('argv parser', function () {

@@ -1,6 +1,6 @@
 /* eslint-disable quote-props,func-style,no-var */
 export const func1 = function (p1, ...params) {
-	return `${p1} ${params?.length}`
+	return `${p1} ${p1?.length} ${params.length}`
 }
 
 export var var1 = 'var1'
