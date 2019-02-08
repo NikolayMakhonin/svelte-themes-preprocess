@@ -32,7 +32,7 @@
     "test:mocha:mjs": "mocha -r ./env/register-babel ./dist/mjs/test/tests/**/*.js --exclude **/src/**",
     "test:mocha:js": "mocha -r ./env/register-tests ./dist/js/test/tests/**/*.js --exclude **/src/**",
     "test": "npm run test:mocha:mjs && npm run test:mocha:js",
-    "test:all": "npm run lint && npm run clean && test:mocha:src && npm run build && test:mocha:mjs && test:mocha:js",
+    "test:all": "npm run lint && npm run clean && npm run test:mocha:src && npm run build && npm run test:mocha:mjs && npm run test:mocha:js",
     "test:all:coverage": "npm run lint && npm run clean && npm run build && npm run coverage && nyc check-coverage --lines 100 --functions 100 --branches 100",
     "watch:mocha": "mocha -r ./env/register-babel ./src/test/tests/**/*.js --exclude **/src/** --watch --watch-extensions \"js){100}|^(((?!([\\\\/](dist|tmp|node_modules|\\.[^\\\\/]*)[\\\\/]|\\.(log|bak)$)).)*\"",
     "perf:mocha": "mocha -r ./env/register-babel ./src/test/performance",
