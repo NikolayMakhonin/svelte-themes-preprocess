@@ -15,7 +15,7 @@ module.exports = function (config) {
 	delete config.browsers
 	if (process.env.TRAVIS) {
 		helpers.configDetectBrowsers(config)
-		helpers.configBrowserStack(config, true, false)
+		// helpers.configBrowserStack(config, true, false)
 	} else {
 		helpers.configDetectBrowsers(config)
 	}
