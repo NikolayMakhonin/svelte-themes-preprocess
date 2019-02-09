@@ -25,8 +25,7 @@ module.exports = function (config) {
 			helpers.servedPattern(helpers.writeTextFile('tmp/karma/chai.js', '"use strict"; var assert = chai.assert, expect = chai.expect, should = chai.should;')),
 			helpers.concatJsFiles(
 				'tmp/karma/performance.js',
-				'test/performance/common/**/*.js',
-				'test/performance/browser/**/*.js',
+				'test/performance/{common,browser}/**/*.js',
 				'!**/src/**/*.js'
 			)
 		],
