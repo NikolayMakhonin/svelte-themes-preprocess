@@ -13,7 +13,7 @@
     "dist/**",
     "env/register-*"
   ],
-  "main": "bin/js/main/main.js",
+  "main": "dist/js/main/main.js",
   "jsnext:main": "dist/mjs/main/main.js",
   "module": "dist/mjs/main/main.js",
   "engines": {
