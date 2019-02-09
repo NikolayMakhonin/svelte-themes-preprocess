@@ -8,7 +8,7 @@
     <ui>bdd</ui>
     <extra-mocha-options>-r ./env/register-babel --exclude **/src/**</extra-mocha-options>
     <test-kind>PATTERN</test-kind>
-    <test-pattern>./{src,dist/{js,mjs}}/test/tests/**/*.js</test-pattern>
+    <test-pattern>./{src,dist/{js,mjs}}/test/tests/{common,node}/**/*.js</test-pattern>
     <method v="2" />
   </configuration>
 </component>
