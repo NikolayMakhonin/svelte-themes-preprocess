@@ -6,7 +6,7 @@
     <working-directory>$PROJECT_DIR$</working-directory>
     <pass-parent-env>true</pass-parent-env>
     <ui>bdd</ui>
-    <extra-mocha-options>-r ./env/register-babel --exclude **/src/** --exclude **/browser/** --watch --watch-extensions  js){100}|^(((?!([\\/](dist|tmp|node_modules|reports|\.[^\\/]*)[\\/]|\.(log|bak)$)).)*</extra-mocha-options>
+    <extra-mocha-options>-r ./env/register-babel --exclude **/src/** --watch --watch-extensions  js){100}|^(((?!([\\/](dist|tmp|node_modules|reports|\.[^\\/]*)[\\/]|\.(log|bak)$)).)*</extra-mocha-options>
     <test-kind>PATTERN</test-kind>
     <test-pattern>./src/test/tests/**/*.js</test-pattern>
     <method v="2" />
