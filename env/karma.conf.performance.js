@@ -1,12 +1,5 @@
 /* eslint-disable prefer-template,no-sync */
 // Karma configuration
-// const globals = require('rollup-plugin-node-globals')
-// const builtins = require('rollup-plugin-node-builtins')
-const nodeResolve  = require('rollup-plugin-node-resolve')
-const commonjs  = require('rollup-plugin-commonjs')
-const babel = require('rollup-plugin-babel')
-const {uglify} = require('rollup-plugin-uglify')
-// const istanbul = require('rollup-plugin-istanbul')
 const helpers = require('./karma.conf.helpers')
 
 module.exports = function (config) {
@@ -26,7 +19,7 @@ module.exports = function (config) {
 			helpers.concatJsFiles(
 				'tmp/karma/performance.js',
 				'test/performance/{common,browser}/**/*.js',
-				'!**/src/**/*.js'
+				'!*/**/src/**/*.js'
 			)
 		],
 
@@ -41,28 +34,14 @@ module.exports = function (config) {
 
 		rollupPreprocessor: {
 			plugins: [
-				babel(),
-				// istanbul({
-				// 	exclude: ['test/**/*.js']
-				// }),
-				// globals(),
-				// builtins(),
-				nodeResolve(),
-				commonjs({
-					// namedExports: {
-					// 	'node_modules/chai/index.js': ['assert', 'expect']
-					// }
-				}),
-				babel({
-					babelrc: true
-				}),
-				uglify({
-					mangle   : false,
-					sourcemap: {
-						content: 'inline',
-						url    : 'inline'
-					}
-				})
+				helpers.rollup.plugins.babel,
+				// helpers.rollup.plugins.istanbul,
+				// helpers.rollup.plugins.globals,
+				// helpers.rollup.plugins.builtins,
+				helpers.rollup.plugins.nodeResolve,
+				helpers.rollup.plugins.commonjs,
+				helpers.rollup.plugins.babel,
+				helpers.rollup.plugins.uglify
 			],
 			output: {
 				format   : 'cjs',

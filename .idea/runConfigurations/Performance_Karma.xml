@@ -1,0 +1,10 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Performance Karma" type="JavaScriptTestRunnerKarma">
+    <config-file value="$PROJECT_DIR$/env/karma.conf.performance.js" />
+    <karma-package-dir value="$PROJECT_DIR$/node_modules/karma" />
+    <working-directory value="$PROJECT_DIR$" />
+    <node-interpreter value="$Node2$/node" />
+    <envs />
+    <method v="2" />
+  </configuration>
+</component>

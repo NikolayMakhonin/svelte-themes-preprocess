@@ -1,16 +1,12 @@
 /* eslint-disable prefer-template,no-sync */
 // Karma configuration
-// const globals = require('rollup-plugin-node-globals')
-// const builtins = require('rollup-plugin-node-builtins')
-const nodeResolve  = require('rollup-plugin-node-resolve')
-const commonjs  = require('rollup-plugin-commonjs')
-const babel = require('rollup-plugin-babel')
-const {uglify} = require('rollup-plugin-uglify')
-const istanbul = require('rollup-plugin-istanbul')
 const helpers = require('./karma.conf.helpers')
 
 module.exports = function (config) {
 	helpers.configCommon(config)
+
+	delete config.browsers
+	helpers.configDetectBrowsers(config)
 
 	config.set({
 		// browserNoActivityTimeout: 900000,
@@ -25,8 +21,8 @@ module.exports = function (config) {
 			helpers.servedPattern(helpers.writeTextFile('tmp/karma/chai.js', '"use strict"; var assert = chai.assert, expect = chai.expect, should = chai.should;')),
 			helpers.concatJsFiles(
 				'tmp/karma/tests.js',
-				'test/tests/{common,browser}/**/*.js',
-				'!**/src/**/*.js'
+				'src/test/tests/{common,browser}/**/*.js',
+				'!*/**/src/**/*.js'
 			)
 		],
 
@@ -41,26 +37,14 @@ module.exports = function (config) {
 
 		rollupPreprocessor: {
 			plugins: [
-				babel(),
-				istanbul(),
-				// globals(),
-				// builtins(),
-				nodeResolve(),
-				commonjs({
-					// namedExports: {
-					// 	'node_modules/chai/index.js': ['assert', 'expect']
-					// }
-				}),
-				babel({
-					babelrc: true
-				}),
-				uglify({
-					mangle   : false,
-					sourcemap: {
-						content: 'inline',
-						url    : 'inline'
-					}
-				})
+				helpers.rollup.plugins.babel,
+				helpers.rollup.plugins.istanbul,
+				// helpers.rollup.plugins.globals,
+				// helpers.rollup.plugins.builtins,
+				helpers.rollup.plugins.nodeResolve,
+				helpers.rollup.plugins.commonjs,
+				helpers.rollup.plugins.babel,
+				helpers.rollup.plugins.uglify
 			],
 			output: {
 				format   : 'cjs',
