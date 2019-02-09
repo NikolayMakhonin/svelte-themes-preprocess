@@ -42,11 +42,11 @@
     "test:coverage": "npm run test:mocha:src && npm run test:mocha:mjs && npm run test:mocha:js",
     "coverage:mocha": "nyc npm run test:coverage",
     "coverage:karma": "karma start ./env/karma.conf.coverage.js",
-    "coverage:all": "npm run coverage:mocha && npm run coverage:karma",
-    "coverage": "npm run coverage:all && istanbul-combine -d tmp/coverage/lcov -p summary -r lcov tmp/coverage/json/**/*.json",
+    "coverage": "npm run coverage:mocha && npm run coverage:karma && coverage:merge",
+    "coverage:ci": "npm run coverage:mocha && npm run ci:karma && coverage:merge",
+    "coverage:merge": "istanbul-combine -d ./tmp/coverage/lcov -p summary -r lcov ./tmp/coverage/json/**/*.json",
     "ci:karma": "karma start ./env/karma.conf.ci.js",
-    "coverage:ci": "npm run coverage:mocha && npm run ci:karma",
-    "ci": "npm run lint && npm run coverage && ncat ./tmp/coverage/**/lcov.info --banner \"\" | coveralls"
+    "ci": "npm run lint && npm run coverage:ci && ncat ./tmp/coverage/lcov/**/lcov.info --banner \"\" | coveralls"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
