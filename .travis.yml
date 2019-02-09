@@ -2,15 +2,37 @@ language: node_js
 
 # Node versions: https://node.green/
 
-os:
-  - "osx"
-
-node_js:
-  - "11.5.0"
-  - "8.6.0"
+matrix:
+  include:
+    - name: "browsers linux"
+      os: "linux"
+      node_js: "11.5.0"
+#    - name: "browsers osx"
+#      os: "osx"
+#      node_js: "11.5.0"
+#    - name: "browsers windows"
+#      os: "windows"
+#      node_js: "11.5.0"
+    - name: "node old"
+      os: "osx"
+      node_js: "8.6.0"
+      env: NODE_ONLY=true
 
 sudo: false
 cache: npm
+
+addons:
+  chrome: stable
+  firefox: latest
+  browserstack:
+    username: "nikolaymakhonin1"
+    access_key:
+      # You shoud generate this for each repositories.
+      # See: https://docs.travis-ci.com/user/encryption-keys
+      secure: "Mr5AKVaQeoiJogFcZKNq1+QnRhDQuoX53G7Z/TLXyTOdVS8yx909xrRtVVivWvYx7uJ4Trb/uX2s5a+W6qQhJC1vGpbMdDgsnCZaySAX8A262wZTC67vHFVQcvVSD5mwCd9IHxQD9JE/FuiPWFdCrP8pEwyZ3cyUSU2oEq7X6JbultUT/+gZdCUIiqMyjETAnjlMLFZWDBbxuKDS3+oxVhsKAqcq7joB8y8Sido+9dciRX0Om/kcrUEPdbtM4EiKaVSqj9OeISc/rRIDYoTWVHWvEy37Xh/L93qOjOqeoSETQYbAgH+FO+jk22OlulMZtuWG03rR+Slgk6U8H93GRJBXg8qWShkTyCXQHqhdeHNw6rQugi6jKqz9dekOgrrSCAWFVeXcdmSaniWgP8q6ZDKqb5DZ8hT0tTiOODqGPWFq4wkJjD9lCW7UoQad8wUXEKO79k7jcHjKez2u1x40sTcwD7vk6WQiLCyMd3jFbSNUP+6r82MnFOEAv+xt9el7KKVg8YiCWa55NeBQdyHf6u8WHzBO1oTOzmdVKQOtG3jjbpAOIqXwU+8t+WXkRsOQLJ/NZEiIJjjAnJgnkN+bFfSySrXHCeSM9f/tb6Y9XUtyZpmCQFZ+Pwi45eew37LYprJaf6ZMDTuLtCMcbjliSSpgbvCqhnTu3530ee+lcv4="
+
+services:
+  - xvfb
 
 before_install:
   # Skip updating shrinkwrap / lock
@@ -23,6 +45,15 @@ before_install:
   # Update Node.js modules
   - "test ! -d node_modules || npm prune"
   - "test ! -d node_modules || npm rebuild"
+  -
+before_script:
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then export DISPLAY=:99.0; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sh -e /etc/init.d/xvfb start; fi
+  - sleep 3 # give xvfb some time to start
 
 script:
-  - npm run ci
+  - if [[ ${NODE_ONLY} == true ]]; then
+      npm run test:mocha;
+    else
+      npm run ci;
+    fi
