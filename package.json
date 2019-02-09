@@ -42,6 +42,7 @@
     "test:coverage": "npm run test:mocha:src && npm run test:mocha:mjs && npm run test:mocha:js",
     "coverage:mocha": "nyc npm run test:coverage",
     "coverage:karma": "karma start ./env/karma.conf.coverage.js",
+    "coverage": "npm run coverage:mocha && npm run coverage:karma",
     "ci:karma": "karma start ./env/karma.conf.ci.js",
     "ci": "npm run lint && npm run coverage:mocha && npm run ci:karma && ncat ./tmp/coverage/**/lcov.info --banner \"\" | coveralls"
   },

@@ -11,7 +11,7 @@ exports.default = void 0;
 var _helpers = _interopRequireDefault(require("./helpers/helpers"));
 
 function main(args) {
-  console.log(JSON.stringify(args));
+  console.log(JSON.stringify(args), _helpers.default.test);
 }
 
 var _default = {
