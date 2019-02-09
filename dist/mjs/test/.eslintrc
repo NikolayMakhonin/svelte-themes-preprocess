@@ -1,25 +1,19 @@
 {
 	"env": {
-		"mocha": true,
-		"browser": false,
-		"node": false
+		"mocha": true
 	},
 	"rules": {
 		"no-unused-vars": ["off"],
 		"no-new-wrappers": ["off"],
 		"no-sync": ["off"],
 		"no-undefined": ["off"],
-		"dot-notation": ["off"]
+		"dot-notation": ["off"],
+		"no-process-env" : "off"
 	},
 	"globals": {
 		"assert": true,
 		"expect": true,
 		"should": true,
 		"console": true
-	},
-	"rules": {
-		"no-unused-vars": [ "off" ],
-		"no-new-wrappers": [ "off" ],
-		"no-process-env" : "off"
 	}
 }
