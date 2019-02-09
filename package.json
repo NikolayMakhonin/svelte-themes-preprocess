@@ -34,7 +34,7 @@
     "test:karma": "karma start ./env/karma.conf.tests.js",
     "test": "npm run test:mocha:mjs && npm run test:mocha:js",
     "test:all": "npm run lint && npm run clean && npm run test:mocha:src && npm run build && npm run test:mocha:mjs && npm run test:mocha:js",
-    "test:all:coverage": "npm run lint && npm run clean && npm run build && npm run coverage && nyc check-coverage --lines 100 --functions 100 --branches 100",
+    "test:all:coverage": "npm run lint && npm run clean && npm run build && npm run coverage && nyc check-coverage --report-dir ./tmp/coverage/lcov --lines 100 --functions 100 --branches 100",
     "watch:mocha": "mocha -r ./env/register-babel ./src/test/tests/{node,common}/**/*.js --exclude **/src/** --watch --watch-extensions \"js){100}|^(((?!([\\\\/](dist|tmp|node_modules|\\.[^\\\\/]*)[\\\\/]|\\.(log|bak)$)).)*\"",
     "watch:karma": "karma start ./env/karma.conf.tests.js --auto-watch",
     "perf:mocha": "mocha -r ./env/register-babel ./src/test/performance/{node,common}/**/*.js",
@@ -42,9 +42,11 @@
     "test:coverage": "npm run test:mocha:src && npm run test:mocha:mjs && npm run test:mocha:js",
     "coverage:mocha": "nyc npm run test:coverage",
     "coverage:karma": "karma start ./env/karma.conf.coverage.js",
-    "coverage": "npm run coverage:mocha && npm run coverage:karma",
+    "coverage:all": "npm run coverage:mocha && npm run coverage:karma",
+    "coverage": "npm run coverage:all && istanbul-combine -d tmp/coverage/lcov -p summary -r lcov tmp/coverage/json/**/*.json",
     "ci:karma": "karma start ./env/karma.conf.ci.js",
-    "ci": "npm run lint && npm run coverage:mocha && npm run ci:karma && ncat ./tmp/coverage/**/lcov.info --banner \"\" | coveralls"
+    "coverage:ci": "npm run coverage:mocha && npm run ci:karma",
+    "ci": "npm run lint && npm run coverage && ncat ./tmp/coverage/**/lcov.info --banner \"\" | coveralls"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -72,6 +74,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "fs-extra": "^7.0.1",
     "globby": "^9.0.0",
+    "istanbul-combine": "^0.3.0",
     "js-beautify": "^1.8.9",
     "karma": "^4.0.0",
     "karma-browserstack-launcher": "^1.4.0",
