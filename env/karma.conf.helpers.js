@@ -133,7 +133,7 @@ module.exports.configCommon = function (config) {
 			)),
 			// Load polyfill
 			servedPattern(require.resolve('./polyfill_custom')),
-			servedPattern(require.resolve('babel-polyfill/dist/polyfill')),
+			// servedPattern(require.resolve('babel-polyfill/dist/polyfill')),
 			servedPattern(writeTextFile(
 				path.resolve('./tmp/karma/polyfill_after.js'),
 				"console.log('karma polyfill activated!');"
