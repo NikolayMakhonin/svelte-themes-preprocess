@@ -33,12 +33,13 @@
     "test:mocha:js": "mocha -r ./env/register-tests ./dist/js/test/tests/**/*.js --exclude **/src/**",
     "test": "npm run test:mocha:mjs && npm run test:mocha:js",
     "test:all": "npm run lint && npm run clean && npm run test:mocha:src && npm run build && npm run test:mocha:mjs && npm run test:mocha:js",
-    "test:all:coverage": "npm run lint && npm run clean && npm run build && npm run coverage && nyc check-coverage --lines 100 --functions 100 --branches 100",
+    "test:all:coverage": "npm run lint && npm run clean && npm run build && npm run coverage && nyc check-coverage --report-dir ./tmp/coverage/lcov --lines 100 --functions 100 --branches 100",
     "watch:mocha": "mocha -r ./env/register-babel ./src/test/tests/**/*.js --exclude **/src/** --watch --watch-extensions \"js){100}|^(((?!([\\\\/](dist|tmp|node_modules|\\.[^\\\\/]*)[\\\\/]|\\.(log|bak)$)).)*\"",
     "perf:mocha": "mocha -r ./env/register-babel ./src/test/performance",
     "test:coverage": "npm run test:mocha:src && npm run test:mocha:mjs && npm run test:mocha:js",
-    "coverage": "nyc npm run test:coverage",
-    "ci": "npm run lint && npm run coverage && ncat ./tmp/coverage/**/lcov.info --banner \"\" | coveralls"
+    "coverage:all": "nyc npm run test:coverage",
+    "coverage": "npm run coverage:all && istanbul-combine -d tmp/coverage/lcov -p summary -r lcov tmp/coverage/json/**/*.json",
+    "ci": "npm run lint && npm run coverage && ncat ./tmp/coverage/lcov/**/lcov.info --banner \"\" | coveralls"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -64,6 +65,7 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "fs-extra": "^7.0.1",
+    "istanbul-combine": "^0.3.0",
     "js-beautify": "^1.8.9",
     "mocha": "^5.2.0",
     "ncat": "^2.0.5",
