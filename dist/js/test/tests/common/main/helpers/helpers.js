@@ -2,7 +2,7 @@
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
-var _helpers = _interopRequireDefault(require("../../../../main/helpers/helpers"));
+var _helpers = _interopRequireDefault(require("../../../../../main/common/helpers/helpers"));
 
 describe('helpers', function () {
   it('base', function () {
