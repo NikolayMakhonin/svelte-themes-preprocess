@@ -14,5 +14,10 @@
 		"expect": true,
 		"should": true,
 		"console": true
+	},
+	"rules": {
+		"no-unused-vars": [ "off" ],
+		"no-new-wrappers": [ "off" ],
+		"no-process-env" : "off"
 	}
 }
