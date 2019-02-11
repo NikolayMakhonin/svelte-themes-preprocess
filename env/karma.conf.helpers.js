@@ -24,7 +24,7 @@ module.exports.rollup = {
 			emitCss   : true
 		}),
 		babel: babel({
-			extensions    : ['.js', '.html'],
+			// extensions    : ['.js', '.html', '.svelte'],
 			runtimeHelpers: true,
 			exclude       : ['node_modules/@babel/**']
 		}),
