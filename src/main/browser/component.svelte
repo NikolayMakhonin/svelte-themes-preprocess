@@ -3,10 +3,12 @@
 
 <!-- Default data -->
 <script>
+	import {test} from './test'
+
 	export default {
 		data() {
 			return {
-				count: 0,
+				count: test ? test.length : test,
 			}
 		}
 	}

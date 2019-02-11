@@ -18,7 +18,7 @@ describe('Svelte component', function () {
 	it('should initialize the count when no data is given', () => {
 		const component = createComponent()
 		const count = component.get('count')
-		assert.strictEqual(count.count, 0)
+		assert.strictEqual(count.count, 4)
 	})
 
 	it('should start the count with given data', () => {
