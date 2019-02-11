@@ -4,7 +4,6 @@ describe('Svelte component', function () {
 	let testElem
 
 	beforeEach(() => {
-		console.log(new Error('test'))
 		testElem = document.createElement('test')
 		document.body.appendChild(testElem)
 	})
@@ -16,16 +15,15 @@ describe('Svelte component', function () {
 		})
 	}
 
-	xit('should initialize the count when no data is given', () => {
+	it('should initialize the count when no data is given', () => {
 		const component = createComponent()
-		const count = test.get('count')
-		expect(count).toBe(0)
+		const count = component.get('count')
+		assert.strictEqual(count.count, 0)
 	})
-//
-// 	it('should start the count with given data', () => {
-// 		const component = createComponent({count: 5})
-// 		const count = test.get('count')
-// 		expect(count).toBe(5)
-// 		console.log(new Error('test'))
-// 	})
+
+	it('should start the count with given data', () => {
+		const component = createComponent({count: 5})
+		const count = component.get('count')
+		assert.strictEqual(count.count, 5)
+	})
 })
