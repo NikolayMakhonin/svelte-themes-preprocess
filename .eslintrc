@@ -12,5 +12,38 @@
 		"sourceType": "module",
 		"allowImportExportEverywhere": false,
 		"codeFrame": true
-	}
+	},
+
+	"plugins": [
+		"html"
+	],
+	"settings": {
+		"html/indent": "+tab",
+		"html/report-bad-indent": "error",
+		"html/html-extensions": [".html", ".svelte"]
+	},
+
+	"overrides": [
+		{
+			"files": [ "src/*.html" ],
+			"rules": {
+				"semi": [ "error", "always" ]
+			},
+			"env": {
+				"browser": true,
+				"es6": false,
+				"node": false
+			},
+			"parser": "espree",
+			"parserOptions": {
+				"ecmaVersion": 5
+			}
+		},
+		{
+			"files": [ "test/**/*.js", "tests/**/*.js" ],
+			"env": {
+				"mocha": true
+			}
+		}
+	]
 }
