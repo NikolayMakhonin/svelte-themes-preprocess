@@ -34,6 +34,7 @@ module.exports = function (config) {
 
 		rollupPreprocessor: {
 			plugins: [
+				helpers.rollup.plugins.svelte,
 				helpers.rollup.plugins.babel,
 				// helpers.rollup.plugins.istanbul,
 				// helpers.rollup.plugins.globals,

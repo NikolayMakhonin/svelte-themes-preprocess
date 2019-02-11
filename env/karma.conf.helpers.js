@@ -13,12 +13,20 @@ const istanbul = require('rollup-plugin-istanbul')
 // const builtins = require('rollup-plugin-node-builtins')
 const nodeResolve  = require('rollup-plugin-node-resolve')
 const commonjs  = require('rollup-plugin-commonjs')
+const svelte  = require('rollup-plugin-svelte')
 const nycrc  = require('../.nycrc.json')
 
 module.exports.rollup = {
 	plugins: {
+		svelte: svelte({
+			dev: true,
+			hydratable: true,
+			emitCss   : true
+		}),
 		babel: babel({
-			runtimeHelpers: true
+			extensions    : ['.js', '.html'],
+			runtimeHelpers: true,
+			exclude       : ['node_modules/@babel/**']
 		}),
 		istanbul   : istanbul(nycrc),
 		// globals    : globals(),

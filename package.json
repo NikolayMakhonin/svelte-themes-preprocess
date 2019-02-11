@@ -99,9 +99,11 @@
     "rollup-plugin-eslint": "^5.0.0",
     "rollup-plugin-istanbul": "^2.0.1",
     "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-svelte": "^5.0.1",
     "rollup-plugin-uglify": "^6.0.2",
     "rollup-pluginutils": "^2.3.3",
-    "shx": "^0.3.2"
+    "shx": "^0.3.2",
+    "svelte": "^3.0.0-beta.3"
   },
   "dependencies": {
     "@babel/runtime": "^7.3.1"
