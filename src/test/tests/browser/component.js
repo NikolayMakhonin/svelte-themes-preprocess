@@ -11,7 +11,7 @@ describe('Svelte component', function () {
 	function createComponent(data) {
 		return new Component({
 			target: document.querySelector('test'),
-			data: {...data},
+			data  : {...data},
 		})
 	}
 

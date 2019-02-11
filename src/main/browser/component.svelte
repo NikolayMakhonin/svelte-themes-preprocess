@@ -4,10 +4,10 @@
 <!-- Default data -->
 <script>
 	export default {
-		data () {
-			 return {
+		data() {
+			return {
 				count: 0,
-			};
+			}
 		}
-	};
+	}
 </script>

@@ -19,12 +19,12 @@ const nycrc  = require('../.nycrc.json')
 module.exports.rollup = {
 	plugins: {
 		svelte: svelte({
-			dev: true,
+			dev       : true,
 			hydratable: true,
 			emitCss   : true
 		}),
 		babel: babel({
-			// extensions    : ['.js', '.html', '.svelte'],
+			extensions    : ['.js', '.html', '.svelte'],
 			runtimeHelpers: true,
 			exclude       : ['node_modules/@babel/**']
 		}),

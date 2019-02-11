@@ -3,7 +3,6 @@ import Component from '../../../main/browser/component.svelte';
 describe('Svelte component', function () {
   var testElem;
   beforeEach(function () {
-    console.log(new Error('test'));
     testElem = document.createElement('test');
     document.body.appendChild(testElem);
   });
@@ -15,15 +14,16 @@ describe('Svelte component', function () {
     });
   }
 
-  xit('should initialize the count when no data is given', function () {
+  it('should initialize the count when no data is given', function () {
     var component = createComponent();
-    var count = test.get('count');
-    expect(count).toBe(0);
-  }); //
-  // 	it('should start the count with given data', () => {
-  // 		const component = createComponent({count: 5})
-  // 		const count = test.get('count')
-  // 		expect(count).toBe(5)
-  // 		console.log(new Error('test'))
-  // 	})
+    var count = component.get('count');
+    assert.strictEqual(count.count, 0);
+  });
+  it('should start the count with given data', function () {
+    var component = createComponent({
+      count: 5
+    });
+    var count = component.get('count');
+    assert.strictEqual(count.count, 5);
+  });
 });

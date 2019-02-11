@@ -7,7 +7,6 @@ var _component = _interopRequireDefault(require("../../../main/browser/component
 describe('Svelte component', function () {
   let testElem;
   beforeEach(() => {
-    console.log(new Error('test'));
     testElem = document.createElement('test');
     document.body.appendChild(testElem);
   });
@@ -23,13 +22,13 @@ describe('Svelte component', function () {
   it('should initialize the count when no data is given', () => {
     const component = createComponent();
     const count = component.get('count');
-    expect(count).toBe(0);
+    assert.strictEqual(count.count, 0);
   });
-
   it('should start the count with given data', () => {
-      const component = createComponent({count: 5})
-      const count = component.get('count')
-      expect(count).toBe(5)
-      console.log(new Error('test'))
-  })
+    const component = createComponent({
+      count: 5
+    });
+    const count = component.get('count');
+    assert.strictEqual(count.count, 5);
+  });
 });
