@@ -5,9 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = exports.var1 = exports.func1 = void 0;
 
-/* eslint-disable quote-props,func-style,no-var */
+/* eslint-disable quote-props,func-style,no-var,prefer-rest-params */
 const func1 = function (p1, ...params) {
-  return `${p1} ${p1 === null || p1 === void 0 ? void 0 : p1.length} ${params.length}`;
+  return `${p1} ${p1 === null || p1 === void 0 ? void 0 : p1.length} ${params.length} ${Array.from(arguments).length}`;
 };
 
 exports.func1 = func1;
