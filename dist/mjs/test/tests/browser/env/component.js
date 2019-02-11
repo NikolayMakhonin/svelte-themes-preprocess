@@ -1,5 +1,5 @@
 import _objectSpread from "@babel/runtime/helpers/objectSpread";
-import Component from '../../../main/browser/component.svelte';
+import Component from './src/component.svelte';
 describe('Svelte component', function () {
   var testElem;
   beforeEach(function () {
@@ -17,7 +17,7 @@ describe('Svelte component', function () {
   it('should initialize the count when no data is given', function () {
     var component = createComponent();
     var count = component.get('count');
-    assert.strictEqual(count.count, 0);
+    assert.strictEqual(count.count, 4);
   });
   it('should start the count with given data', function () {
     var component = createComponent({

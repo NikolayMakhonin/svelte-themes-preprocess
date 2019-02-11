@@ -2,7 +2,7 @@
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
-var _component = _interopRequireDefault(require("../../../main/browser/component.svelte"));
+var _component = _interopRequireDefault(require("./src/component.svelte"));
 
 describe('Svelte component', function () {
   let testElem;
@@ -22,7 +22,7 @@ describe('Svelte component', function () {
   it('should initialize the count when no data is given', () => {
     const component = createComponent();
     const count = component.get('count');
-    assert.strictEqual(count.count, 0);
+    assert.strictEqual(count.count, 4);
   });
   it('should start the count with given data', () => {
     const component = createComponent({
