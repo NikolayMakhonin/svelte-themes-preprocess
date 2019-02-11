@@ -1,4 +1,4 @@
-import Component from '../../../main/browser/component.svelte'
+import Component from './src/component.svelte'
 
 describe('Svelte component', function () {
 	let testElem
