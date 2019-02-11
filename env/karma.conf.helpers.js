@@ -7,7 +7,7 @@ const fs = require('fs')
 const thisPackage = require('../package')
 
 const babel = require('rollup-plugin-babel')
-const {uglify} = require('rollup-plugin-uglify')
+const {terser} = require('rollup-plugin-terser')
 const istanbul = require('rollup-plugin-istanbul')
 // const globals = require('rollup-plugin-node-globals')
 // const builtins = require('rollup-plugin-node-builtins')
@@ -29,8 +29,9 @@ module.exports.rollup = {
 			// 	'node_modules/chai/index.js': ['assert', 'expect']
 			// }
 		}),
-		uglify: uglify({
+		terser: terser({
 			mangle   : false,
+			module   : true,
 			sourcemap: {
 				content: 'inline',
 				url    : 'inline'
