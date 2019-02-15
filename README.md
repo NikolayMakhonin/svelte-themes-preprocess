@@ -46,7 +46,7 @@ git branch -u origin/master master
 
 Or you can just clone repository without history using this command:
 ```bash
-npx degit NikolayMakhonin/nodejs-templates#helpers <app name> && cd <app name> && npm i && npm run test
+npx degit NikolayMakhonin/nodejs-templates#helpers-browser <app name> && cd <app name> && npm i && npm run test
 ```
 
 # Testing
