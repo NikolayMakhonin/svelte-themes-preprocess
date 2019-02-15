@@ -4,7 +4,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 
 var _helpers = _interopRequireDefault(require("../../../../../main/common/helpers/helpers"));
 
-describe('helpers', function () {
+describe('common > main > helpers > helpers', function () {
   it('base', function () {
     assert.strictEqual(_helpers.default.test, 'test');
   });

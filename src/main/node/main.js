@@ -8,6 +8,7 @@ const optionsDefault = {
 	async getComponentId(filename) {
 		return (await unresolve(filename))
 			.replace(/\\/g, '/')
+			.replace(/\.[^/.]+$/, '')
 	}
 }
 
@@ -26,6 +27,7 @@ export default function themesPreprocess(themesFilePath, prePreprocessStyle, pos
 
 	themesFilePath = require.resolve(themesFilePath)
 		.replace(/\\/g, '/')
+		.replace(/\.[^/.]+$/, '')
 
 	options = {
 		...optionsDefault,
@@ -34,49 +36,62 @@ export default function themesPreprocess(themesFilePath, prePreprocessStyle, pos
 
 	return {
 		...postPreprocess,
-		markup({content = ''}) {
-			if (content.indexOf('</style>') >= 0) {
-				return {
-					code: content
-				}
+
+		// add <style> tags if not exists
+		markup({content = '', ...other}) {
+			if (content.indexOf('</style>') < 0) {
+				content = `${content}\r\n<style></style>`
 			}
 
-			console.log(content)
-
-			return {
-				code: `${content}\r\n<style></style>`
-			}
+			return postPreprocess.markup.call(this, {
+				content,
+				...other
+			})
 		},
+
+		// append themes css
 		async style(input) {
-			console.log('qwe', input)
 			if (!input.filename) {
 				throw new Error('svelte preprocess filename must be provided')
 			}
 
 			const componentId = await options.getComponentId(input.filename)
 
-			// let content = (await postPreprocess.style.call(this, input)).code || ''
-			let content = input.content || ''
-
+			let themesContent
 			switch (options.lang) {
 				case 'scss':
-					content += '\r\n'
+					themesContent = '\r\n'
 						+ `$component: '${componentId}';\r\n`
+						+ `@import '${themesFilePath}';\r\n`
+					break
+				case 'less':
+					themesContent = '\r\n'
+						+ `@component: '${componentId}';\r\n`
+						+ `@import '${themesFilePath}';\r\n`
+					break
+				case 'stylus':
+					themesContent = '\r\n'
+						+ `$component = '${componentId}'\r\n`
 						+ `@import '${themesFilePath}';\r\n`
 					break
 				default:
 					throw new Error(`unsupported css lang: ${options.lang}`)
 			}
 
-			const attributes = {...input.attributes}
-			delete attributes.type
-			attributes.lang = options.lang
-
-			return postPreprocess.style.call(this, {
+			const themes = await postPreprocess.style.call(this, {
 				...input,
-				content,
-				attributes
+				content   : themesContent,
+				attributes: {
+					lang: options.lang
+				}
 			})
+
+			const style = await postPreprocess.style.call(this, input)
+
+			return {
+				code: `${style.code || ''}\r\n${themes.code || ''}`,
+				map : style.map
+			}
 		}
 	}
 }

@@ -1,6 +1,6 @@
 import _objectSpread from "@babel/runtime/helpers/objectSpread";
 import Component from './src/component.svelte';
-describe('Svelte component', function () {
+describe('browser > env > component', function () {
   var testElem;
   beforeEach(function () {
     testElem = document.createElement('test');

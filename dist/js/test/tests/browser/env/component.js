@@ -4,7 +4,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 
 var _component = _interopRequireDefault(require("./src/component.svelte"));
 
-describe('Svelte component', function () {
+describe('browser > env > component', function () {
   let testElem;
   beforeEach(() => {
     testElem = document.createElement('test');

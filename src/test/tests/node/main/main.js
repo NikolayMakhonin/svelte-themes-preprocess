@@ -3,6 +3,7 @@ import fs from 'fs'
 import themePreprocess from '../../../../main/node/main'
 import basePreprocess from 'svelte-preprocess'
 import postcssImport from 'postcss-import'
+import 'core-js/fn/array/flat-map'
 
 describe('node > main > main', function () {
 	function getComponentPath(type) {
@@ -47,11 +48,17 @@ describe('node > main > main', function () {
 			content = getFileContent(filename)
 		}
 
-		return svelte.compile(content, {
-			...compileOptionsDefault,
-			filename,
-			...options
-		})
+		try {
+			return svelte.compile(content, {
+				...compileOptionsDefault,
+				filename,
+				...options
+			})
+		} catch (ex) {
+			console.error('Error compile svelte:\r\n', content, ex)
+			assert.fail()
+			return null
+		}
 	}
 
 	it('svelte', function () {
@@ -61,10 +68,10 @@ describe('node > main > main', function () {
 		result = compile('css')
 		assert.ok(result.css.code)
 	})
-
-	const cssLangs = ['scss'] // , 'less', 'stylus']
 	const basePreprocessOptions = {
 		scss   : true,
+		less   : true,
+		stylus : true,
 		postcss: {
 			// see: https://github.com/postcss/postcss
 			plugins: [postcssImport()]
@@ -72,28 +79,45 @@ describe('node > main > main', function () {
 	}
 
 	async function compileWithThemes(componentType, lang) {
-		const themesFile = require.resolve(`./src/styles/${lang}/themes.${lang}`)
+		const fileExt = lang === 'stylus' ? 'styl' : lang
+		const themesFile = require.resolve(`./src/styles/${lang}/themes.${fileExt}`)
 		const content = (await preprocess(componentType, null, themePreprocess(
 			themesFile,
 			basePreprocess(basePreprocessOptions).style,
 			basePreprocess(basePreprocessOptions),
-			{}
+			{lang}
 		))).toString()
 
 		return compile(componentType, content, {})
 	}
 
+	const cssLangs = ['scss', 'less', 'stylus']
+	const componentTypes = ['no-style', 'css', 'scss', 'less', 'stylus']
+	// const cssLangs = ['scss']
+	// const componentTypes = ['less']
+
 	it('preprocess', async function () {
+		this.timeout(60000)
+
 		await Promise.all(cssLangs
-			.map(async lang => {
-				const compiled = await compileWithThemes('no-style', lang)
+			.flatMap(lang => componentTypes
+				.map(async componentType => {
+					const compiled = await compileWithThemes(componentType, lang)
 
-				console.log(compiled.css.code)
+					console.log(componentType, lang)
 
-				assert.ok(compiled.css.code)
-				assert.include(compiled.css.code, '.theme_dark h1')
-				assert.include(compiled.css.code, '.theme_light h1')
-				// assert.match(compiled.css.code, /^h1\b/)
-			}))
+					assert.ok(compiled.css.code)
+					assert.include(compiled.css.code, '.theme_dark h1')
+					assert.include(compiled.css.code, '.theme_light h1')
+					assert.match(compiled.css.code, new RegExp(`component:\\s*["'][^"']*component-${componentType}["']`))
+
+					if (componentType === 'no-style') {
+						assert.match(compiled.css.code, /^\.theme_/)
+						assert.notMatch(compiled.css.code, /component-type/)
+					} else {
+						assert.match(compiled.css.code, /^h1\b/)
+						assert.match(compiled.css.code, new RegExp(`component-type:\\s*["']${componentType}["']`))
+					}
+				})))
 	})
 })

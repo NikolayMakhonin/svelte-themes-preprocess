@@ -4,7 +4,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 
 var _main = _interopRequireDefault(require("../../../../main/common/main"));
 
-describe('main', function () {
+describe('common > main > main', function () {
   it('base', function () {
     _main.default.main('test');
   });
