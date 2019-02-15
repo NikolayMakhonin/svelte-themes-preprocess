@@ -19,6 +19,7 @@ describe('env > modules', function () {
 		// console.log(func1.toString());
 		done()
 	})
+	
 	it('import/export', function (done) {
 		assert.strictEqual(var1, 'var1')
 		assert.strictEqual(module1.func1, func1)
