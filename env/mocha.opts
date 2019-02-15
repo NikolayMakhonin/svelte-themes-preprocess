@@ -1,4 +1,4 @@
 --exclude ./*/**/{src,assets}/**
 --ui bdd
---watch-extensions "js){100}|^(((?!([\\/](dist|tmp|node_modules|\.[^\\/]*)[\\/]|\.(log|bak)$)).)*"
+--watch-extensions js){100}|^(((?!([\\/](dist|tmp|node_modules|\.[^\\/]*)[\\/]|\.(log|bak)$)).)*
 -r ./env/register-tests
