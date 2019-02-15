@@ -27,9 +27,9 @@
     "dist/**",
     "env/register-*"
   ],
-  "main": "dist/js/main/browser/main.js",
-  "jsnext:main": "dist/mjs/main/browser/main.js",
-  "module": "dist/mjs/main/browser/main.js",
+  "main": "dist/js/main/node/main.js",
+  "jsnext:main": "dist/mjs/main/node/main.js",
+  "module": "dist/mjs/main/node/main.js",
   "engines": {
     "node": ">= 8.6.0"
   },
