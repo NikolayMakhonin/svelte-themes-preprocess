@@ -1,14 +1,28 @@
 {
-  "name": "TODO",
+  "name": "svelte-themes-preprocess",
   "version": "0.0.1",
-  "description": "TODO",
-  "author": "TODO",
-  "homepage": "TODO",
+  "description": "Add support flexible themes for svelte components",
+  "author": "Nikolay Makhonin",
+  "homepage": "https://github.com/NikolayMakhonin/svelte-themes-preprocess",
   "bugs": {
-    "url": "TODO"
+    "url": "https://github.com/NikolayMakhonin/svelte-themes-preprocess/issues"
   },
   "license": "CC0-1.0",
-  "keywords": [],
+  "keywords": [
+	"svelte",
+	"preprocess",
+	"preprocessor",
+	"style",
+	"styles",
+	"styleshit",
+	"css",
+	"scss",
+	"sass",
+	"theme",
+	"themes",
+	"theming",
+	"cascading"
+  ],
   "files": [
     "dist/**",
     "env/register-*"
