@@ -36,7 +36,7 @@ git branch -m %TEMPLATE_BRANCH% master
 git tag -a -m "New project from template \"%TEMPLATE_BRANCH%\"" v0.0.0
 git remote set-url --push template no_push
 git remote add origin %YOUR_REPO_URL%
-git checkout -b develop origin
+git checkout -b develop
 git push --all origin
 git push --tags origin
 git branch -u origin/develop develop
