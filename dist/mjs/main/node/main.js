@@ -37,24 +37,28 @@ var optionsDefault = {
     return getComponentId;
   }()
 };
-export default function themesPreprocess(themesFilePath, prePreprocessStyle, postPreprocess) {
-  var options = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : {};
+export default function themesPreprocess(themesFilePath, preprocess) {
+  var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
 
   if (!themesFilePath) {
-    throw new Error('themesFilePath is empty');
+    throw new Error('argument "themesFilePath" is empty and should be specified');
   }
 
-  if (!prePreprocessStyle) {
-    throw new Error('prePreprocessStyle is null');
+  if (!preprocess) {
+    throw new Error('argument "preprocess" is null and should be specified');
   }
 
-  if (!postPreprocess) {
-    throw new Error('postPreprocess is null');
+  if (!preprocess.style) {
+    throw new Error('argument "preprocess.style" is null and should be specified');
+  }
+
+  if (typeof preprocess.style !== 'function') {
+    throw new Error('argument "preprocess.style" is not a function');
   }
 
   themesFilePath = require.resolve(themesFilePath).replace(/\\/g, '/').replace(/\.[^/.]+$/, '');
   options = _objectSpread({}, optionsDefault, options);
-  return _objectSpread({}, postPreprocess, {
+  return _objectSpread({}, preprocess, {
     // add <style> tags if not exists
     markup: function markup(_ref) {
       var _ref$content = _ref.content,
@@ -65,9 +69,16 @@ export default function themesPreprocess(themesFilePath, prePreprocessStyle, pos
         content = "".concat(content, "\r\n<style></style>");
       }
 
-      return postPreprocess.markup.call(this, _objectSpread({
-        content: content
-      }, other));
+      if (preprocess.markup) {
+        return preprocess.markup.call(this, _objectSpread({
+          content: content
+        }, other));
+      }
+
+      return {
+        code: content,
+        map: null
+      };
     },
     // append themes css
     style: function () {
@@ -113,7 +124,7 @@ export default function themesPreprocess(themesFilePath, prePreprocessStyle, pos
 
               case 15:
                 _context2.next = 17;
-                return postPreprocess.style.call(this, _objectSpread({}, input, {
+                return preprocess.style.call(this, _objectSpread({}, input, {
                   content: themesContent,
                   attributes: {
                     lang: options.lang
@@ -123,7 +134,7 @@ export default function themesPreprocess(themesFilePath, prePreprocessStyle, pos
               case 17:
                 themes = _context2.sent;
                 _context2.next = 20;
-                return postPreprocess.style.call(this, input);
+                return preprocess.style.call(this, input);
 
               case 20:
                 style = _context2.sent;

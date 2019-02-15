@@ -47,10 +47,6 @@ describe('node > main > main', function () {
     hydratable: true,
     emitCss: true,
 
-    onerror(err) {
-      assert.fail(err.message);
-    },
-
     onwarn(warn) {
       assert.fail(warn.message);
     }
@@ -97,12 +93,35 @@ describe('node > main > main', function () {
 
     const themesFile = require.resolve(`./src/styles/${lang}/themes.${fileExt}`);
 
-    const content = (await preprocess(componentType, null, (0, _main.default)(themesFile, (0, _sveltePreprocess.default)(basePreprocessOptions).style, (0, _sveltePreprocess.default)(basePreprocessOptions), {
+    const content = (await preprocess(componentType, null, (0, _main.default)(themesFile, (0, _sveltePreprocess.default)(basePreprocessOptions), {
       lang
     }))).toString();
     return compile(componentType, content, {});
   }
 
+  it('base', async () => {
+    const themesFile = require.resolve('./src/styles/scss/themes.scss');
+
+    let preprocessor = (0, _main.default)(themesFile, (0, _sveltePreprocess.default)(basePreprocessOptions));
+    await preprocess('scss', null, preprocessor);
+    preprocessor = (0, _main.default)(themesFile, {
+      style: (0, _sveltePreprocess.default)(basePreprocessOptions).style
+    });
+    await preprocess('scss', null, preprocessor);
+    assert.throws(() => (0, _main.default)(), Error);
+    assert.throws(() => (0, _main.default)('x', (0, _sveltePreprocess.default)(basePreprocessOptions)), Error);
+    assert.throws(() => (0, _main.default)('', (0, _sveltePreprocess.default)(basePreprocessOptions)), Error);
+    assert.throws(() => (0, _main.default)(themesFile), Error);
+    assert.throws(() => (0, _main.default)(themesFile, {}), Error);
+    assert.throws(() => (0, _main.default)(themesFile, {
+      style: 'x'
+    }), Error); // eslint-disable-next-line no-empty-function
+
+    (0, _main.default)(themesFile, {
+      style() {}
+
+    });
+  });
   const cssLangs = ['scss', 'less', 'stylus'];
   const componentTypes = ['no-style', 'css', 'scss', 'less', 'stylus']; // const cssLangs = ['scss']
   // const componentTypes = ['less']

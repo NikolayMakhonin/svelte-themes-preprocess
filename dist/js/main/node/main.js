@@ -21,24 +21,28 @@ const optionsDefault = {
 
 };
 
-function themesPreprocess(themesFilePath, prePreprocessStyle, postPreprocess, options = {}) {
+function themesPreprocess(themesFilePath, preprocess, options = {}) {
   if (!themesFilePath) {
-    throw new Error('themesFilePath is empty');
+    throw new Error('argument "themesFilePath" is empty and should be specified');
   }
 
-  if (!prePreprocessStyle) {
-    throw new Error('prePreprocessStyle is null');
+  if (!preprocess) {
+    throw new Error('argument "preprocess" is null and should be specified');
   }
 
-  if (!postPreprocess) {
-    throw new Error('postPreprocess is null');
+  if (!preprocess.style) {
+    throw new Error('argument "preprocess.style" is null and should be specified');
+  }
+
+  if (typeof preprocess.style !== 'function') {
+    throw new Error('argument "preprocess.style" is not a function');
   }
 
   themesFilePath = require.resolve(themesFilePath).replace(/\\/g, '/').replace(/\.[^/.]+$/, '');
   options = { ...optionsDefault,
     ...options
   };
-  return { ...postPreprocess,
+  return { ...preprocess,
 
     // add <style> tags if not exists
     markup({
@@ -49,10 +53,17 @@ function themesPreprocess(themesFilePath, prePreprocessStyle, postPreprocess, op
         content = `${content}\r\n<style></style>`;
       }
 
-      return postPreprocess.markup.call(this, {
-        content,
-        ...other
-      });
+      if (preprocess.markup) {
+        return preprocess.markup.call(this, {
+          content,
+          ...other
+        });
+      }
+
+      return {
+        code: content,
+        map: null
+      };
     },
 
     // append themes css
@@ -81,13 +92,13 @@ function themesPreprocess(themesFilePath, prePreprocessStyle, postPreprocess, op
           throw new Error(`unsupported css lang: ${options.lang}`);
       }
 
-      const themes = await postPreprocess.style.call(this, { ...input,
+      const themes = await preprocess.style.call(this, { ...input,
         content: themesContent,
         attributes: {
           lang: options.lang
         }
       });
-      const style = await postPreprocess.style.call(this, input);
+      const style = await preprocess.style.call(this, input);
       return {
         code: `${style.code || ''}\r\n${themes.code || ''}`,
         map: style.map

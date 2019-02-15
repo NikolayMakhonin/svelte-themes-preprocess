@@ -1,6 +1,6 @@
 import * as svelte from 'svelte'
 import fs from 'fs'
-import themePreprocess from '../../../../main/node/main'
+import themesPreprocess from '../../../../main/node/main'
 import basePreprocess from 'svelte-preprocess'
 import postcssImport from 'postcss-import'
 import 'core-js/fn/array/flat-map'
@@ -81,15 +81,31 @@ describe('node > main > main', function () {
 	async function compileWithThemes(componentType, lang) {
 		const fileExt = lang === 'stylus' ? 'styl' : lang
 		const themesFile = require.resolve(`./src/styles/${lang}/themes.${fileExt}`)
-		const content = (await preprocess(componentType, null, themePreprocess(
+		const content = (await preprocess(componentType, null, themesPreprocess(
 			themesFile,
-			basePreprocess(basePreprocessOptions).style,
 			basePreprocess(basePreprocessOptions),
 			{lang}
 		))).toString()
 
 		return compile(componentType, content, {})
 	}
+
+	it('base', async () => {
+		const themesFile = require.resolve('./src/styles/scss/themes.scss')
+		let preprocessor = themesPreprocess(themesFile, basePreprocess(basePreprocessOptions))
+		await preprocess('scss', null, preprocessor)
+		preprocessor = themesPreprocess(themesFile, {style: basePreprocess(basePreprocessOptions).style})
+		await preprocess('scss', null, preprocessor)
+
+		assert.throws(() => themesPreprocess(), Error)
+		assert.throws(() => themesPreprocess('x', basePreprocess(basePreprocessOptions)), Error)
+		assert.throws(() => themesPreprocess('', basePreprocess(basePreprocessOptions)), Error)
+		assert.throws(() => themesPreprocess(themesFile), Error)
+		assert.throws(() => themesPreprocess(themesFile, {}), Error)
+		assert.throws(() => themesPreprocess(themesFile, {style: 'x'}), Error)
+		// eslint-disable-next-line no-empty-function
+		themesPreprocess(themesFile, {style() {}})
+	})
 
 	const cssLangs = ['scss', 'less', 'stylus']
 	const componentTypes = ['no-style', 'css', 'scss', 'less', 'stylus']
