@@ -11,7 +11,103 @@
 
 # Description
 
-Add support flexible themes for svelte components
+Add support flexible themes for svelte components.
+
+You can use this plugin with rollup-plugin-svelte: ```svelte({ preprocessor: ... })```
+
+Plugin support these CSS syntaxes: ```scss```, ```less```, ```stylus```
+
+## Install
+
+```
+npm i postcss postcss-import node-sass svelte-preprocess svelte-themes-preprocess --save-dev
+```
+
+## How it work
+
+**theme_dark.scss**
+```scss
+:global(.theme_dark) {
+    @if ($component = 'module_name/src/components/Nav') {
+        h1 {
+            color: #111;
+        }
+    }
+}
+```
+
+**theme_light.scss**
+```scss
+:global(.theme_light) {
+    @if ($component = 'module_name/src/routes/index') {
+        h1 {
+            color: #222;
+        }
+    }
+}
+```
+
+**themes.scss**
+```
+@import 'themes/theme_dark';
+@import 'themes/theme_light';
+```
+
+**component.svelte**
+```
+<h1>Svelte component</h1>
+<style>
+    h1 {
+        color: #000;
+    }
+</style>
+```
+
+**Preprocessing**
+```
+import preprocess from 'svelte-preprocess'
+import postcssImport from 'postcss-import'
+import themesPreprocess from 'svelte-themes-preprocess'
+
+const postcssOptions = {
+    plugins: [
+        // This plugin is necessary and should be first in plugins list:
+        postcssImport(),
+        
+        // Other plugins ...
+    ]
+}
+
+const sveltePreprocess = preprocess({
+    scss   : true,
+    postcss: postcssOptions
+})
+
+const result = svelte.preprocess(input, themesPreprocess(
+    path.resolve('./src/styles/themes.scss'),
+    sveltePreprocess,
+    {
+        lang: 'scss'
+    }
+))
+```
+**Result**
+```
+<h1>Svelte component</h1>
+<style>
+    h1 {
+        color: #000;
+    }
+    
+    .theme_dark h1 {
+        color: #111;
+    }
+    
+    .theme_dark h1 {
+        color: #222;
+    }
+</style>
+```
 
 # License
 
