@@ -11,7 +11,7 @@
 
 # Description
 
-For quickly create NodeJs module of browser helpers using these commands (just copy/paste it to the console):
+For quickly create NodeJs module with svelte components using these commands (just copy/paste it to the console):
 
 (Create new clear empty repository before)
 
@@ -19,7 +19,7 @@ Config:
 
 ```cmd
 (
-SET TEMPLATE_BRANCH=helpers-browser
+SET TEMPLATE_BRANCH=svelte-component
 SET TEMPLATE_REPO=https://github.com/NikolayMakhonin/nodejs-templates.git
 SET /p DIR_NAME=Enter project directory name:
 SET /p YOUR_REPO_URL=Enter your new clear repository url:
@@ -46,7 +46,7 @@ git branch -u origin/master master
 
 Or you can just clone repository without history using this command:
 ```bash
-npx degit NikolayMakhonin/nodejs-templates#helpers <app name> && cd <app name> && npm i && npm run test
+npx degit NikolayMakhonin/nodejs-templates#svelte-component <app name> && cd <app name> && npm i && npm run test
 ```
 
 # Testing
@@ -107,10 +107,10 @@ addons:
 [npm-url]: https://npmjs.org/package/templates
 [node-version-image]: https://img.shields.io/node/v/templates.svg
 [node-version-url]: https://nodejs.org/en/download/
-[travis-image]: https://travis-ci.org/NikolayMakhonin/nodejs-templates.svg?branch=helpers-browser
-[travis-url]: https://travis-ci.org/NikolayMakhonin/nodejs-templates?branch=helpers-browser
-[coveralls-image]: https://coveralls.io/repos/github/NikolayMakhonin/nodejs-templates/badge.svg?branch=helpers-browser
-[coveralls-url]: https://coveralls.io/github/NikolayMakhonin/nodejs-templates?branch=helpers-browser
+[travis-image]: https://travis-ci.org/NikolayMakhonin/nodejs-templates.svg?branch=svelte-component
+[travis-url]: https://travis-ci.org/NikolayMakhonin/nodejs-templates?branch=svelte-component
+[coveralls-image]: https://coveralls.io/repos/github/NikolayMakhonin/nodejs-templates/badge.svg?branch=svelte-component
+[coveralls-url]: https://coveralls.io/github/NikolayMakhonin/nodejs-templates?branch=svelte-component
 [downloads-image]: https://img.shields.io/npm/dm/templates.svg
 [downloads-url]: https://npmjs.org/package/templates
 [npm-url]: https://npmjs.org/package/templates
