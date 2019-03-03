@@ -14,6 +14,8 @@ var _sveltePreprocess = _interopRequireDefault(require("svelte-preprocess"));
 
 var _postcssImport = _interopRequireDefault(require("postcss-import"));
 
+var _postcssGlobalNested = _interopRequireDefault(require("postcss-global-nested"));
+
 require("core-js/fn/array/flat-map");
 
 describe('node > main > main', function () {
@@ -84,7 +86,7 @@ describe('node > main > main', function () {
     stylus: true,
     postcss: {
       // see: https://github.com/postcss/postcss
-      plugins: [(0, _postcssImport.default)()]
+      plugins: [(0, _postcssImport.default)(), (0, _postcssGlobalNested.default)()]
     }
   };
 

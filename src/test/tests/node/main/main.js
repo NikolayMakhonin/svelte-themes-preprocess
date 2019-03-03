@@ -3,6 +3,7 @@ import fs from 'fs'
 import themesPreprocess from '../../../../main/node/main'
 import basePreprocess from 'svelte-preprocess'
 import postcssImport from 'postcss-import'
+import postcssGlobalNested from 'postcss-global-nested'
 import 'core-js/fn/array/flat-map'
 
 describe('node > main > main', function () {
@@ -69,12 +70,17 @@ describe('node > main > main', function () {
 		assert.ok(result.css.code)
 	})
 	const basePreprocessOptions = {
-		scss   : true,
-		less   : true,
-		stylus : true,
-		postcss: {
-			// see: https://github.com/postcss/postcss
-			plugins: [postcssImport()]
+		transformers: {
+			scss: true,
+			less: true,
+			stylus: true,
+			postcss: {
+				// see: https://github.com/postcss/postcss
+				plugins: [
+					postcssImport(),
+					postcssGlobalNested()
+				]
+			}
 		}
 	}
 
@@ -108,7 +114,7 @@ describe('node > main > main', function () {
 	})
 
 	const cssLangs = ['scss', 'less', 'stylus']
-	const componentTypes = ['no-style', 'css', 'scss', 'less', 'stylus']
+	const componentTypes = ['scss', 'no-style', 'css', 'less', 'stylus']
 	// const cssLangs = ['scss']
 	// const componentTypes = ['less']
 

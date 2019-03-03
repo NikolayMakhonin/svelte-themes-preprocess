@@ -114,6 +114,7 @@
     "node-sass": "^4.11.0",
     "nyc": "^13.1.0",
     "postcss": "^7.0.14",
+    "postcss-global-nested": "^1.2.0",
     "postcss-import": "^12.0.1",
     "rollup": "^0.67.4",
     "rollup-plugin-babel": "^4.3.2",

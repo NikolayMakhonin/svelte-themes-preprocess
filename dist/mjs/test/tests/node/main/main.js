@@ -6,6 +6,7 @@ import fs from 'fs';
 import themesPreprocess from '../../../../main/node/main';
 import basePreprocess from 'svelte-preprocess';
 import postcssImport from 'postcss-import';
+import postcssGlobalNested from 'postcss-global-nested';
 import 'core-js/fn/array/flat-map';
 describe('node > main > main', function () {
   function getComponentPath(type) {
@@ -73,7 +74,7 @@ describe('node > main > main', function () {
     stylus: true,
     postcss: {
       // see: https://github.com/postcss/postcss
-      plugins: [postcssImport()]
+      plugins: [postcssImport(), postcssGlobalNested()]
     }
   };
 

@@ -7,4 +7,10 @@
 		color: #aaa;
 		component-type: $componentType;
 	}
+
+	:global {
+		main {
+			content: "global";
+		}
+	}
 </style>
