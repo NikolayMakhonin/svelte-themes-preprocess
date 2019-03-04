@@ -68,6 +68,10 @@ export default function themesPreprocess(themesFilePath, preprocess, options = {
 
 			const componentId = await options.getComponentId(input.filename)
 
+			if (options?.debug?.showComponentsIds) {
+				console.log(`Component id for themes: ${componentId}`)
+			}
+			
 			let themesContent
 			switch (options.lang) {
 				case 'scss':

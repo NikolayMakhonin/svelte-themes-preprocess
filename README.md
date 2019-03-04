@@ -87,7 +87,10 @@ const result = svelte.preprocess(input, themesPreprocess(
     path.resolve('./src/styles/themes.scss'),
     sveltePreprocess,
     {
-        lang: 'scss'
+        lang: 'scss',
+        debug: {
+            showComponentsIds: true // show components ids in console
+        }
     }
 ))
 ```

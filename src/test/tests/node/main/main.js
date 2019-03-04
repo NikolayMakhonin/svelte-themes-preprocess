@@ -98,7 +98,11 @@ describe('node > main > main', function () {
 
 	it('base', async () => {
 		const themesFile = require.resolve('./src/styles/scss/themes.scss')
-		let preprocessor = themesPreprocess(themesFile, basePreprocess(basePreprocessOptions))
+		let preprocessor = themesPreprocess(themesFile, basePreprocess(basePreprocessOptions), {
+			debug: {
+				showComponentsIds: true
+			}
+		})
 		await preprocess('scss', null, preprocessor)
 		preprocessor = themesPreprocess(themesFile, {style: basePreprocess(basePreprocessOptions).style})
 		await preprocess('scss', null, preprocessor)
