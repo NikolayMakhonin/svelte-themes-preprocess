@@ -40,7 +40,22 @@ function themesPreprocess(themesFilePath, preprocess, options = {}) {
 
   themesFilePath = require.resolve(themesFilePath).replace(/\\/g, '/').replace(/\.[^/.]+$/, '');
   options = { ...optionsDefault,
-    ...options
+    ...options,
+    langs: {
+      scss(componentId, themesPath) {
+        return '\r\n' + `$component: '${componentId}';\r\n` + `@import '${themesPath}';\r\n`;
+      },
+
+      less(componentId, themesPath) {
+        return '\r\n' + `@component: '${componentId}';\r\n` + `@import '${themesPath}';\r\n`;
+      },
+
+      stylus(componentId, themesPath) {
+        return '\r\n' + `$component = '${componentId}'\r\n` + `@import '${themesPath}';\r\n`;
+      },
+
+      ...options.langs
+    }
   };
   return { ...preprocess,
 
@@ -80,25 +95,13 @@ function themesPreprocess(themesFilePath, preprocess, options = {}) {
         console.log(`Component id for themes: ${componentId}`);
       }
 
-      let themesContent;
+      const getThemesContent = options.langs[options.lang];
 
-      switch (options.lang) {
-        case 'scss':
-          themesContent = '\r\n' + `$component: '${componentId}';\r\n` + `@import '${themesFilePath}';\r\n`;
-          break;
-
-        case 'less':
-          themesContent = '\r\n' + `@component: '${componentId}';\r\n` + `@import '${themesFilePath}';\r\n`;
-          break;
-
-        case 'stylus':
-          themesContent = '\r\n' + `$component = '${componentId}'\r\n` + `@import '${themesFilePath}';\r\n`;
-          break;
-
-        default:
-          throw new Error(`unsupported css lang: ${options.lang}`);
+      if (!getThemesContent) {
+        throw new Error(`unsupported css lang: ${options.lang}`);
       }
 
+      const themesContent = getThemesContent(componentId, themesFilePath);
       const themes = await preprocess.style.call(this, { ...input,
         content: themesContent,
         attributes: {

@@ -4,6 +4,7 @@ import themesPreprocess from '../../../../main/node/main'
 import basePreprocess from 'svelte-preprocess'
 import postcss from 'postcss'
 import postcssImport from 'postcss-import'
+import postcssNested from 'postcss-nested'
 import postcssGlobalNested from 'postcss-global-nested'
 import postcssJsSyntax from 'postcss-js-syntax'
 import {requireFromString} from 'require-from-memory'
@@ -18,9 +19,7 @@ describe('node > main > main', function () {
 		return fs.readFileSync(filePath, 'utf-8')
 	}
 
-	const preprocessOptionsDefault = {
-
-	}
+	const preprocessOptionsDefault = {}
 
 	function preprocess(componentType, content, options = {}) {
 		const filename = getComponentPath(componentType)
@@ -73,10 +72,13 @@ describe('node > main > main', function () {
 		assert.ok(result.css.code)
 	})
 
-	const postcssInstance = postcss([
+	const postcssPlugins = [
 		postcssImport(),
+		postcssNested(),
 		postcssGlobalNested()
-	])
+	]
+
+	const postcssInstance = postcss(postcssPlugins)
 
 	const basePreprocessOptions = {
 		transformers: {
@@ -96,10 +98,7 @@ describe('node > main > main', function () {
 			},
 			postcss: {
 				// see: https://github.com/postcss/postcss
-				plugins: [
-					postcssImport(),
-					postcssGlobalNested()
-				]
+				plugins: postcssPlugins
 			}
 		}
 	}
@@ -147,7 +146,10 @@ module.exports = themeBuilder('${componentId.replace(/'/g, '\'')}')
 		assert.throws(() => themesPreprocess(themesFile, {}), Error)
 		assert.throws(() => themesPreprocess(themesFile, {style: 'x'}), Error)
 		// eslint-disable-next-line no-empty-function
-		themesPreprocess(themesFile, {style() {}})
+		themesPreprocess(themesFile, {
+			style() {
+			}
+		})
 	})
 
 	const cssLangs = ['scss', 'less', 'stylus', 'js']

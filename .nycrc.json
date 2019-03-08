@@ -2,6 +2,9 @@
     "include": [
         "{src,dist/{js,mjs}}/{main,test/**/src}/**/*.js"
     ],
+    "exclude": [
+        "**/*.svelte.js"
+    ],
     "reporter": [
         "json"
     ],

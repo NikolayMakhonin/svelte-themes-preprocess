@@ -57,7 +57,19 @@ export default function themesPreprocess(themesFilePath, preprocess) {
   }
 
   themesFilePath = require.resolve(themesFilePath).replace(/\\/g, '/').replace(/\.[^/.]+$/, '');
-  options = _objectSpread({}, optionsDefault, options);
+  options = _objectSpread({}, optionsDefault, options, {
+    langs: _objectSpread({
+      scss: function scss(componentId, themesPath) {
+        return '\r\n' + "$component: '".concat(componentId, "';\r\n") + "@import '".concat(themesPath, "';\r\n");
+      },
+      less: function less(componentId, themesPath) {
+        return '\r\n' + "@component: '".concat(componentId, "';\r\n") + "@import '".concat(themesPath, "';\r\n");
+      },
+      stylus: function stylus(componentId, themesPath) {
+        return '\r\n' + "$component = '".concat(componentId, "'\r\n") + "@import '".concat(themesPath, "';\r\n");
+      }
+    }, options.langs)
+  });
   return _objectSpread({}, preprocess, {
     // add <style> tags if not exists
     markup: function markup(_ref) {
@@ -87,7 +99,7 @@ export default function themesPreprocess(themesFilePath, preprocess) {
       _regeneratorRuntime.mark(function _callee2(input) {
         var _options, _options$debug;
 
-        var componentId, themesContent, themes, style;
+        var componentId, getThemesContent, themesContent, themes, style;
         return _regeneratorRuntime.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
@@ -110,27 +122,18 @@ export default function themesPreprocess(themesFilePath, preprocess) {
                   console.log("Component id for themes: ".concat(componentId));
                 }
 
-                _context2.t0 = options.lang;
-                _context2.next = _context2.t0 === 'scss' ? 9 : _context2.t0 === 'less' ? 11 : _context2.t0 === 'stylus' ? 13 : 15;
-                break;
+                getThemesContent = options.langs[options.lang];
 
-              case 9:
-                themesContent = '\r\n' + "$component: '".concat(componentId, "';\r\n") + "@import '".concat(themesFilePath, "';\r\n");
-                return _context2.abrupt("break", 16);
+                if (getThemesContent) {
+                  _context2.next = 9;
+                  break;
+                }
 
-              case 11:
-                themesContent = '\r\n' + "@component: '".concat(componentId, "';\r\n") + "@import '".concat(themesFilePath, "';\r\n");
-                return _context2.abrupt("break", 16);
-
-              case 13:
-                themesContent = '\r\n' + "$component = '".concat(componentId, "'\r\n") + "@import '".concat(themesFilePath, "';\r\n");
-                return _context2.abrupt("break", 16);
-
-              case 15:
                 throw new Error("unsupported css lang: ".concat(options.lang));
 
-              case 16:
-                _context2.next = 18;
+              case 9:
+                themesContent = getThemesContent(componentId, themesFilePath);
+                _context2.next = 12;
                 return preprocess.style.call(this, _objectSpread({}, input, {
                   content: themesContent,
                   attributes: {
@@ -138,19 +141,19 @@ export default function themesPreprocess(themesFilePath, preprocess) {
                   }
                 }));
 
-              case 18:
+              case 12:
                 themes = _context2.sent;
-                _context2.next = 21;
+                _context2.next = 15;
                 return preprocess.style.call(this, input);
 
-              case 21:
+              case 15:
                 style = _context2.sent;
                 return _context2.abrupt("return", {
                   code: "".concat(style.code || '', "\r\n").concat(themes.code || ''),
                   map: style.map
                 });
 
-              case 23:
+              case 17:
               case "end":
                 return _context2.stop();
             }

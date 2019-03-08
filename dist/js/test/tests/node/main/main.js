@@ -12,7 +12,11 @@ var _main = _interopRequireDefault(require("../../../../main/node/main"));
 
 var _sveltePreprocess = _interopRequireDefault(require("svelte-preprocess"));
 
+var _postcss = _interopRequireDefault(require("postcss"));
+
 var _postcssImport = _interopRequireDefault(require("postcss-import"));
+
+var _postcssNested = _interopRequireDefault(require("postcss-nested"));
 
 var _postcssGlobalNested = _interopRequireDefault(require("postcss-global-nested"));
 
@@ -84,29 +88,31 @@ describe('node > main > main', function () {
     result = compile('css');
     assert.ok(result.css.code);
   });
+  const postcssPlugins = [(0, _postcssImport.default)(), (0, _postcssNested.default)(), (0, _postcssGlobalNested.default)()];
+  const postcssInstance = (0, _postcss.default)(postcssPlugins);
   const basePreprocessOptions = {
     transformers: {
       scss: true,
       less: true,
       stylus: true,
 
-      javascript({
+      async javascript({
         content,
         filename
       }) {
-        // console.log('qweqwe', content, filename)
-        const parsed = _postcssJsSyntax.default.parse(content, {
-          from: filename,
+        const parsed = await postcssInstance.process(content, {
+          from: `${filename}.js`,
+          parser: _postcssJsSyntax.default.parse,
           requireFromString: _requireFromMemory.requireFromString
         });
-
-        console.log(parsed);
-        return parsed;
+        return {
+          code: parsed.css
+        };
       },
 
       postcss: {
         // see: https://github.com/postcss/postcss
-        plugins: [(0, _postcssImport.default)(), (0, _postcssGlobalNested.default)()]
+        plugins: postcssPlugins
       }
     }
   };
@@ -117,7 +123,19 @@ describe('node > main > main', function () {
     const themesFile = require.resolve(`./src/styles/${lang}/themes.${fileExt}`);
 
     const content = (await preprocess(componentType, null, (0, _main.default)(themesFile, (0, _sveltePreprocess.default)(basePreprocessOptions), {
-      lang
+      lang,
+      langs: {
+        js(componentId, themesFilePath) {
+          return `
+var themeBuilder = require('${themesFilePath.replace(/'/g, '\'')}')
+if (themeBuilder.__esModule) {
+	themeBuilder = themeBuilder.default
+}
+module.exports = themeBuilder('${componentId.replace(/'/g, '\'')}')
+`;
+        }
+
+      }
     }))).toString();
     return compile(componentType, content, {});
   }
@@ -142,6 +160,13 @@ describe('node > main > main', function () {
     assert.throws(() => (0, _main.default)(themesFile, {}), Error);
     assert.throws(() => (0, _main.default)(themesFile, {
       style: 'x'
+    }), Error);
+    assert.throws(() => (0, _main.default)(themesFile, {
+      style() {
+        return null;
+      },
+
+      lang: 'qweqwe'
     }), Error); // eslint-disable-next-line no-empty-function
 
     (0, _main.default)(themesFile, {
@@ -149,7 +174,7 @@ describe('node > main > main', function () {
 
     });
   });
-  const cssLangs = ['scss', 'less', 'stylus'];
+  const cssLangs = ['scss', 'less', 'stylus', 'js'];
   const componentTypes = ['js', 'scss', 'no-style', 'css', 'less', 'stylus']; // const cssLangs = ['scss']
   // const componentTypes = ['less']
 

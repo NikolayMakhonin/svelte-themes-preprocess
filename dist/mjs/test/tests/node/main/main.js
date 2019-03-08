@@ -5,7 +5,9 @@ import * as svelte from 'svelte';
 import fs from 'fs';
 import themesPreprocess from '../../../../main/node/main';
 import basePreprocess from 'svelte-preprocess';
+import postcss from 'postcss';
 import postcssImport from 'postcss-import';
+import postcssNested from 'postcss-nested';
 import postcssGlobalNested from 'postcss-global-nested';
 import postcssJsSyntax from 'postcss-js-syntax';
 import { requireFromString } from 'require-from-memory';
@@ -70,59 +72,92 @@ describe('node > main > main', function () {
     result = compile('css');
     assert.ok(result.css.code);
   });
+  var postcssPlugins = [postcssImport(), postcssNested(), postcssGlobalNested()];
+  var postcssInstance = postcss(postcssPlugins);
   var basePreprocessOptions = {
     transformers: {
       scss: true,
       less: true,
       stylus: true,
-      javascript: function javascript(_ref) {
-        var content = _ref.content,
-            filename = _ref.filename;
-        // console.log('qweqwe', content, filename)
-        var parsed = postcssJsSyntax.parse(content, {
-          from: filename,
-          requireFromString: requireFromString
-        });
-        console.log(parsed);
-        return parsed;
-      },
+      javascript: function () {
+        var _javascript = _asyncToGenerator(
+        /*#__PURE__*/
+        _regeneratorRuntime.mark(function _callee(_ref) {
+          var content, filename, parsed;
+          return _regeneratorRuntime.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  content = _ref.content, filename = _ref.filename;
+                  _context.next = 3;
+                  return postcssInstance.process(content, {
+                    from: "".concat(filename, ".js"),
+                    parser: postcssJsSyntax.parse,
+                    requireFromString: requireFromString
+                  });
+
+                case 3:
+                  parsed = _context.sent;
+                  return _context.abrupt("return", {
+                    code: parsed.css
+                  });
+
+                case 5:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee);
+        }));
+
+        function javascript(_x) {
+          return _javascript.apply(this, arguments);
+        }
+
+        return javascript;
+      }(),
       postcss: {
         // see: https://github.com/postcss/postcss
-        plugins: [postcssImport(), postcssGlobalNested()]
+        plugins: postcssPlugins
       }
     }
   };
 
-  function compileWithThemes(_x, _x2) {
+  function compileWithThemes(_x2, _x3) {
     return _compileWithThemes.apply(this, arguments);
   }
 
   function _compileWithThemes() {
     _compileWithThemes = _asyncToGenerator(
     /*#__PURE__*/
-    _regeneratorRuntime.mark(function _callee4(componentType, lang) {
+    _regeneratorRuntime.mark(function _callee5(componentType, lang) {
       var fileExt, themesFile, content;
-      return _regeneratorRuntime.wrap(function _callee4$(_context4) {
+      return _regeneratorRuntime.wrap(function _callee5$(_context5) {
         while (1) {
-          switch (_context4.prev = _context4.next) {
+          switch (_context5.prev = _context5.next) {
             case 0:
               fileExt = lang === 'stylus' ? 'styl' : lang;
               themesFile = require.resolve("./src/styles/".concat(lang, "/themes.").concat(fileExt));
-              _context4.next = 4;
+              _context5.next = 4;
               return preprocess(componentType, null, themesPreprocess(themesFile, basePreprocess(basePreprocessOptions), {
-                lang: lang
+                lang: lang,
+                langs: {
+                  js: function js(componentId, themesFilePath) {
+                    return "\nvar themeBuilder = require('".concat(themesFilePath.replace(/'/g, '\''), "')\nif (themeBuilder.__esModule) {\n\tthemeBuilder = themeBuilder.default\n}\nmodule.exports = themeBuilder('").concat(componentId.replace(/'/g, '\''), "')\n");
+                  }
+                }
               }));
 
             case 4:
-              content = _context4.sent.toString();
-              return _context4.abrupt("return", compile(componentType, content, {}));
+              content = _context5.sent.toString();
+              return _context5.abrupt("return", compile(componentType, content, {}));
 
             case 6:
             case "end":
-              return _context4.stop();
+              return _context5.stop();
           }
         }
-      }, _callee4);
+      }, _callee5);
     }));
     return _compileWithThemes.apply(this, arguments);
   }
@@ -131,11 +166,11 @@ describe('node > main > main', function () {
   /*#__PURE__*/
   _asyncToGenerator(
   /*#__PURE__*/
-  _regeneratorRuntime.mark(function _callee() {
+  _regeneratorRuntime.mark(function _callee2() {
     var themesFile, preprocessor;
-    return _regeneratorRuntime.wrap(function _callee$(_context) {
+    return _regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
-        switch (_context.prev = _context.next) {
+        switch (_context2.prev = _context2.next) {
           case 0:
             themesFile = require.resolve('./src/styles/scss/themes.scss');
             preprocessor = themesPreprocess(themesFile, basePreprocess(basePreprocessOptions), {
@@ -143,14 +178,14 @@ describe('node > main > main', function () {
                 showComponentsIds: true
               }
             });
-            _context.next = 4;
+            _context2.next = 4;
             return preprocess('scss', null, preprocessor);
 
           case 4:
             preprocessor = themesPreprocess(themesFile, {
               style: basePreprocess(basePreprocessOptions).style
             });
-            _context.next = 7;
+            _context2.next = 7;
             return preprocess('scss', null, preprocessor);
 
           case 7:
@@ -173,20 +208,26 @@ describe('node > main > main', function () {
               return themesPreprocess(themesFile, {
                 style: 'x'
               });
+            }, Error);
+            assert.throws(function () {
+              return themesPreprocess(themesFile, {
+                style: function style() {},
+                lang: 'qweqwe'
+              });
             }, Error); // eslint-disable-next-line no-empty-function
 
             themesPreprocess(themesFile, {
               style: function style() {}
             });
 
-          case 14:
+          case 15:
           case "end":
-            return _context.stop();
+            return _context2.stop();
         }
       }
-    }, _callee);
+    }, _callee2);
   })));
-  var cssLangs = ['scss', 'less', 'stylus'];
+  var cssLangs = ['scss', 'less', 'stylus', 'js'];
   var componentTypes = ['js', 'scss', 'no-style', 'css', 'less', 'stylus']; // const cssLangs = ['scss']
   // const componentTypes = ['less']
 
@@ -194,30 +235,30 @@ describe('node > main > main', function () {
   /*#__PURE__*/
   _asyncToGenerator(
   /*#__PURE__*/
-  _regeneratorRuntime.mark(function _callee3() {
-    return _regeneratorRuntime.wrap(function _callee3$(_context3) {
+  _regeneratorRuntime.mark(function _callee4() {
+    return _regeneratorRuntime.wrap(function _callee4$(_context4) {
       while (1) {
-        switch (_context3.prev = _context3.next) {
+        switch (_context4.prev = _context4.next) {
           case 0:
             this.timeout(60000);
-            _context3.next = 3;
+            _context4.next = 3;
             return Promise.all(cssLangs.flatMap(function (lang) {
               return componentTypes.map(
               /*#__PURE__*/
               function () {
                 var _ref4 = _asyncToGenerator(
                 /*#__PURE__*/
-                _regeneratorRuntime.mark(function _callee2(componentType) {
+                _regeneratorRuntime.mark(function _callee3(componentType) {
                   var compiled;
-                  return _regeneratorRuntime.wrap(function _callee2$(_context2) {
+                  return _regeneratorRuntime.wrap(function _callee3$(_context3) {
                     while (1) {
-                      switch (_context2.prev = _context2.next) {
+                      switch (_context3.prev = _context3.next) {
                         case 0:
-                          _context2.next = 2;
+                          _context3.next = 2;
                           return compileWithThemes(componentType, lang);
 
                         case 2:
-                          compiled = _context2.sent;
+                          compiled = _context3.sent;
                           console.log(componentType, lang);
                           assert.ok(compiled.css.code);
                           assert.include(compiled.css.code, '.theme_dark h1');
@@ -234,13 +275,13 @@ describe('node > main > main', function () {
 
                         case 9:
                         case "end":
-                          return _context2.stop();
+                          return _context3.stop();
                       }
                     }
-                  }, _callee2);
+                  }, _callee3);
                 }));
 
-                return function (_x3) {
+                return function (_x4) {
                   return _ref4.apply(this, arguments);
                 };
               }());
@@ -248,9 +289,9 @@ describe('node > main > main', function () {
 
           case 3:
           case "end":
-            return _context3.stop();
+            return _context4.stop();
         }
       }
-    }, _callee3, this);
+    }, _callee4, this);
   })));
 });

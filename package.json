@@ -1,6 +1,6 @@
 {
   "name": "svelte-themes-preprocess",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Add support flexible themes for svelte components",
   "author": "Nikolay Makhonin",
   "homepage": "https://github.com/NikolayMakhonin/svelte-themes-preprocess",
@@ -117,6 +117,7 @@
     "postcss-global-nested": "^1.2.0",
     "postcss-import": "^12.0.1",
     "postcss-js-syntax": "0.0.3",
+    "postcss-nested": "^4.1.2",
     "require-from-memory": "0.0.1",
     "rollup": "^0.67.4",
     "rollup-plugin-babel": "^4.3.2",
