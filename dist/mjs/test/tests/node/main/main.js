@@ -7,6 +7,8 @@ import themesPreprocess from '../../../../main/node/main';
 import basePreprocess from 'svelte-preprocess';
 import postcssImport from 'postcss-import';
 import postcssGlobalNested from 'postcss-global-nested';
+import postcssJsSyntax from 'postcss-js-syntax';
+import { requireFromString } from 'require-from-memory';
 import 'core-js/fn/array/flat-map';
 describe('node > main > main', function () {
   function getComponentPath(type) {
@@ -69,12 +71,25 @@ describe('node > main > main', function () {
     assert.ok(result.css.code);
   });
   var basePreprocessOptions = {
-    scss: true,
-    less: true,
-    stylus: true,
-    postcss: {
-      // see: https://github.com/postcss/postcss
-      plugins: [postcssImport(), postcssGlobalNested()]
+    transformers: {
+      scss: true,
+      less: true,
+      stylus: true,
+      javascript: function javascript(_ref) {
+        var content = _ref.content,
+            filename = _ref.filename;
+        // console.log('qweqwe', content, filename)
+        var parsed = postcssJsSyntax.parse(content, {
+          from: filename,
+          requireFromString: requireFromString
+        });
+        console.log(parsed);
+        return parsed;
+      },
+      postcss: {
+        // see: https://github.com/postcss/postcss
+        plugins: [postcssImport(), postcssGlobalNested()]
+      }
     }
   };
 
@@ -107,7 +122,7 @@ describe('node > main > main', function () {
               return _context4.stop();
           }
         }
-      }, _callee4, this);
+      }, _callee4);
     }));
     return _compileWithThemes.apply(this, arguments);
   }
@@ -123,7 +138,11 @@ describe('node > main > main', function () {
         switch (_context.prev = _context.next) {
           case 0:
             themesFile = require.resolve('./src/styles/scss/themes.scss');
-            preprocessor = themesPreprocess(themesFile, basePreprocess(basePreprocessOptions));
+            preprocessor = themesPreprocess(themesFile, basePreprocess(basePreprocessOptions), {
+              debug: {
+                showComponentsIds: true
+              }
+            });
             _context.next = 4;
             return preprocess('scss', null, preprocessor);
 
@@ -165,10 +184,10 @@ describe('node > main > main', function () {
             return _context.stop();
         }
       }
-    }, _callee, this);
+    }, _callee);
   })));
   var cssLangs = ['scss', 'less', 'stylus'];
-  var componentTypes = ['no-style', 'css', 'scss', 'less', 'stylus']; // const cssLangs = ['scss']
+  var componentTypes = ['js', 'scss', 'no-style', 'css', 'less', 'stylus']; // const cssLangs = ['scss']
   // const componentTypes = ['less']
 
   it('preprocess',
@@ -186,7 +205,7 @@ describe('node > main > main', function () {
               return componentTypes.map(
               /*#__PURE__*/
               function () {
-                var _ref3 = _asyncToGenerator(
+                var _ref4 = _asyncToGenerator(
                 /*#__PURE__*/
                 _regeneratorRuntime.mark(function _callee2(componentType) {
                   var compiled;
@@ -218,11 +237,11 @@ describe('node > main > main', function () {
                           return _context2.stop();
                       }
                     }
-                  }, _callee2, this);
+                  }, _callee2);
                 }));
 
                 return function (_x3) {
-                  return _ref3.apply(this, arguments);
+                  return _ref4.apply(this, arguments);
                 };
               }());
             }));

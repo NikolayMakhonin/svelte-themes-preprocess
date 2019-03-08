@@ -27,7 +27,7 @@ var optionsDefault = {
               return _context.stop();
           }
         }
-      }, _callee, this);
+      }, _callee);
     }));
 
     function getComponentId(_x) {
@@ -85,6 +85,8 @@ export default function themesPreprocess(themesFilePath, preprocess) {
       var _style = _asyncToGenerator(
       /*#__PURE__*/
       _regeneratorRuntime.mark(function _callee2(input) {
+        var _options, _options$debug;
+
         var componentId, themesContent, themes, style;
         return _regeneratorRuntime.wrap(function _callee2$(_context2) {
           while (1) {
@@ -103,27 +105,32 @@ export default function themesPreprocess(themesFilePath, preprocess) {
 
               case 4:
                 componentId = _context2.sent;
+
+                if ((_options = options) === null || _options === void 0 ? void 0 : (_options$debug = _options.debug) === null || _options$debug === void 0 ? void 0 : _options$debug.showComponentsIds) {
+                  console.log("Component id for themes: ".concat(componentId));
+                }
+
                 _context2.t0 = options.lang;
-                _context2.next = _context2.t0 === 'scss' ? 8 : _context2.t0 === 'less' ? 10 : _context2.t0 === 'stylus' ? 12 : 14;
+                _context2.next = _context2.t0 === 'scss' ? 9 : _context2.t0 === 'less' ? 11 : _context2.t0 === 'stylus' ? 13 : 15;
                 break;
 
-              case 8:
+              case 9:
                 themesContent = '\r\n' + "$component: '".concat(componentId, "';\r\n") + "@import '".concat(themesFilePath, "';\r\n");
-                return _context2.abrupt("break", 15);
+                return _context2.abrupt("break", 16);
 
-              case 10:
+              case 11:
                 themesContent = '\r\n' + "@component: '".concat(componentId, "';\r\n") + "@import '".concat(themesFilePath, "';\r\n");
-                return _context2.abrupt("break", 15);
+                return _context2.abrupt("break", 16);
 
-              case 12:
+              case 13:
                 themesContent = '\r\n' + "$component = '".concat(componentId, "'\r\n") + "@import '".concat(themesFilePath, "';\r\n");
-                return _context2.abrupt("break", 15);
-
-              case 14:
-                throw new Error("unsupported css lang: ".concat(options.lang));
+                return _context2.abrupt("break", 16);
 
               case 15:
-                _context2.next = 17;
+                throw new Error("unsupported css lang: ".concat(options.lang));
+
+              case 16:
+                _context2.next = 18;
                 return preprocess.style.call(this, _objectSpread({}, input, {
                   content: themesContent,
                   attributes: {
@@ -131,19 +138,19 @@ export default function themesPreprocess(themesFilePath, preprocess) {
                   }
                 }));
 
-              case 17:
+              case 18:
                 themes = _context2.sent;
-                _context2.next = 20;
+                _context2.next = 21;
                 return preprocess.style.call(this, input);
 
-              case 20:
+              case 21:
                 style = _context2.sent;
                 return _context2.abrupt("return", {
                   code: "".concat(style.code || '', "\r\n").concat(themes.code || ''),
                   map: style.map
                 });
 
-              case 22:
+              case 23:
               case "end":
                 return _context2.stop();
             }

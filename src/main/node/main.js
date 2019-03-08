@@ -35,8 +35,27 @@ export default function themesPreprocess(themesFilePath, preprocess, options = {
 
 	options = {
 		...optionsDefault,
-		...options
+		...options,
+		langs: {
+			scss(componentId, themesPath) {
+				return '\r\n'
+					+ `$component: '${componentId}';\r\n`
+					+ `@import '${themesPath}';\r\n`
+			},
+			less(componentId, themesPath) {
+				return '\r\n'
+					+ `@component: '${componentId}';\r\n`
+					+ `@import '${themesPath}';\r\n`
+			},
+			stylus(componentId, themesPath) {
+				return '\r\n'
+					+ `$component = '${componentId}'\r\n`
+					+ `@import '${themesPath}';\r\n`
+			},
+			...options.langs
+		}
 	}
+
 
 	return {
 		...preprocess,
@@ -72,26 +91,12 @@ export default function themesPreprocess(themesFilePath, preprocess, options = {
 				console.log(`Component id for themes: ${componentId}`)
 			}
 			
-			let themesContent
-			switch (options.lang) {
-				case 'scss':
-					themesContent = '\r\n'
-						+ `$component: '${componentId}';\r\n`
-						+ `@import '${themesFilePath}';\r\n`
-					break
-				case 'less':
-					themesContent = '\r\n'
-						+ `@component: '${componentId}';\r\n`
-						+ `@import '${themesFilePath}';\r\n`
-					break
-				case 'stylus':
-					themesContent = '\r\n'
-						+ `$component = '${componentId}'\r\n`
-						+ `@import '${themesFilePath}';\r\n`
-					break
-				default:
-					throw new Error(`unsupported css lang: ${options.lang}`)
+			const getThemesContent = options.langs[options.lang]
+			if (!getThemesContent) {
+				throw new Error(`unsupported css lang: ${options.lang}`)
 			}
+
+			const themesContent = getThemesContent(componentId, themesFilePath)
 
 			const themes = await preprocess.style.call(this, {
 				...input,

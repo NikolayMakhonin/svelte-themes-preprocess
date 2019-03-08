@@ -16,6 +16,10 @@ var _postcssImport = _interopRequireDefault(require("postcss-import"));
 
 var _postcssGlobalNested = _interopRequireDefault(require("postcss-global-nested"));
 
+var _postcssJsSyntax = _interopRequireDefault(require("postcss-js-syntax"));
+
+var _requireFromMemory = require("require-from-memory");
+
 require("core-js/fn/array/flat-map");
 
 describe('node > main > main', function () {
@@ -81,12 +85,29 @@ describe('node > main > main', function () {
     assert.ok(result.css.code);
   });
   const basePreprocessOptions = {
-    scss: true,
-    less: true,
-    stylus: true,
-    postcss: {
-      // see: https://github.com/postcss/postcss
-      plugins: [(0, _postcssImport.default)(), (0, _postcssGlobalNested.default)()]
+    transformers: {
+      scss: true,
+      less: true,
+      stylus: true,
+
+      javascript({
+        content,
+        filename
+      }) {
+        // console.log('qweqwe', content, filename)
+        const parsed = _postcssJsSyntax.default.parse(content, {
+          from: filename,
+          requireFromString: _requireFromMemory.requireFromString
+        });
+
+        console.log(parsed);
+        return parsed;
+      },
+
+      postcss: {
+        // see: https://github.com/postcss/postcss
+        plugins: [(0, _postcssImport.default)(), (0, _postcssGlobalNested.default)()]
+      }
     }
   };
 
@@ -104,7 +125,11 @@ describe('node > main > main', function () {
   it('base', async () => {
     const themesFile = require.resolve('./src/styles/scss/themes.scss');
 
-    let preprocessor = (0, _main.default)(themesFile, (0, _sveltePreprocess.default)(basePreprocessOptions));
+    let preprocessor = (0, _main.default)(themesFile, (0, _sveltePreprocess.default)(basePreprocessOptions), {
+      debug: {
+        showComponentsIds: true
+      }
+    });
     await preprocess('scss', null, preprocessor);
     preprocessor = (0, _main.default)(themesFile, {
       style: (0, _sveltePreprocess.default)(basePreprocessOptions).style
@@ -125,7 +150,7 @@ describe('node > main > main', function () {
     });
   });
   const cssLangs = ['scss', 'less', 'stylus'];
-  const componentTypes = ['no-style', 'css', 'scss', 'less', 'stylus']; // const cssLangs = ['scss']
+  const componentTypes = ['js', 'scss', 'no-style', 'css', 'less', 'stylus']; // const cssLangs = ['scss']
   // const componentTypes = ['less']
 
   it('preprocess', async function () {

@@ -9,8 +9,10 @@
 	}
 
 	:global {
-		main {
-			content: "global";
+		main, a {
+			div, table, .xxx, &-wer {
+				content: "global";
+			}
 		}
 	}
 </style>

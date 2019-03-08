@@ -68,11 +68,18 @@ function themesPreprocess(themesFilePath, preprocess, options = {}) {
 
     // append themes css
     async style(input) {
+      var _options, _options$debug;
+
       if (!input.filename) {
         throw new Error('svelte preprocess filename must be provided');
       }
 
       const componentId = await options.getComponentId(input.filename);
+
+      if ((_options = options) === null || _options === void 0 ? void 0 : (_options$debug = _options.debug) === null || _options$debug === void 0 ? void 0 : _options$debug.showComponentsIds) {
+        console.log(`Component id for themes: ${componentId}`);
+      }
+
       let themesContent;
 
       switch (options.lang) {

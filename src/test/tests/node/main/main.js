@@ -2,8 +2,11 @@ import * as svelte from 'svelte'
 import fs from 'fs'
 import themesPreprocess from '../../../../main/node/main'
 import basePreprocess from 'svelte-preprocess'
+import postcss from 'postcss'
 import postcssImport from 'postcss-import'
 import postcssGlobalNested from 'postcss-global-nested'
+import postcssJsSyntax from 'postcss-js-syntax'
+import {requireFromString} from 'require-from-memory'
 import 'core-js/fn/array/flat-map'
 
 describe('node > main > main', function () {
@@ -69,11 +72,28 @@ describe('node > main > main', function () {
 		result = compile('css')
 		assert.ok(result.css.code)
 	})
+
+	const postcssInstance = postcss([
+		postcssImport(),
+		postcssGlobalNested()
+	])
+
 	const basePreprocessOptions = {
 		transformers: {
-			scss: true,
-			less: true,
+			scss  : true,
+			less  : true,
 			stylus: true,
+			async javascript({content, filename}) {
+				const parsed = await postcssInstance.process(content, {
+					from  : `${filename}.js`,
+					parser: postcssJsSyntax.parse,
+					requireFromString
+				})
+
+				return {
+					code: parsed.css
+				}
+			},
 			postcss: {
 				// see: https://github.com/postcss/postcss
 				plugins: [
@@ -90,7 +110,20 @@ describe('node > main > main', function () {
 		const content = (await preprocess(componentType, null, themesPreprocess(
 			themesFile,
 			basePreprocess(basePreprocessOptions),
-			{lang}
+			{
+				lang,
+				langs: {
+					js(componentId, themesFilePath) {
+						return `
+var themeBuilder = require('${themesFilePath.replace(/'/g, '\'')}')
+if (themeBuilder.__esModule) {
+	themeBuilder = themeBuilder.default
+}
+module.exports = themeBuilder('${componentId.replace(/'/g, '\'')}')
+`
+					}
+				}
+			}
 		))).toString()
 
 		return compile(componentType, content, {})
@@ -117,8 +150,8 @@ describe('node > main > main', function () {
 		themesPreprocess(themesFile, {style() {}})
 	})
 
-	const cssLangs = ['scss', 'less', 'stylus']
-	const componentTypes = ['scss', 'no-style', 'css', 'less', 'stylus']
+	const cssLangs = ['scss', 'less', 'stylus', 'js']
+	const componentTypes = ['js', 'scss', 'no-style', 'css', 'less', 'stylus']
 	// const cssLangs = ['scss']
 	// const componentTypes = ['less']
 
