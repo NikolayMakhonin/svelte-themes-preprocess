@@ -103,16 +103,21 @@ describe('node > main > main', function () {
 		}
 	}
 
+	basePreprocessOptions.transformers.jss = basePreprocessOptions.transformers.javascript
+
 	async function compileWithThemes(componentType, lang) {
-		const fileExt = lang === 'stylus' ? 'styl' : lang
-		const themesFile = require.resolve(`./src/styles/${lang}/themes.${fileExt}`)
+		// eslint-disable-next-line no-nested-ternary
+		const fileExt = lang === 'stylus'
+			? 'styl'
+			: lang === 'jss' ? 'js' : lang
+		const themesFile = require.resolve(`./src/styles/${lang === 'jss' ? 'js' : lang}/themes.${fileExt}`)
 		const content = (await preprocess(componentType, null, themesPreprocess(
 			themesFile,
 			basePreprocess(basePreprocessOptions),
 			{
 				lang,
 				langs: {
-					js(componentId, themesFilePath) {
+					jss(componentId, themesFilePath) {
 						return `
 var themeBuilder = require('${themesFilePath.replace(/'/g, '\'')}')
 if (themeBuilder.__esModule) {
@@ -145,14 +150,13 @@ module.exports = themeBuilder('${componentId.replace(/'/g, '\'')}')
 		assert.throws(() => themesPreprocess(themesFile), Error)
 		assert.throws(() => themesPreprocess(themesFile, {}), Error)
 		assert.throws(() => themesPreprocess(themesFile, {style: 'x'}), Error)
-		// eslint-disable-next-line no-empty-function
 		themesPreprocess(themesFile, {
-			style() {
-			}
+			// eslint-disable-next-line no-empty-function
+			style() { }
 		})
 	})
 
-	const cssLangs = ['scss', 'less', 'stylus', 'js']
+	const cssLangs = ['scss', 'less', 'stylus', 'jss', 'jss']
 	const componentTypes = ['js', 'scss', 'no-style', 'css', 'less', 'stylus']
 	// const cssLangs = ['scss']
 	// const componentTypes = ['less']

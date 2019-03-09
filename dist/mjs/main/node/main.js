@@ -60,13 +60,16 @@ export default function themesPreprocess(themesFilePath, preprocess) {
   options = _objectSpread({}, optionsDefault, options, {
     langs: _objectSpread({
       scss: function scss(componentId, themesPath) {
-        return '\r\n' + "$component: '".concat(componentId, "';\r\n") + "@import '".concat(themesPath, "';\r\n");
+        return '\r\n' + "$component: '".concat(componentId.replace(/'/g, '\''), "';\r\n") + "@import '".concat(themesPath.replace(/'/g, '\''), "';\r\n");
       },
       less: function less(componentId, themesPath) {
-        return '\r\n' + "@component: '".concat(componentId, "';\r\n") + "@import '".concat(themesPath, "';\r\n");
+        return '\r\n' + "@component: '".concat(componentId.replace(/'/g, '\''), "';\r\n") + "@import '".concat(themesPath.replace(/'/g, '\''), "';\r\n");
       },
       stylus: function stylus(componentId, themesPath) {
-        return '\r\n' + "$component = '".concat(componentId, "'\r\n") + "@import '".concat(themesPath, "';\r\n");
+        return '\r\n' + "$component = '".concat(componentId.replace(/'/g, '\''), "'\r\n") + "@import '".concat(themesPath.replace(/'/g, '\''), "';\r\n");
+      },
+      js: function js(componentId, themesPath) {
+        return "\n\t\t\t\t\tvar themeBuilder = require('".concat(themesPath.replace(/'/g, '\''), "')\n\t\t\t\t\tif (themeBuilder.__esModule) {\n\t\t\t\t\t\tthemeBuilder = themeBuilder.default\n\t\t\t\t\t}\n\t\t\t\t\tmodule.exports = themeBuilder('").concat(componentId.replace(/'/g, '\''), "')\n\t\t\t\t");
       }
     }, options.langs)
   });

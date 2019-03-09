@@ -43,15 +43,25 @@ function themesPreprocess(themesFilePath, preprocess, options = {}) {
     ...options,
     langs: {
       scss(componentId, themesPath) {
-        return '\r\n' + `$component: '${componentId}';\r\n` + `@import '${themesPath}';\r\n`;
+        return '\r\n' + `$component: '${componentId.replace(/'/g, '\'')}';\r\n` + `@import '${themesPath.replace(/'/g, '\'')}';\r\n`;
       },
 
       less(componentId, themesPath) {
-        return '\r\n' + `@component: '${componentId}';\r\n` + `@import '${themesPath}';\r\n`;
+        return '\r\n' + `@component: '${componentId.replace(/'/g, '\'')}';\r\n` + `@import '${themesPath.replace(/'/g, '\'')}';\r\n`;
       },
 
       stylus(componentId, themesPath) {
-        return '\r\n' + `$component = '${componentId}'\r\n` + `@import '${themesPath}';\r\n`;
+        return '\r\n' + `$component = '${componentId.replace(/'/g, '\'')}'\r\n` + `@import '${themesPath.replace(/'/g, '\'')}';\r\n`;
+      },
+
+      js(componentId, themesPath) {
+        return `
+					var themeBuilder = require('${themesPath.replace(/'/g, '\'')}')
+					if (themeBuilder.__esModule) {
+						themeBuilder = themeBuilder.default
+					}
+					module.exports = themeBuilder('${componentId.replace(/'/g, '\'')}')
+				`;
       },
 
       ...options.langs

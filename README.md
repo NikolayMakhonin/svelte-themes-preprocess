@@ -15,7 +15,7 @@ Add support flexible themes for svelte components.
 
 You can use this plugin with rollup-plugin-svelte: ```svelte({ preprocessor: ... })```
 
-Plugin support these CSS syntaxes: ```scss```, ```less```, ```stylus```
+Plugin support these CSS syntaxes: ```scss```, ```less```, ```stylus```, [```js```](https://npmjs.org/package/postcss-js-syntax)
 
 ## Install
 
@@ -90,6 +90,22 @@ const result = svelte.preprocess(input, themesPreprocess(
         lang: 'scss',
         debug: {
             showComponentsIds: true // show components ids in console
+        },
+        langs: { // (Optional) if you want to use custom CSS preprocessor
+            js(componentId, themesPath) {
+                return `
+                    var themeBuilder = require('${themesPath.replace(/'/g, '\'')}')
+                    if (themeBuilder.__esModule) {
+                        themeBuilder = themeBuilder.default
+                    }
+                    module.exports = themeBuilder('${componentId.replace(/'/g, '\'')}')
+                `
+            },
+            less(componentId, themesPath) {
+                return '\r\n'
+                    + `@component: '${componentId.replace(/'/g, '\'')}';\r\n`
+                    + `@import '${themesPath.replace(/'/g, '\'')}';\r\n`
+            }
         }
     }
 ))
@@ -106,7 +122,7 @@ const result = svelte.preprocess(input, themesPreprocess(
         color: #111;
     }
     
-    .theme_dark h1 {
+    .theme_light h1 {
         color: #222;
     }
 </style>

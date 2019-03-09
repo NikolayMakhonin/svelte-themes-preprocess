@@ -122,6 +122,7 @@ describe('node > main > main', function () {
       }
     }
   };
+  basePreprocessOptions.transformers.jss = basePreprocessOptions.transformers.javascript;
 
   function compileWithThemes(_x2, _x3) {
     return _compileWithThemes.apply(this, arguments);
@@ -136,13 +137,14 @@ describe('node > main > main', function () {
         while (1) {
           switch (_context5.prev = _context5.next) {
             case 0:
-              fileExt = lang === 'stylus' ? 'styl' : lang;
-              themesFile = require.resolve("./src/styles/".concat(lang, "/themes.").concat(fileExt));
+              // eslint-disable-next-line no-nested-ternary
+              fileExt = lang === 'stylus' ? 'styl' : lang === 'jss' ? 'js' : lang;
+              themesFile = require.resolve("./src/styles/".concat(lang === 'jss' ? 'js' : lang, "/themes.").concat(fileExt));
               _context5.next = 4;
               return preprocess(componentType, null, themesPreprocess(themesFile, basePreprocess(basePreprocessOptions), {
                 lang: lang,
                 langs: {
-                  js: function js(componentId, themesFilePath) {
+                  jss: function jss(componentId, themesFilePath) {
                     return "\nvar themeBuilder = require('".concat(themesFilePath.replace(/'/g, '\''), "')\nif (themeBuilder.__esModule) {\n\tthemeBuilder = themeBuilder.default\n}\nmodule.exports = themeBuilder('").concat(componentId.replace(/'/g, '\''), "')\n");
                   }
                 }
@@ -208,26 +210,20 @@ describe('node > main > main', function () {
               return themesPreprocess(themesFile, {
                 style: 'x'
               });
-            }, Error);
-            assert.throws(function () {
-              return themesPreprocess(themesFile, {
-                style: function style() {},
-                lang: 'qweqwe'
-              });
             }, Error); // eslint-disable-next-line no-empty-function
 
             themesPreprocess(themesFile, {
               style: function style() {}
             });
 
-          case 15:
+          case 14:
           case "end":
             return _context2.stop();
         }
       }
     }, _callee2);
   })));
-  var cssLangs = ['scss', 'less', 'stylus', 'js'];
+  var cssLangs = ['scss', 'less', 'stylus', 'jss', 'jss'];
   var componentTypes = ['js', 'scss', 'no-style', 'css', 'less', 'stylus']; // const cssLangs = ['scss']
   // const componentTypes = ['less']
 
