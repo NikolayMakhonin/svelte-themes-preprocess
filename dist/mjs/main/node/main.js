@@ -56,7 +56,7 @@ export default function themesPreprocess(themesFilePath, preprocess) {
     throw new Error('argument "preprocess.style" is not a function');
   }
 
-  themesFilePath = require.resolve(themesFilePath).replace(/\\/g, '/').replace(/\.[^/.]+$/, '');
+  themesFilePath = require.resolve(themesFilePath).replace(/\\/g, '/');
   options = _objectSpread({}, optionsDefault, options, {
     langs: _objectSpread({
       scss: function scss(componentId, themesPath) {

@@ -250,11 +250,22 @@ describe('node > main > main', function () {
                     while (1) {
                       switch (_context3.prev = _context3.next) {
                         case 0:
-                          _context3.next = 2;
+                          _context3.prev = 0;
+                          _context3.next = 3;
                           return compileWithThemes(componentType, lang);
 
-                        case 2:
+                        case 3:
                           compiled = _context3.sent;
+                          _context3.next = 10;
+                          break;
+
+                        case 6:
+                          _context3.prev = 6;
+                          _context3.t0 = _context3["catch"](0);
+                          console.error(componentType, lang, _context3.t0);
+                          throw _context3.t0;
+
+                        case 10:
                           console.log(componentType, lang);
                           assert.ok(compiled.css.code);
                           assert.include(compiled.css.code, '.theme_dark h1');
@@ -269,12 +280,12 @@ describe('node > main > main', function () {
                             assert.match(compiled.css.code, new RegExp("component-type:\\s*[\"']".concat(componentType, "[\"']")));
                           }
 
-                        case 9:
+                        case 16:
                         case "end":
                           return _context3.stop();
                       }
                     }
-                  }, _callee3);
+                  }, _callee3, null, [[0, 6]]);
                 }));
 
                 return function (_x4) {

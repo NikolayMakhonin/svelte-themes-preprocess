@@ -167,7 +167,13 @@ module.exports = themeBuilder('${componentId.replace(/'/g, '\'')}')
 		await Promise.all(cssLangs
 			.flatMap(lang => componentTypes
 				.map(async componentType => {
-					const compiled = await compileWithThemes(componentType, lang)
+					let compiled
+					try {
+						compiled = await compileWithThemes(componentType, lang)
+					} catch (ex) {
+						console.error(componentType, lang, ex)
+						throw ex
+					}
 
 					console.log(componentType, lang)
 

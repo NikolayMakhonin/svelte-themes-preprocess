@@ -176,7 +176,15 @@ module.exports = themeBuilder('${componentId.replace(/'/g, '\'')}')
   it('preprocess', async function () {
     this.timeout(60000);
     await Promise.all(cssLangs.flatMap(lang => componentTypes.map(async componentType => {
-      const compiled = await compileWithThemes(componentType, lang);
+      let compiled;
+
+      try {
+        compiled = await compileWithThemes(componentType, lang);
+      } catch (ex) {
+        console.error(componentType, lang, ex);
+        throw ex;
+      }
+
       console.log(componentType, lang);
       assert.ok(compiled.css.code);
       assert.include(compiled.css.code, '.theme_dark h1');

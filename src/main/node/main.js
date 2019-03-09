@@ -31,7 +31,6 @@ export default function themesPreprocess(themesFilePath, preprocess, options = {
 
 	themesFilePath = require.resolve(themesFilePath)
 		.replace(/\\/g, '/')
-		.replace(/\.[^/.]+$/, '')
 
 	options = {
 		...optionsDefault,

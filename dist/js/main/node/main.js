@@ -38,7 +38,7 @@ function themesPreprocess(themesFilePath, preprocess, options = {}) {
     throw new Error('argument "preprocess.style" is not a function');
   }
 
-  themesFilePath = require.resolve(themesFilePath).replace(/\\/g, '/').replace(/\.[^/.]+$/, '');
+  themesFilePath = require.resolve(themesFilePath).replace(/\\/g, '/');
   options = { ...optionsDefault,
     ...options,
     langs: {
