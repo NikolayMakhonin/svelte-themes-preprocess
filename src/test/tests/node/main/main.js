@@ -109,13 +109,13 @@ describe('node > main > main', function () {
 		// eslint-disable-next-line no-nested-ternary
 		const fileExt = lang === 'stylus'
 			? 'styl'
-			: lang === 'jss' ? 'js' : lang
+			: lang === 'jss' || lang === 'es6' ? 'js' : lang
 		const themesFile = require.resolve(`./src/styles/${lang === 'jss' ? 'js' : lang}/themes.${fileExt}`)
 		const content = (await preprocess(componentType, null, themesPreprocess(
 			themesFile,
 			basePreprocess(basePreprocessOptions),
 			{
-				lang,
+				lang : lang === 'es6' ? 'js' : lang,
 				langs: {
 					jss(componentId, themesFilePath) {
 						return `
@@ -156,7 +156,7 @@ module.exports = themeBuilder('${componentId.replace(/'/g, '\'')}')
 		})
 	})
 
-	const cssLangs = ['scss', 'less', 'stylus', 'jss', 'jss']
+	const cssLangs = ['scss', 'less', 'stylus', 'js', 'jss', 'es6']
 	const componentTypes = ['js', 'scss', 'no-style', 'css', 'less', 'stylus']
 	// const cssLangs = ['scss']
 	// const componentTypes = ['less']

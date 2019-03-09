@@ -138,11 +138,11 @@ describe('node > main > main', function () {
           switch (_context5.prev = _context5.next) {
             case 0:
               // eslint-disable-next-line no-nested-ternary
-              fileExt = lang === 'stylus' ? 'styl' : lang === 'jss' ? 'js' : lang;
+              fileExt = lang === 'stylus' ? 'styl' : lang === 'jss' || lang === 'es6' ? 'js' : lang;
               themesFile = require.resolve("./src/styles/".concat(lang === 'jss' ? 'js' : lang, "/themes.").concat(fileExt));
               _context5.next = 4;
               return preprocess(componentType, null, themesPreprocess(themesFile, basePreprocess(basePreprocessOptions), {
-                lang: lang,
+                lang: lang === 'es6' ? 'js' : lang,
                 langs: {
                   jss: function jss(componentId, themesFilePath) {
                     return "\nvar themeBuilder = require('".concat(themesFilePath.replace(/'/g, '\''), "')\nif (themeBuilder.__esModule) {\n\tthemeBuilder = themeBuilder.default\n}\nmodule.exports = themeBuilder('").concat(componentId.replace(/'/g, '\''), "')\n");
@@ -210,9 +210,9 @@ describe('node > main > main', function () {
               return themesPreprocess(themesFile, {
                 style: 'x'
               });
-            }, Error); // eslint-disable-next-line no-empty-function
-
+            }, Error);
             themesPreprocess(themesFile, {
+              // eslint-disable-next-line no-empty-function
               style: function style() {}
             });
 
@@ -223,7 +223,7 @@ describe('node > main > main', function () {
       }
     }, _callee2);
   })));
-  var cssLangs = ['scss', 'less', 'stylus', 'jss', 'jss'];
+  var cssLangs = ['scss', 'less', 'stylus', 'js', 'jss', 'es6'];
   var componentTypes = ['js', 'scss', 'no-style', 'css', 'less', 'stylus']; // const cssLangs = ['scss']
   // const componentTypes = ['less']
 

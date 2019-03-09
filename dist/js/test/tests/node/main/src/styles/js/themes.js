@@ -1,16 +1,10 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+var _require;
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
+/* eslint-disable global-require */
+const dark = require('./themes/theme_dark.js');
 
-var _theme_dark = _interopRequireDefault(require("./themes/theme_dark.js"));
+const light = (_require = require('./themes/theme_light.js')) === null || _require === void 0 ? void 0 : _require.default;
 
-var _theme_light = _interopRequireDefault(require("./themes/theme_light.js"));
-
-var _default = componentId => [(0, _theme_dark.default)(componentId), (0, _theme_light.default)(componentId)];
-
-exports.default = _default;
+module.exports = componentId => [...[dark(componentId)], light(componentId)];

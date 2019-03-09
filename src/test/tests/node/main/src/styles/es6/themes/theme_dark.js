@@ -1,5 +1,5 @@
 const params = {color: '#bbb'}
-module.exports = componentId => ({
+export default componentId => ({
 	':global(.theme_dark)': {
 		h1: {
 			color       : params?.color,

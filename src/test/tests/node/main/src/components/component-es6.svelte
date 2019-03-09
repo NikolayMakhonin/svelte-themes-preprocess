@@ -2,7 +2,7 @@
 
 <style type="text/js">
 const params = { color: '#aaa' }
-module.exports = {
+export default {
 	h1: {
 		color: params?.color,
 		'component-type': '"js"'

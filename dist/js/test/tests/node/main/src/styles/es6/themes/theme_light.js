@@ -1,14 +1,10 @@
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
 const params = {
   color: '#bbb'
 };
 
-var _default = componentId => ({
+module.exports = componentId => ({
   ':global(.theme_light)': {
     h1: {
       color: params === null || params === void 0 ? void 0 : params.color,
@@ -16,5 +12,3 @@ var _default = componentId => ({
     }
   }
 });
-
-exports.default = _default;

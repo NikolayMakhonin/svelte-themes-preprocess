@@ -1,5 +1,10 @@
-import dark from './themes/theme_dark.js';
-import light from './themes/theme_light.js';
-export default (function (componentId) {
-  return [dark(componentId), light(componentId)];
-});
+var _require;
+
+/* eslint-disable global-require */
+var dark = require('./themes/theme_dark.js');
+
+var light = (_require = require('./themes/theme_light.js')) === null || _require === void 0 ? void 0 : _require.default;
+
+module.exports = function (componentId) {
+  return [dark(componentId)].concat([light(componentId)]);
+};

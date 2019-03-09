@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f227c621-bb31-4cea-b0fa-8f771fa973ea" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/tests/node/main/src/components/component-css.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tests/node/main/src/components/component-less.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tests/node/main/src/components/component-no-style.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tests/node/main/src/components/component-scss.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tests/node/main/src/components/component-stylus.svelte" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tests/node/main/src/styles/scss/themes.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tests/node/main/src/styles/scss/themes/theme_dark.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/tests/node/main/src/styles/scss/themes/theme_light.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+    <list default="true" id="f227c621-bb31-4cea-b0fa-8f771fa973ea" name="Default Changelist" comment="v">
+      <change afterPath="$PROJECT_DIR$/src/test/tests/node/main/src/components/component-es6.svelte" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/tests/node/main/src/styles/es6/themes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/tests/node/main/src/styles/es6/themes/theme_dark.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/tests/node/main/src/styles/es6/themes/theme_light.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/node/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/node/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/tests/node/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tests/node/main/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/test/tests/node/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/test/tests/node/main/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/test/tests/node/main/src/components/component-js.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/test/tests/node/main/src/components/component-js.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/test/tests/node/main/src/styles/js/themes.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/test/tests/node/main/src/styles/js/themes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/test/tests/node/main/src/styles/js/themes/theme_dark.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/test/tests/node/main/src/styles/js/themes/theme_dark.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/js/test/tests/node/main/src/styles/js/themes/theme_light.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/test/tests/node/main/src/styles/js/themes/theme_light.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/mjs/test/tests/node/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/mjs/test/tests/node/main/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/mjs/test/tests/node/main/src/components/component-js.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/dist/mjs/test/tests/node/main/src/components/component-js.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/mjs/test/tests/node/main/src/styles/js/themes.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/mjs/test/tests/node/main/src/styles/js/themes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/mjs/test/tests/node/main/src/styles/js/themes/theme_dark.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/mjs/test/tests/node/main/src/styles/js/themes/theme_dark.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/mjs/test/tests/node/main/src/styles/js/themes/theme_light.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/mjs/test/tests/node/main/src/styles/js/themes/theme_light.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/tests/node/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tests/node/main/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/tests/node/main/src/components/component-js.svelte" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tests/node/main/src/components/component-js.svelte" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/tests/node/main/src/styles/js/themes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tests/node/main/src/styles/js/themes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/tests/node/main/src/styles/js/themes/theme_dark.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tests/node/main/src/styles/js/themes/theme_dark.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/tests/node/main/src/styles/js/themes/theme_light.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/tests/node/main/src/styles/js/themes/theme_light.js" afterDir="false" />
     </list>
     <ignored path=".idea/" />
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -30,84 +36,88 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/main.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/node/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="96" column="15" lean-forward="true" selection-start-line="96" selection-start-column="15" selection-end-line="96" selection-end-column="15" />
+            <state relative-caret-position="23">
+              <caret line="54" column="41" lean-forward="true" selection-start-line="54" selection-start-column="41" selection-end-line="54" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/styles/js/themes/theme_dark.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.babelrc.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/components/component-js.svelte">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="78">
+              <caret line="3" selection-start-line="3" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.babelrc-mjs.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/styles/js/themes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="78">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/node/main.js">
+        <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/styles/js/themes/theme_light.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-390">
-              <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+            <state relative-caret-position="104">
+              <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+        <entry file="file://$PROJECT_DIR$/.babelrc-js.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2870" />
+            <state relative-caret-position="-78" />
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/styles/scss/themes.scss">
+        <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/styles/es6/themes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="156">
+              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/components/component-css.svelte">
+        <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/components/component-es6.svelte">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="78">
-              <caret line="3" selection-start-line="3" selection-end-line="5" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/styles/scss/themes/theme_dark.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="20" selection-start-column="20" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/styles/scss/themes/theme_light.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.eslintrc">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="9" column="77" selection-start-line="9" selection-start-column="77" selection-end-line="9" selection-end-column="77" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/svelte/compiler/svelte.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="24118" column="28" lean-forward="true" selection-start-line="24118" selection-start-column="28" selection-end-line="24118" selection-end-column="28" />
+              <caret line="3" selection-start-line="3" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -122,7 +132,26 @@
       <find>css</find>
       <find>SourceMap</find>
       <find>concat</find>
+      <find>postcssImport</find>
+      <find>basePreprocessOptions</find>
+      <find>transformers</find>
+      <find>preprocessOptionsDefault</find>
+      <find>showComponentsNames</find>
+      <find>export default</find>
+      <find>component-type</find>
+      <find>x</find>
+      <find>console</find>
+      <find>stylus</find>
+      <find>lang</find>
+      <find>postcssGlobalNested</find>
+      <find>langs</find>
+      <find>themeBuilder.__esModule</find>
+      <find>\t</find>
+      <find>__esModule</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
     <dirStrings>
       <dir>L:\Work\_GIT\GitHub\NodeJs\modules\svelte-themes-preprocess</dir>
     </dirStrings>
@@ -148,8 +177,21 @@
         <option value="$PROJECT_DIR$/src/test/tests/node/main/src/styles/scss/themes/theme_dark.scss" />
         <option value="$PROJECT_DIR$/src/test/tests/node/main/src/styles/scss/themes.scss" />
         <option value="$PROJECT_DIR$/.eslintrc" />
+        <option value="$PROJECT_DIR$/src/test/tests/node/main/src/components/component-scss.svelte" />
+        <option value="$PROJECT_DIR$/.nycrc.json" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/node/main.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/HISTORY.md" />
+        <option value="$PROJECT_DIR$/src/test/tests/node/main/src/components/component-es6.svelte" />
         <option value="$PROJECT_DIR$/src/test/tests/node/main/main.js" />
+        <option value="$PROJECT_DIR$/src/test/tests/node/main/src/components/component-js.svelte" />
+        <option value="$PROJECT_DIR$/src/test/tests/node/main/src/styles/es6/themes/theme_dark.js" />
+        <option value="$PROJECT_DIR$/src/test/tests/node/main/src/styles/es6/themes/theme_light.js" />
+        <option value="$PROJECT_DIR$/src/test/tests/node/main/src/styles/es6/themes.js" />
+        <option value="$PROJECT_DIR$/src/test/tests/node/main/src/styles/js/themes.js" />
+        <option value="$PROJECT_DIR$/src/test/tests/node/main/src/styles/js/themes/theme_light.js" />
+        <option value="$PROJECT_DIR$/src/test/tests/node/main/src/styles/js/themes/theme_dark.js" />
       </list>
     </option>
   </component>
@@ -184,6 +226,19 @@
               <item name="svelte-themes-preprocess" type="b2602c69:ProjectViewProjectNode" />
               <item name="svelte-themes-preprocess" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="svelte-themes-preprocess" type="b2602c69:ProjectViewProjectNode" />
+              <item name="svelte-themes-preprocess" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="node" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="svelte-themes-preprocess" type="b2602c69:ProjectViewProjectNode" />
+              <item name="svelte-themes-preprocess" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -192,14 +247,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="svelte-themes-preprocess" type="b2602c69:ProjectViewProjectNode" />
-              <item name="svelte-themes-preprocess" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="svelte-themes-preprocess" type="b2602c69:ProjectViewProjectNode" />
@@ -260,6 +307,68 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="styles" type="462c0819:PsiDirectoryNode" />
+              <item name="es6" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="svelte-themes-preprocess" type="b2602c69:ProjectViewProjectNode" />
+              <item name="svelte-themes-preprocess" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="node" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+              <item name="es6" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="svelte-themes-preprocess" type="b2602c69:ProjectViewProjectNode" />
+              <item name="svelte-themes-preprocess" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="node" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="svelte-themes-preprocess" type="b2602c69:ProjectViewProjectNode" />
+              <item name="svelte-themes-preprocess" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="node" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="svelte-themes-preprocess" type="b2602c69:ProjectViewProjectNode" />
+              <item name="svelte-themes-preprocess" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="node" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+              <item name="less" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="svelte-themes-preprocess" type="b2602c69:ProjectViewProjectNode" />
+              <item name="svelte-themes-preprocess" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="node" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
               <item name="scss" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -273,6 +382,31 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="styles" type="462c0819:PsiDirectoryNode" />
               <item name="scss" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="svelte-themes-preprocess" type="b2602c69:ProjectViewProjectNode" />
+              <item name="svelte-themes-preprocess" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="node" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+              <item name="stylus" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="svelte-themes-preprocess" type="b2602c69:ProjectViewProjectNode" />
+              <item name="svelte-themes-preprocess" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="node" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="styles" type="462c0819:PsiDirectoryNode" />
+              <item name="stylus" type="462c0819:PsiDirectoryNode" />
               <item name="themes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -304,6 +438,8 @@
       <recent name="L:\Work\_GIT\GitHub\NodeJs\modules\svelte-themes-preprocess\src\test\tests\node\main\src\scss" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="L:\Work\_GIT\GitHub\NodeJs\modules\svelte-themes-preprocess\src\test\tests\node\main\src\styles" />
+      <recent name="L:\Work\_GIT\GitHub\NodeJs\modules\svelte-themes-preprocess\src\test\tests\node\main\src\components" />
       <recent name="L:\Work\_GIT\GitHub\NodeJs\modules\svelte-themes-preprocess\src\test\tests\node\main\src" />
     </key>
   </component>
@@ -366,63 +502,107 @@
       <workItem from="1550215663415" duration="342000" />
       <workItem from="1550216154969" duration="10000" />
       <workItem from="1550216185024" duration="12218000" />
+      <workItem from="1551613559564" duration="1104000" />
+      <workItem from="1551614821694" duration="120000" />
+      <workItem from="1551695732549" duration="1097000" />
+      <workItem from="1552029236428" duration="1000000" />
+      <workItem from="1552064659201" duration="2302000" />
+      <workItem from="1552068962862" duration="3718000" />
+      <workItem from="1552072860401" duration="1896000" />
+      <workItem from="1552105457239" duration="2955000" />
     </task>
+    <task id="LOCAL-00001" summary="Fix postcss tests">
+      <created>1551614651726</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1551614651726</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added option: debug.showComponentsIds">
+      <created>1551696200789</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1551696200789</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Develop">
+      <created>1552071242171</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1552071242171</updated>
+    </task>
+    <task id="LOCAL-00004" summary="v1.0.2">
+      <created>1552073450406</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1552073450406</updated>
+    </task>
+    <task id="LOCAL-00005" summary="v1.0.3">
+      <created>1552107260880</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1552107260880</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Watch_Mocha - 2019.02.15 at 12h 56m 28s.xml">
+    <history-entry file="Watch_Mocha - 2019.03.09 at 06h 51m 21s.xml">
       <configuration name="Watch Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Watch_Mocha - 2019.02.15 at 12h 56m 36s.xml">
+    <history-entry file="Watch_Mocha - 2019.03.09 at 06h 53m 55s.xml">
       <configuration name="Watch Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Watch_Mocha - 2019.02.15 at 12h 56m 56s.xml">
+    <history-entry file="Watch_Mocha - 2019.03.09 at 06h 53m 57s.xml">
       <configuration name="Watch Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Watch_Mocha - 2019.02.15 at 12h 57m 42s.xml">
+    <history-entry file="Watch_Mocha - 2019.03.09 at 07h 02m 33s.xml">
       <configuration name="Watch Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Watch_Mocha - 2019.02.15 at 12h 59m 18s.xml">
+    <history-entry file="Watch_Mocha - 2019.03.09 at 07h 03m 25s.xml">
       <configuration name="Watch Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Watch_Mocha - 2019.02.15 at 12h 59m 22s.xml">
+    <history-entry file="Watch_Mocha - 2019.03.09 at 07h 03m 48s.xml">
       <configuration name="Watch Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Watch_Mocha - 2019.02.15 at 12h 59m 39s.xml">
+    <history-entry file="Watch_Mocha - 2019.03.09 at 07h 04m 11s.xml">
       <configuration name="Watch Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Watch_Mocha - 2019.02.15 at 12h 59m 48s.xml">
+    <history-entry file="Watch_Mocha - 2019.03.09 at 07h 04m 13s.xml">
       <configuration name="Watch Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Watch_Mocha - 2019.02.15 at 12h 59m 56s.xml">
+    <history-entry file="Watch_Mocha - 2019.03.09 at 07h 07m 39s.xml">
       <configuration name="Watch Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Watch_Mocha - 2019.02.15 at 13h 00m 03s.xml">
+    <history-entry file="Watch_Mocha - 2019.03.09 at 07h 10m 05s.xml">
       <configuration name="Watch Mocha" configurationId="mocha-javascript-test-runner" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14443000" />
+    <option name="totallyTimeSpent" value="28643000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1928" height="892" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2592397" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29514256" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="TypeScript" weight="0.3286908" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37465182" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.41922006" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.48328692" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32729805" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.39693594" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="TypeScript" order="11" weight="0.32729805" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -430,6 +610,73 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fix postcss tests" />
+    <MESSAGE value="Added option: debug.showComponentsIds" />
+    <MESSAGE value="Develop" />
+    <MESSAGE value="v1.0.2" />
+    <MESSAGE value="v1.0.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="v1.0.3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/node_modules/postcss-js-syntax/dist/mjs/main/parse.js</url>
+          <line>5</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/node_modules/postcss-js-syntax/dist/mjs/main/parse.js</url>
+          <line>11</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/node_modules/postcss-js-syntax/dist/js/main/parse.js</url>
+          <line>21</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/node_modules/postcss-js-syntax/dist/js/main/parse.js</url>
+          <line>19</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/node_modules/postcss-js-syntax/dist/js/main/parse.js</url>
+          <line>18</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/node_modules/postcss-js-syntax/dist/js/main/parse.js</url>
+          <line>17</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="mocha-javascript-test-runner">
+        <watch expression="postcssJsSyntax" language="JavaScript" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XPathView.XPathProjectComponent">
+    <history />
+    <find-history />
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>postcssJsSyntax</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>postcssJsSyntax.parse</expression-string>
+        <language-id>JavaScript</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/component.svelte" />
@@ -447,77 +694,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/scss/components/component.svelte">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/scss/components/component.svelte" />
     <entry file="file://$PROJECT_DIR$/node_modules/eslint-config-pro/.eslintrc.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/components/component-no-style.svelte">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/components/component-scss.svelte">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/components/component-stylus.svelte">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="6" column="8" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/components/component-less.svelte">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/svelte-preprocess/src/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2870" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/components/component-css.svelte">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" selection-start-line="3" selection-end-line="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/styles/scss/themes/theme_dark.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="20" selection-start-column="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/styles/scss/themes/theme_light.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/styles/scss/themes.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
@@ -535,20 +719,254 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/node/main.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/postcss-scss/lib/scss-syntax.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/postcss-load-config/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-390">
-          <caret line="39" column="26" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+        <state relative-caret-position="87">
+          <caret line="54" column="14" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/svelte-preprocess/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3874">
+          <caret line="149" column="4" selection-start-line="149" selection-start-column="4" selection-end-line="149" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/svelte-preprocess/src/transformers/postcss.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/svelte-preprocess/src/transformers/scss.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/svelte-preprocess/src/utils.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/svelte-preprocess/src/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="19" column="17" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/postcss-global-nested/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/components/component-less.svelte">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/components/component-scss.svelte">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/postcss-js-syntax/dist/js/main/parse.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/postcss-js-syntax/dist/mjs/main/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/postcss-js-syntax/dist/mjs/main/parse.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/styles/js/themes/theme_dark.styl" />
+    <entry file="file://$PROJECT_DIR$/node_modules/postcss/lib/postcss.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="208" column="4" selection-start-line="208" selection-start-column="4" selection-end-line="208" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/styles/less/themes.less">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/styles/scss/themes.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="26" selection-start-column="16" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/styles/scss/themes/theme_dark.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" selection-start-column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/styles/stylus/themes.styl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/styles/stylus/themes/theme_dark.styl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.nycrc.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/components/component-css.svelte">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" selection-start-line="3" selection-end-line="5" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/components/component-no-style.svelte">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="26">
+            <caret line="4" selection-start-line="4" selection-end-line="4" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/components/component-jss.svelte">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HISTORY.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="156">
+            <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="96" column="15" lean-forward="true" selection-start-line="96" selection-start-column="15" selection-end-line="96" selection-end-column="15" />
+        <state relative-caret-position="171">
+          <caret line="117" column="52" selection-start-line="117" selection-start-column="52" selection-end-line="117" selection-end-column="52" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/styles/scss/themes/theme_light.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/styles/es6/themes/theme_light.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/styles/es6/themes/theme_dark.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/styles/es6/themes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/styles/js/themes/theme_light.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/styles/js/themes/theme_dark.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/styles/js/themes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/node/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="54" column="41" lean-forward="true" selection-start-line="54" selection-start-column="41" selection-end-line="54" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.babelrc-js.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-78" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.babelrc.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.babelrc-mjs.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/components/component-es6.svelte">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" selection-start-line="3" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/tests/node/main/src/components/component-js.svelte">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" selection-start-line="3" selection-end-line="4" />
         </state>
       </provider>
     </entry>

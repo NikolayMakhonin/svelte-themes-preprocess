@@ -120,12 +120,12 @@ describe('node > main > main', function () {
 
   async function compileWithThemes(componentType, lang) {
     // eslint-disable-next-line no-nested-ternary
-    const fileExt = lang === 'stylus' ? 'styl' : lang === 'jss' ? 'js' : lang;
+    const fileExt = lang === 'stylus' ? 'styl' : lang === 'jss' || lang === 'es6' ? 'js' : lang;
 
     const themesFile = require.resolve(`./src/styles/${lang === 'jss' ? 'js' : lang}/themes.${fileExt}`);
 
     const content = (await preprocess(componentType, null, (0, _main.default)(themesFile, (0, _sveltePreprocess.default)(basePreprocessOptions), {
-      lang,
+      lang: lang === 'es6' ? 'js' : lang,
       langs: {
         jss(componentId, themesFilePath) {
           return `
@@ -162,14 +162,14 @@ module.exports = themeBuilder('${componentId.replace(/'/g, '\'')}')
     assert.throws(() => (0, _main.default)(themesFile, {}), Error);
     assert.throws(() => (0, _main.default)(themesFile, {
       style: 'x'
-    }), Error); // eslint-disable-next-line no-empty-function
-
+    }), Error);
     (0, _main.default)(themesFile, {
+      // eslint-disable-next-line no-empty-function
       style() {}
 
     });
   });
-  const cssLangs = ['scss', 'less', 'stylus', 'jss', 'jss'];
+  const cssLangs = ['scss', 'less', 'stylus', 'js', 'jss', 'es6'];
   const componentTypes = ['js', 'scss', 'no-style', 'css', 'less', 'stylus']; // const cssLangs = ['scss']
   // const componentTypes = ['less']
 

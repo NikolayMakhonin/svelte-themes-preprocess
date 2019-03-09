@@ -1,7 +1,8 @@
-import dark from './themes/theme_dark.js'
-import light from './themes/theme_light.js'
+/* eslint-disable global-require */
+const dark = require('./themes/theme_dark.js')
+const light = require('./themes/theme_light.js')?.default
 
-export default componentId => [
-	dark(componentId),
+module.exports = componentId => [
+	...[dark(componentId)],
 	light(componentId)
 ]

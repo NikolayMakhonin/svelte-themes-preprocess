@@ -1,7 +1,8 @@
 var params = {
   color: '#bbb'
 };
-export default (function (componentId) {
+
+module.exports = function (componentId) {
   return {
     ':global(.theme_light)': {
       h1: {
@@ -10,4 +11,4 @@ export default (function (componentId) {
       }
     }
   };
-});
+};
