@@ -1,3 +1,11 @@
+1.0.5 / 2019-09-01
+===================
+
+  * Upgraded dev dependencies to latest versions except less and mocha
+  * Upgraded svelte to v3 and tested
+  * Info: Svelte v3 stop support IE and PhantomJS due to https://github.com/babel/babel/issues/8915
+    * but plugin still work on svelte v2 
+
 1.0.4 / 2019-03-08
 ===================
 
@@ -21,4 +29,4 @@
 1.0.0 / 2019-02-15
 ===================
 
-  * Frist version
+  * First version

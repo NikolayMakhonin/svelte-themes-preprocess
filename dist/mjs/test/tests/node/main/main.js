@@ -1,7 +1,12 @@
 import _regeneratorRuntime from "@babel/runtime/regenerator";
 import _asyncToGenerator from "@babel/runtime/helpers/asyncToGenerator";
-import _objectSpread from "@babel/runtime/helpers/objectSpread";
-import * as svelte from 'svelte';
+import _defineProperty from "@babel/runtime/helpers/defineProperty";
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+import * as svelte from 'svelte/compiler';
 import fs from 'fs';
 import themesPreprocess from '../../../../main/node/main';
 import basePreprocess from 'svelte-preprocess';
@@ -40,11 +45,7 @@ describe('node > main > main', function () {
     dev: true,
     css: true,
     generate: true,
-    hydratable: true,
-    emitCss: true,
-    onwarn: function onwarn(warn) {
-      assert.fail(warn.message);
-    }
+    hydratable: true
   };
 
   function compile(componentType, content) {
@@ -56,9 +57,15 @@ describe('node > main > main', function () {
     }
 
     try {
-      return svelte.compile(content, _objectSpread({}, compileOptionsDefault, {
+      var result = svelte.compile(content, _objectSpread({}, compileOptionsDefault, {
         filename: filename
       }, options));
+
+      if (result.warnings && result.warnings.length) {
+        assert.fail(JSON.stringify(result.warnings));
+      }
+
+      return result;
     } catch (ex) {
       console.error('Error compile svelte:\r\n', content, ex);
       assert.fail();
@@ -191,22 +198,22 @@ describe('node > main > main', function () {
             return preprocess('scss', null, preprocessor);
 
           case 7:
-            assert.throws(function () {
+            assert["throws"](function () {
               return themesPreprocess();
             }, Error);
-            assert.throws(function () {
+            assert["throws"](function () {
               return themesPreprocess('x', basePreprocess(basePreprocessOptions));
             }, Error);
-            assert.throws(function () {
+            assert["throws"](function () {
               return themesPreprocess('', basePreprocess(basePreprocessOptions));
             }, Error);
-            assert.throws(function () {
+            assert["throws"](function () {
               return themesPreprocess(themesFile);
             }, Error);
-            assert.throws(function () {
+            assert["throws"](function () {
               return themesPreprocess(themesFile, {});
             }, Error);
-            assert.throws(function () {
+            assert["throws"](function () {
               return themesPreprocess(themesFile, {
                 style: 'x'
               });

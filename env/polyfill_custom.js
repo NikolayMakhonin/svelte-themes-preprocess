@@ -1,4 +1,4 @@
-/* eslint-disable no-undefined,no-global-assign,no-undef,no-var,vars-on-top */
+/* eslint-disable no-undefined,no-global-assign,no-undef,no-var,vars-on-top,semi-style */
 /* eslint prefer-template: "off" */
 /* eslint-env es5 */
 /* eslint semi: ["error", "always"] */

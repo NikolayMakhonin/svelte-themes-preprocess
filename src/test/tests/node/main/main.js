@@ -1,4 +1,4 @@
-import * as svelte from 'svelte'
+import * as svelte from 'svelte/compiler'
 import fs from 'fs'
 import themesPreprocess from '../../../../main/node/main'
 import basePreprocess from 'svelte-preprocess'
@@ -39,10 +39,6 @@ describe('node > main > main', function () {
 		css       : true,
 		generate  : true,
 		hydratable: true,
-		emitCss   : true,
-		onwarn(warn) {
-			assert.fail(warn.message)
-		}
 	}
 
 	function compile(componentType, content, options = {}) {
@@ -52,11 +48,17 @@ describe('node > main > main', function () {
 		}
 
 		try {
-			return svelte.compile(content, {
+			const result = svelte.compile(content, {
 				...compileOptionsDefault,
 				filename,
 				...options
 			})
+
+			if (result.warnings && result.warnings.length) {
+				assert.fail(JSON.stringify(result.warnings))
+			}
+
+			return result
 		} catch (ex) {
 			console.error('Error compile svelte:\r\n', content, ex)
 			assert.fail()

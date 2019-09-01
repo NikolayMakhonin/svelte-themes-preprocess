@@ -4,7 +4,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 
 var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
 
-var svelte = _interopRequireWildcard(require("svelte"));
+var svelte = _interopRequireWildcard(require("svelte/compiler"));
 
 var _fs = _interopRequireDefault(require("fs"));
 
@@ -54,13 +54,7 @@ describe('node > main > main', function () {
     dev: true,
     css: true,
     generate: true,
-    hydratable: true,
-    emitCss: true,
-
-    onwarn(warn) {
-      assert.fail(warn.message);
-    }
-
+    hydratable: true
   };
 
   function compile(componentType, content, options = {}) {
@@ -71,10 +65,16 @@ describe('node > main > main', function () {
     }
 
     try {
-      return svelte.compile(content, { ...compileOptionsDefault,
+      const result = svelte.compile(content, { ...compileOptionsDefault,
         filename,
         ...options
       });
+
+      if (result.warnings && result.warnings.length) {
+        assert.fail(JSON.stringify(result.warnings));
+      }
+
+      return result;
     } catch (ex) {
       console.error('Error compile svelte:\r\n', content, ex);
       assert.fail();

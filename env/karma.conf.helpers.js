@@ -16,6 +16,8 @@ const commonjs  = require('rollup-plugin-commonjs')
 const svelte  = require('rollup-plugin-svelte')
 const nycrc  = require('../.nycrc.json')
 
+const babelrc = require('../.babelrc')
+
 module.exports.rollup = {
 	plugins: {
 		svelte: svelte({
@@ -24,7 +26,8 @@ module.exports.rollup = {
 			emitCss   : true
 		}),
 		babel: babel({
-			extensions    : ['.js', '.html', '.svelte'],
+			...babelrc,
+			extensions    : ['.js', '.mjs', '.html', '.svelte'],
 			runtimeHelpers: true,
 			exclude       : ['node_modules/@babel/**']
 		}),
