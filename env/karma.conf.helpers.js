@@ -142,7 +142,7 @@ module.exports.configCommon = function (config) {
 			)),
 			// Load polyfill
 			servedPattern(require.resolve('./polyfill_custom')),
-			// servedPattern(require.resolve('@babel/polyfill/dist/polyfill')), // For IE
+			// servedPattern(require.resolve('@babel/polyfill/dist/polyfill')), // For IE / PhantomJS
 			servedPattern(writeTextFile(
 				path.resolve('./tmp/karma/polyfill_after.js'),
 				"console.log('karma polyfill activated!');"
@@ -218,7 +218,8 @@ function configDetectBrowsers(config) {
 
 			// post processing of browsers list
 			// here you can edit the list of browsers used by karma
-			postDetection: availableBrowsers => availableBrowsers.filter(o => !o.startsWith('IE')),
+			postDetection: availableBrowsers => availableBrowsers
+				.filter(o => !o.startsWith('IE') && !o.startsWith('PhantomJS')),
 		},
 
 		plugins: concatArrays(config.plugins, [
@@ -229,7 +230,7 @@ function configDetectBrowsers(config) {
 			'karma-safari-launcher',
 			'karma-safaritechpreview-launcher',
 			'karma-opera-launcher',
-			'karma-phantomjs-launcher',
+			// 'karma-phantomjs-launcher',
 			'karma-detect-browsers'
 		])
 	})
