@@ -1,10 +1,22 @@
 require('./register-tests')
+const path = require('path')
 const registerBabel = require('@babel/register')
 
+function normalizePath(filepath) {
+	return path.relative(process.cwd(), filepath).replace(/\\/g, '/')
+}
+
+function testDir(filepath, dirPath) {
+	return new RegExp('^' + dirPath + '/').test(normalizePath(filepath))
+}
+
 registerBabel({
-	// This will override `node_modules` ignoring - you can alternatively pass
-	// an array of strings to be explicitly matched or a regex / glob
-	ignore      : ['node_modules'],
-	// only        : [/.*/],
-	babelrcRoots: true
+	only: [
+		function(filepath) {
+			return !testDir(filepath, 'node_modules')
+				// || testDir(filepath, 'node_modules/less')
+		},
+	],
+	babelrcRoots: true,
+	...require('../.babelrc')
 })
