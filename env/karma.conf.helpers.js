@@ -142,7 +142,7 @@ module.exports.configCommon = function (config) {
 			)),
 			// Load polyfill
 			servedPattern(require.resolve('./polyfill_custom')),
-			servedPattern(require.resolve('@babel/polyfill/dist/polyfill')), // For IE
+			// servedPattern(require.resolve('@babel/polyfill/dist/polyfill')), // For IE
 			servedPattern(writeTextFile(
 				path.resolve('./tmp/karma/polyfill_after.js'),
 				"console.log('karma polyfill activated!');"
@@ -221,7 +221,7 @@ function configDetectBrowsers(config) {
 			'karma-chrome-launcher',
 			'karma-edge-launcher',
 			'karma-firefox-launcher',
-			'karma-ie-launcher',
+			// 'karma-ie-launcher',
 			'karma-safari-launcher',
 			'karma-safaritechpreview-launcher',
 			'karma-opera-launcher',
@@ -323,27 +323,27 @@ module.exports.configBrowserStack = function (config, desktop = true, mobile = f
 			os             : 'OS X',
 			os_version     : 'Sierra',
 		},
-		IE11: {
-			base           : 'BrowserStack',
-			browser        : 'IE',
-			browser_version: '11',
-			os             : 'Windows',
-			os_version     : '10',
-		},
-		IE10: {
-			base           : 'BrowserStack',
-			browser        : 'IE',
-			browser_version: '10',
-			os             : 'Windows',
-			os_version     : '8',
-		},
-		IE9: {
-			base           : 'BrowserStack',
-			browser        : 'IE',
-			browser_version: '9',
-			os             : 'Windows',
-			os_version     : '7',
-		},
+		// IE11: {
+		// 	base           : 'BrowserStack',
+		// 	browser        : 'IE',
+		// 	browser_version: '11',
+		// 	os             : 'Windows',
+		// 	os_version     : '10',
+		// },
+		// IE10: {
+		// 	base           : 'BrowserStack',
+		// 	browser        : 'IE',
+		// 	browser_version: '10',
+		// 	os             : 'Windows',
+		// 	os_version     : '8',
+		// },
+		// IE9: {
+		// 	base           : 'BrowserStack',
+		// 	browser        : 'IE',
+		// 	browser_version: '9',
+		// 	os             : 'Windows',
+		// 	os_version     : '7',
+		// },
 		Edge: {
 			base           : 'BrowserStack',
 			browser        : 'Edge',
