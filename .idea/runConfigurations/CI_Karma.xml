@@ -3,7 +3,7 @@
     <config-file value="$PROJECT_DIR$/env/karma.conf.ci.js" />
     <karma-package-dir value="$PROJECT_DIR$/node_modules/karma" />
     <working-directory value="$PROJECT_DIR$" />
-    <node-interpreter value="$Node2$/node" />
+    <node-interpreter value="node" />
     <envs />
     <method v="2" />
   </configuration>
