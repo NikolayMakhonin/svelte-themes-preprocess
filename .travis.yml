@@ -24,12 +24,12 @@ cache: npm
 addons:
   chrome: stable
   firefox: latest
-  browserstack:
-    username: "nikolaymakhonin1"
-    access_key:
-      # You shoud generate this for each repositories.
-      # See: https://docs.travis-ci.com/user/encryption-keys
-      secure: "Z/pTlHdmPQ5Ge51yzuRau1QKxd6FrB+vlkaKlpltqfxdTC96d2Z2H5tXvOM8W0QJM56Rne+KJ97T3qvqNhLKCgXgsaRqCiKMeJ6dWXl5AQk9PFq1zCJWOuQdt8mQJ6Zi6Y/leZBaOUAL/7mqrg0GkgL2Ck5j6n7AcWymHb40QvMV3BmYIiEi1i4FRuJ+w8ULLYT7RbgQq7IMZNmP9s57giaSAlxEIHHpBoGyP7wVecZHPVfjh2pmkBkq7wCYX4KzyriHde3y3R1h7Y7ZM5RXtyboscYM4fcwg6/qslq00MVfCDI+5zud+/O8b9Y1F/I/gUoVZByhQJA0WtUGsOBMLpS76OWPZX7b2UmyYBw8BOyal5rV8V+mbEqtFksyeGBI/bkRD6wllxPd/uJ+qOMvet4H8DnpxeJnq/h0asMRvar6dWtl2BjNNWawYVicxCUvY2/aPMYxjRYTIem8jfwfCKgVuiThNrPR4A8tVPESEE727JsEaLKPWTvJ2DLjOURXoUsWBnHYunyibUuYGgox4Lfl9ZiRvIbotg9hbWnHaskg5Rzot3+lI3KYhyotWDyxxRBN1IERqsE68Gn5Yk/e97LNAGMt/hK7O69QKRDqdJFurb4JuMw2QIOeKvgthdUuPl4pkfJs7aIgYirqAiV3ov8BRclOkMkeNhOUDOOScDk="
+#  browserstack:
+#    username: "nikolaymakhonin1"
+#    access_key:
+#      # You shoud generate this for each repositories.
+#      # See: https://docs.travis-ci.com/user/encryption-keys
+#      secure: "Z/pTlHdmPQ5Ge51yzuRau1QKxd6FrB+vlkaKlpltqfxdTC96d2Z2H5tXvOM8W0QJM56Rne+KJ97T3qvqNhLKCgXgsaRqCiKMeJ6dWXl5AQk9PFq1zCJWOuQdt8mQJ6Zi6Y/leZBaOUAL/7mqrg0GkgL2Ck5j6n7AcWymHb40QvMV3BmYIiEi1i4FRuJ+w8ULLYT7RbgQq7IMZNmP9s57giaSAlxEIHHpBoGyP7wVecZHPVfjh2pmkBkq7wCYX4KzyriHde3y3R1h7Y7ZM5RXtyboscYM4fcwg6/qslq00MVfCDI+5zud+/O8b9Y1F/I/gUoVZByhQJA0WtUGsOBMLpS76OWPZX7b2UmyYBw8BOyal5rV8V+mbEqtFksyeGBI/bkRD6wllxPd/uJ+qOMvet4H8DnpxeJnq/h0asMRvar6dWtl2BjNNWawYVicxCUvY2/aPMYxjRYTIem8jfwfCKgVuiThNrPR4A8tVPESEE727JsEaLKPWTvJ2DLjOURXoUsWBnHYunyibUuYGgox4Lfl9ZiRvIbotg9hbWnHaskg5Rzot3+lI3KYhyotWDyxxRBN1IERqsE68Gn5Yk/e97LNAGMt/hK7O69QKRDqdJFurb4JuMw2QIOeKvgthdUuPl4pkfJs7aIgYirqAiV3ov8BRclOkMkeNhOUDOOScDk="
 
 services:
   - xvfb
