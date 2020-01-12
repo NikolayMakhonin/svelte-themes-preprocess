@@ -48,13 +48,13 @@ npm i postcss postcss-import node-sass svelte-preprocess svelte-themes-preproces
 ```
 
 **themes.scss**
-```
+```scss
 @import 'themes/theme_dark';
 @import 'themes/theme_light';
 ```
 
 **component.svelte**
-```
+```html
 <h1>Svelte component</h1>
 <style>
     h1 {
@@ -64,7 +64,7 @@ npm i postcss postcss-import node-sass svelte-preprocess svelte-themes-preproces
 ```
 
 **Preprocessing**
-```
+```js
 import preprocess from 'svelte-preprocess'
 import postcssImport from 'postcss-import'
 import themesPreprocess from 'svelte-themes-preprocess'
@@ -73,7 +73,7 @@ const postcssOptions = {
     plugins: [
         // This plugin is necessary and should be first in plugins list:
         postcssImport(),
-        
+
         // Other plugins ...
     ]
 }
@@ -111,17 +111,17 @@ const result = svelte.preprocess(input, themesPreprocess(
 ))
 ```
 **Result**
-```
+```html
 <h1>Svelte component</h1>
 <style>
     h1 {
         color: #000;
     }
-    
+
     .theme_dark h1 {
         color: #111;
     }
-    
+
     .theme_light h1 {
         color: #222;
     }
