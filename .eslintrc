@@ -48,6 +48,13 @@
 			"env": {
 				"mocha": true
 			}
+		},
+		{
+			"files": ["**/*.md"],
+			"rules": {
+				"no-undef": "off",
+				"no-unused-vars": "off"
+			}
 		}
 	]
 }

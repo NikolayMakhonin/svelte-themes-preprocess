@@ -214,6 +214,8 @@ function configDetectBrowsers(config) {
 		// available frameworks: https://npmjs.org/browse/keyword/karma-adapter
 		frameworks: concatArrays(config.frameworks, ['detectBrowsers']),
 
+		usePhantomJS: false,
+
 		// configuration
 		detectBrowsers: {
 			// use headless mode, for browsers that support it, default is false
