@@ -75,7 +75,9 @@ function themesPreprocess(themesFilePath, preprocess, options = {}) {
       ...other
     }) {
       if (content.indexOf('</style>') < 0) {
-        content = `${content}\r\n<style></style>`;
+        content = `${content}\r\n<style>/**/</style>`;
+      } else {
+        content = content.replace(/<style( [\0-=\?-\uFFFF]*)?>[\t-\r \xA0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\uFEFF]*<\/style>/g, '<style>/**/</style>');
       }
 
       if (preprocess.markup) {

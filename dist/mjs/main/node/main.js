@@ -5,7 +5,7 @@ import _asyncToGenerator from "@babel/runtime/helpers/asyncToGenerator";
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 // import preprocess from 'svelte-preprocess'
 // import fs from 'fs'
@@ -86,7 +86,9 @@ export default function themesPreprocess(themesFilePath, preprocess) {
           other = _objectWithoutProperties(_ref, ["content"]);
 
       if (content.indexOf('</style>') < 0) {
-        content = "".concat(content, "\r\n<style></style>");
+        content = "".concat(content, "\r\n<style>/**/</style>");
+      } else {
+        content = content.replace(/<style( [\0-=\?-\uFFFF]*)?>[\t-\r \xA0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\uFEFF]*<\/style>/g, '<style>/**/</style>');
       }
 
       if (preprocess.markup) {

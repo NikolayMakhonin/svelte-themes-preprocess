@@ -37,7 +37,7 @@ describe('node > main > main', function () {
 	const compileOptionsDefault = {
 		dev       : true,
 		css       : true,
-		generate  : true,
+		generate  : 'ssr',
 		hydratable: true,
 	}
 
@@ -68,6 +68,9 @@ describe('node > main > main', function () {
 
 	it('svelte', function () {
 		let result = compile('no-style')
+		assert.notOk(result.css.code)
+
+		result = compile('empty-style')
 		assert.notOk(result.css.code)
 
 		result = compile('css')
@@ -159,7 +162,7 @@ module.exports = themeBuilder('${componentId.replace(/'/g, '\'')}')
 	})
 
 	const cssLangs = ['scss', 'less', 'stylus', 'js', 'jss', 'es6']
-	const componentTypes = ['js', 'scss', 'no-style', 'css', 'less', 'stylus']
+	const componentTypes = ['js', 'scss', 'no-style', 'empty-style', 'css', 'less', 'stylus']
 	// const cssLangs = ['scss']
 	// const componentTypes = ['less']
 
@@ -184,7 +187,7 @@ module.exports = themeBuilder('${componentId.replace(/'/g, '\'')}')
 					assert.include(compiled.css.code, '.theme_light h1')
 					assert.match(compiled.css.code, new RegExp(`component:\\s*["'][^"']*component-${componentType}["']`))
 
-					if (componentType === 'no-style') {
+					if (componentType === 'no-style' || componentType === 'empty-style') {
 						assert.match(compiled.css.code, /^\.theme_/)
 						assert.notMatch(compiled.css.code, /component-type/)
 					} else {

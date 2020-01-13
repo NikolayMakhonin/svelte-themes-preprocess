@@ -4,7 +4,7 @@ import _defineProperty from "@babel/runtime/helpers/defineProperty";
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 import * as svelte from 'svelte/compiler';
 import fs from 'fs';
@@ -44,7 +44,7 @@ describe('node > main > main', function () {
   var compileOptionsDefault = {
     dev: true,
     css: true,
-    generate: true,
+    generate: 'ssr',
     hydratable: true
   };
 
@@ -75,6 +75,8 @@ describe('node > main > main', function () {
 
   it('svelte', function () {
     var result = compile('no-style');
+    assert.notOk(result.css.code);
+    result = compile('empty-style');
     assert.notOk(result.css.code);
     result = compile('css');
     assert.ok(result.css.code);
@@ -231,7 +233,7 @@ describe('node > main > main', function () {
     }, _callee2);
   })));
   var cssLangs = ['scss', 'less', 'stylus', 'js', 'jss', 'es6'];
-  var componentTypes = ['js', 'scss', 'no-style', 'css', 'less', 'stylus']; // const cssLangs = ['scss']
+  var componentTypes = ['js', 'scss', 'no-style', 'empty-style', 'css', 'less', 'stylus']; // const cssLangs = ['scss']
   // const componentTypes = ['less']
 
   it('preprocess',
@@ -279,7 +281,7 @@ describe('node > main > main', function () {
                           assert.include(compiled.css.code, '.theme_light h1');
                           assert.match(compiled.css.code, new RegExp("component:\\s*[\"'][^\"']*component-".concat(componentType, "[\"']")));
 
-                          if (componentType === 'no-style') {
+                          if (componentType === 'no-style' || componentType === 'empty-style') {
                             assert.match(compiled.css.code, /^\.theme_/);
                             assert.notMatch(compiled.css.code, /component-type/);
                           } else {

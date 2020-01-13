@@ -71,7 +71,9 @@ export default function themesPreprocess(themesFilePath, preprocess, options = {
 		// add <style> tags if not exists
 		markup({content = '', ...other}) {
 			if (content.indexOf('</style>') < 0) {
-				content = `${content}\r\n<style></style>`
+				content = `${content}\r\n<style>/**/</style>`
+			} else {
+				content = content.replace(/<style( [^>]*)?>\s*<\/style>/gs, '<style>/**/</style>')
 			}
 
 			if (preprocess.markup) {
